@@ -1,0 +1,94 @@
+.reviews {
+  padding: 10px;
+  padding-top: 152px;
+  height: 778px;
+}
+.reviews__title {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 44px;
+  text-transform: uppercase;
+  color: #292929;
+
+  margin-bottom: 86px;
+}
+
+.reviews__row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 145px;
+  //   padding-left: 2px;
+  //   padding-right: 2px;
+}
+.reviews__item {
+  &.item {
+    display: flex;
+    justify-content: space-betweenl;
+  }
+  .item__avatar {
+    width: 206px;
+    height: 207px;
+    margin-right: 40px;
+  }
+  .item__body {
+    margin-top: 22px;
+    width: 436px;
+  }
+  .item__name {
+    font-family: Calibri;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    margin-bottom: 30px;
+  }
+  .item__review {
+    position: relative;
+    font-family: Calibri;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #928f94;
+  }
+  .item__review::before {
+    content: "“";
+    font-family: Calibri;
+    font-size: 36px;
+    line-height: 44px;
+    width: 33px;
+    height: 39px;
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: -15px;
+  }
+  .item__review::after {
+    content: "”";
+    font-family: Calibri;
+    font-size: 36px;
+    line-height: 44px;
+    width: 33px;
+    height: 39px;
+    display: block;
+    position: absolute;
+    bottom: -15px;
+    right: -20px;
+  }
+}
+
+.reviews__controls-row {
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+}
+.controls-item {
+  width: 19.34px;
+  height: 19px;
+  background: #e5e5e5;
+  margin-right: 11px;
+  border-radius: 100%;
+  &.activ {
+    background: #c4c4c4;
+  }
+}

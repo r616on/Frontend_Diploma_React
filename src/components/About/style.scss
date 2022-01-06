@@ -1,0 +1,44 @@
+.about {
+  height: 561px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 133px;
+}
+.about__title {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 44px;
+  text-transform: uppercase;
+  color: #292929;
+  //   margin-top: 133px;
+  margin-bottom: 33px;
+}
+.about__body {
+  max-width: 1073px;
+  position: relative;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 29px;
+  color: #292929;
+  padding-left: 28px;
+  .indent {
+    margin-bottom: 30px;
+  }
+  .indent:last-child {
+    margin-bottom: 0px;
+  }
+}
+.about__body::before {
+  position: absolute;
+  content: "";
+  width: 9px;
+  height: 231px;
+  background: #ffa800;
+  display: block;
+  top: 4px;
+  left: 0;
+}

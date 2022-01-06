@@ -1,0 +1,133 @@
+.footer {
+  height: 519px;
+  background: #2d2b2f;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #e5e5e5;
+  .title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    color: #ffffff;
+    margin-bottom: 27px;
+  }
+}
+.footer__top {
+  display: flex;
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+.footer__feedback {
+  width: 48.555%;
+  padding-left: 107px;
+}
+.feedback {
+}
+.feedback__title {
+}
+
+.feedback__item-row {
+}
+.feedback__item {
+  display: flex;
+  margin-bottom: 27px;
+}
+.feedback__item:last-child {
+  margin-bottom: 0px;
+}
+.feedback__icon {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  margin-right: 36px;
+}
+.feedback__body {
+  width: 250px;
+}
+
+.footer__subscription {
+  padding-right: 98px;
+  flex: 1 1 auto;
+}
+.subscription {
+}
+.subscription__title {
+}
+.subscription__form {
+}
+.subscription-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-end;
+  margin-bottom: 44px;
+}
+.subscription-form__lable {
+  display: flex;
+  flex-direction: column;
+}
+.subscription-form__input {
+  margin-top: 16px;
+  width: 447px;
+  height: 60px;
+}
+.subscription-form__button {
+  width: 169px;
+  height: 60px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 3px;
+  background: #2d2b2f;
+  font-family: Roboto;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #e5e5e5;
+}
+
+.subscription__social-networks {
+}
+.social-networks {
+  display: flex;
+}
+.social-networks__item {
+  height: 30px;
+  margin-right: 48px;
+  font-size: 35px;
+}
+.social-networks__link {
+}
+
+.footer__strip {
+  border: 1px solid #e5e5e5;
+}
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 96px;
+  padding-bottom: 4px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.arrow-up {
+  margin-left: 12px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e5e5e5;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__text {
+}

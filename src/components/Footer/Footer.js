@@ -1,70 +1,78 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./desktop.scss";
-import topMenuItems from "../Header/data.json";
+// import { Link } from "react-router-dom";
+import "./style.scss";
 
 function Footer() {
   return (
-    <footer className="container bg-light footer">
-      <div className="row footer__row">
-        <section className="col footer__info">
-          <h5>Информация</h5>
-          <ul className="nav flex-column">
-            {topMenuItems.map((item) => {
-              return (
-                <li key={item.title} className="nav-item">
-                  <Link to={item.route} className="nav-link">
-                    {item.title}
-                  </Link>
-                </li>
-              );
-            })}
+    <footer className="footer">
+      <div className="footer__top container">
+        <div className="footer__feedback feedback">
+          <h3 className="feedback__title title">Свяжитесь с нами</h3>
+          <ul className="feedback__item-row">
+            <li className="feedback__item">
+              <div className="feedback__icon icon-tel"></div>
+              <div className="feedback__body">8 (800) 000 00 00</div>
+            </li>
+            <li className="feedback__item">
+              <div className="feedback__icon icon-mail"></div>
+              <div className="feedback__body">inbox@mail.ru</div>
+            </li>
+            <li className="feedback__item">
+              <div className="feedback__icon icon-skype"></div>
+              <div className="feedback__body">tu.train.tickets</div>
+            </li>
+            <li className="feedback__item">
+              <div className="feedback__icon icon-mark"></div>
+              <div className="feedback__body">
+                г. Москва ул. Московская 27-35 555 555
+              </div>
+            </li>
           </ul>
-        </section>
-
-        <div className="col payment">
-          <section className="col">
-            <h5>Принимаем к оплате:</h5>
-            <div className="footer-pay">
-              <div className="footer-pay-systems footer-pay-systems-paypal"></div>
-              <div className="footer-pay-systems footer-pay-systems-master-card"></div>
-              <div className="footer-pay-systems footer-pay-systems-visa"></div>
-              <div className="footer-pay-systems footer-pay-systems-yandex"></div>
-              <div className="footer-pay-systems footer-pay-systems-webmoney"></div>
-              <div className="footer-pay-systems footer-pay-systems-qiwi"></div>
-            </div>
-          </section>
-          <section className="footer-copyright col">
-            <div className="footer-copyright__row">
-              2009-2019 © BosaNoga.ru — модный интернет-магазин обуви и
-              аксессуаров. Все права защищены.
-              <br />
-              Доставка по всей России!
-            </div>
-          </section>
         </div>
-
-        <section className="col text-right footer-contacts">
-          <h5>Контакты:</h5>
-          <div className="footer-contacts__row">
-            <a className="footer-contacts-phone" href="tel:+7-495-790-35-03">
-              +7 495 79 03 5 03
-            </a>
-            <span className="footer-contacts-working-hours">
-              Ежедневно: с 09-00 до 21-00
-            </span>
-            <a
-              className="footer-contacts-email"
-              href="mailto:office@bosanoga.ru"
-            >
-              office@bosanoga.ru
-            </a>
-          </div>
-          <div className="footer-social-links">
-            <div className="footer-social-link footer-social-link-twitter"></div>
-            <div className="footer-social-link footer-social-link-vk"></div>
-          </div>
-        </section>
+        <div className="footer__subscription subscription">
+          <h3 className="subscription__title title">Подписка</h3>
+          <form className="subscription__form subscription-form">
+            <label className="subscription-form__lable">
+              Будьте в курсе событий
+              <input className="subscription-form__input" />
+            </label>
+            <button className="subscription-form__button">Отправить</button>
+          </form>
+          <h3 className="subscription__title title">Подписывайтесь на нас</h3>
+          <ul className="subscription__social-networks social-networks">
+            <li className="social-networks__item">
+              <a href="/" className="social-networks__link icon-ytube">
+                {" "}
+              </a>
+            </li>
+            <li className="social-networks__item">
+              <a href="/" className="social-networks__link icon-linkIn">
+                {" "}
+              </a>
+            </li>
+            <li className="social-networks__item">
+              <a href="/" className="social-networks__link icon-G">
+                {" "}
+              </a>
+            </li>
+            <li className="social-networks__item">
+              <a href="/" className="social-networks__link icon-facebook">
+                {" "}
+              </a>
+            </li>
+            <li className="social-networks__item">
+              <a href="/" className="social-networks__link icon-twitter">
+                {" "}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="footer__strip"></div>
+      <div className="footer__bottom container">
+        <div className="logo">Лого</div>
+        <div className="arrow-up icon-arrowUp"></div>
+        <div className="footer__text">2022WEB</div>
       </div>
     </footer>
   );
