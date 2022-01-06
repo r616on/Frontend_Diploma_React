@@ -104,6 +104,20 @@
   font-size: 35px;
 }
 .social-networks__link {
+  color: #e5e5e5;
+  font-size: 35px;
+  &.icon-linkIn {
+    font-size: 30px;
+  }
+  &.icon-G {
+    font-size: 37px;
+  }
+  &.icon-facebook {
+    font-size: 32px;
+  }
+  &.icon-twitter {
+    font-size: 32px;
+  }
 }
 
 .footer__strip {

@@ -1,5 +1,8 @@
 import React from "react";
 import "./style.scss";
+import navItem from "./data.json";
+import { Link } from "react-router-dom";
+import Button from "../../atom/Button/Button";
 
 function Header() {
   return (
@@ -7,10 +10,11 @@ function Header() {
       <div className="logo header__logo container">Лого</div>
       <nav className="header-nav nav">
         <ul className="nav__row container">
-          <li className="nav__item">О нас</li>
-          <li className="nav__item">Как это работает</li>
-          <li className="nav__item">Отзывы</li>
-          <li className="nav__item">Контакты</li>
+          {navItem.map((item) => (
+            <Link key={item.title} to={item.route} className="nav__item">
+              {item.title}
+            </Link>
+          ))}
         </ul>
       </nav>
       <div className="header__body"></div>
@@ -28,7 +32,9 @@ function Header() {
             <input className="search-ticket-form__item" type="date" />
             <input className="search-ticket-form__item" type="date" />
           </div>
-          <button className="search-ticket-form__button">Найти билеты</button>
+          <div className="search-ticket-form__button">
+            <Button type="findTickets" />
+          </div>
         </form>
       </div>
     </header>

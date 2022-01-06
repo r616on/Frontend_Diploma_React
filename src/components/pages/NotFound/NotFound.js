@@ -1,5 +1,5 @@
 import React from "react";
-import PageTemplate from "../../templates/PageTemplate/PageTemplate";
+import PageTemplate from "../../../templates/PageTemplate/PageTemplate";
 import "./desktop.scss";
 
 function NotFound() {

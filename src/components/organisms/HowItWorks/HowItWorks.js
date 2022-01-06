@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../atom/Button/Button";
 // import { Link } from "react-router-dom";
 import "./style.scss";
 
@@ -7,7 +8,7 @@ function HowItWorks() {
     <section className="howItWorks">
       <div className="howItWorks__row-top container">
         <h2 className="howItWorks__title title">Как это работает</h2>
-        <button className="howItWorks__button">Узнать больше</button>
+        <Button type="learnMore" />
       </div>
       <div className="howItWorks__row-bottom container">
         <div className="howItWorks__item item">

@@ -1,8 +1,8 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 import "./style.scss";
-import avaGerl from "../../img/reviews/avaGerl.jpg";
-import avaMean from "../../img/reviews/avaMean.jpg";
+import avaGerl from "./img/avaGerl.jpg";
+import avaMean from "./img/avaMean.jpg";
 
 function Reviews() {
   return (

@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../atom/Button/Button";
 // import { Link } from "react-router-dom";
 import "./style.scss";
 
@@ -36,7 +37,7 @@ function Footer() {
               Будьте в курсе событий
               <input className="subscription-form__input" />
             </label>
-            <button className="subscription-form__button">Отправить</button>
+            <Button type="submit" />
           </form>
           <h3 className="subscription__title title">Подписывайтесь на нас</h3>
           <ul className="subscription__social-networks social-networks">
