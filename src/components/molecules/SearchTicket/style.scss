@@ -1,0 +1,106 @@
+.search-ticket {
+  display: flex;
+}
+.search-ticket__title {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px;
+  line-height: 88px;
+  color: #ffffff;
+  width: 419px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 184px;
+  margin-bottom: 110px;
+}
+.search-ticket__form {
+  width: 50%;
+}
+.search-ticket-form {
+  width: 729px;
+  height: 574px;
+  background: rgba(41, 41, 41, 0.8);
+  padding: 23px;
+  padding-top: 19px;
+  display: flex;
+  flex-direction: column;
+  .row {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+.search-ticket-form__title {
+  margin-bottom: 20px;
+  width: 100%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 35px;
+  color: #ffffff;
+  margin-top: 56px;
+  margin-left: 4px;
+}
+
+.search-ticket-form__item {
+  width: 322px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 3px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+  color: #e5e5e5;
+  padding: 20px;
+}
+.search-ticket-form__icon {
+  width: 24px;
+  height: 24px;
+  background-image: url("./img/icon/search-ticket-form__update.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.search-ticket-form__button {
+  margin-top: 77px;
+  align-self: end;
+}
+
+.selectTrain {
+  .search-ticket-form {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    height: 325px;
+    padding-top: 28px;
+    padding-bottom: 174px;
+    .row {
+      width: 48%;
+      margin-left: 34px;
+      margin-bottom: 47px;
+      &:first-child {
+        margin-left: 0px;
+      }
+    }
+  }
+  .search-ticket-form__title {
+    margin-top: 0px;
+  }
+  .search-ticket__title {
+    display: none;
+  }
+  .search-ticket-form__button {
+    margin-top: 0px;
+    align-self: flex-end;
+  }
+}
