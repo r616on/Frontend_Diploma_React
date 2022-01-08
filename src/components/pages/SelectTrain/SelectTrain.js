@@ -6,7 +6,7 @@ import StatusSteps from "../../molecules/StatusSteps/StatusSteps";
 function SelectTrain() {
   return (
     <PageTemplate selectTrain>
-      <StatusSteps />
+      <StatusSteps step={4} />
     </PageTemplate>
   );
 }

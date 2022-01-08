@@ -15,7 +15,7 @@
 }
 .status-steps__background-left {
   width: 25%;
-  //background: #ffa800;
+  background: #ffa800;
 }
 
 .status-steps__background-right {
@@ -38,12 +38,17 @@
     align-items: center;
     background: #3e3c41;
     z-index: 2;
-    margin-right: 37.5px;
-    border-radius: 4px;
+    margin-right: 37px;
+    // border-radius: 4px;
     &.active {
       background: #ffa800;
       &.item::after {
         display: block;
+      }
+    }
+    &.previous {
+      &.item::before {
+        background-color: #ffa800;
       }
     }
     &::before {
@@ -51,7 +56,7 @@
       position: absolute;
       display: block;
       width: 37px;
-      height: 97px;
+      height: 98px;
       right: -37px;
       background-image: url("./img/arrow.svg");
       background-repeat: no-repeat;
@@ -69,47 +74,19 @@
       bottom: 2px;
       $size: 47px;
       border-top: $size solid transparent;
-      border-left: 36.5px solid #ffa800;
+      border-left: 36px solid #ffa800;
       border-bottom: $size solid transparent;
       z-index: 4;
       display: none;
     }
-    // &::before {
-    //   //content: "";
-    //   position: absolute;
-    //   display: block;
-    //   width: 0;
-    //   height: 0;
-    //   right: -37.5px;
-    //   bottom: 1px;
-    //   $size: 49px;
-    //   border-top: $size solid transparent;
-    //   border-left: 37.5px solid red;
-    //   border-bottom: $size solid transparent;
-    //   z-index: 3;
-    //   background: #3e3c41;
-    // }
-
-    // &::before {
-    //   content: "";
-    //   width: 61.7px;
-    //   display: block;
-    //   position: absolute;
-    //   bottom: 24px;
-    //   right: -8px;
-    //   border-top: 2px solid red;
-    //   transform: rotate(-52deg);
-    // }
-    // &::after {
-    //   content: "";
-    //   width: 61.7px;
-    //   display: block;
-    //   position: absolute;
-    //   top: 24px;
-    //   right: -8px;
-    //   border-top: 2px solid green;
-    //   transform: rotate(52deg);
-    // }
+    &.item:last-child {
+      &.item::before {
+        display: none;
+      }
+      &.item::after {
+        display: none;
+      }
+    }
   }
 
   .item__icon {
