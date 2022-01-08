@@ -24,6 +24,7 @@ function Header({ selectTrain }) {
       <div className="header__form  container">
         <SearchTicket selectTrain={selectTrain} />
       </div>
+      {!selectTrain && <div className="header__line"></div>}
     </header>
   );
 }
