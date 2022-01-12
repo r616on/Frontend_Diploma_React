@@ -3,14 +3,10 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import "./style.scss";
 import Button from "../../atom/Button/Button";
-import DatePicker from "react-datepicker";
-import { registerLocale } from "react-datepicker";
-import "./react-datepicker.css";
-import ru from "date-fns/locale/ru";
-registerLocale("ru", ru);
+import DatePicker from "../../atom/DatePicker/DatePicker";
 
 function SearchTicket({ selectTrain }) {
-  const [startDate, setStartDate] = useState(new Date());
+  const dateFormat = "DD/MM/YYYY";
   return (
     <div className={classNames("search-ticket", { selectTrain })}>
       <h1 className="search-ticket__title">Вся жизнь - путешествие!</h1>
@@ -26,17 +22,15 @@ function SearchTicket({ selectTrain }) {
           <h3 className="search-ticket-form__title">Дата</h3>
           <DatePicker
             className="search-ticket-form__item"
-            selected={startDate}
-            closeOnScroll={true}
-            onChange={(date) => setStartDate(date)}
-            locale="ru"
+            // className="DateWidget__date-picker"
+            allowClear={false}
+            format={dateFormat}
           />
           <DatePicker
             className="search-ticket-form__item"
-            selected={startDate}
-            closeOnScroll={true}
-            onChange={(date) => setStartDate(date)}
-            locale="ru"
+            // className="DateWidget__date-picker"
+            allowClear={false}
+            format={dateFormat}
           />
         </div>
         <div className="search-ticket-form__button">
