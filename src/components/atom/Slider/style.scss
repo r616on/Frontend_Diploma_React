@@ -1,0 +1,62 @@
+.Slider {
+  position: relative;
+  height: 24px;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 63px;
+
+  .ant-slider-rail {
+    height: 20px;
+    background-color: inherit;
+    border: 1px solid #c4c4c4;
+    box-sizing: border-box;
+    border-radius: 8px;
+  }
+  .ant-slider-track,
+  .ant-slider-track-1 {
+    height: 20px;
+    background: #ffa800;
+    border-radius: 8px;
+  }
+  .ant-slider-handle {
+    width: 24px;
+    height: 24px;
+    margin-top: -2px;
+    border-radius: 100%;
+    background: #ffffff;
+    border: none;
+  }
+  .ant-slider-step {
+    // position: relative;
+    width: calc(100%-22px);
+    height: 20px;
+    border-radius: 8px;
+  }
+  .ant-slider-dot {
+    width: 22px;
+    height: 22px;
+    margin-left: -12px;
+    margin-top: 1px;
+    border-radius: 100%;
+    background: #ffffff;
+    border: none;
+  }
+  .ant-slider-mark {
+    position: absolute;
+
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 90%;
+    margin-left: 4%;
+    margin-right: 6%;
+  }
+  .ant-slider-mark-text {
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+
+    color: #e5e5e5;
+  }
+}

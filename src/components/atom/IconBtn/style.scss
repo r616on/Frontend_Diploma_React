@@ -1,0 +1,92 @@
+.IconBtn {
+  &.square {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 9.84px;
+      height: 1.8px;
+      // border: 2px solid #ffffff;
+      background-color: #ffffff;
+      border-radius: 1px;
+      transform: rotate(-90deg);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 9.84px;
+      height: 1.8px;
+      background-color: #ffffff;
+      border-radius: 1px;
+    }
+    &:hover {
+      border-color: #fcdc9d;
+      &::before {
+        background-color: #fcdc9d;
+      }
+      &::after {
+        background-color: #fcdc9d;
+      }
+    }
+    &:active {
+      border-color: #c4c4c4;
+      &::before {
+        display: none;
+      }
+      &::after {
+        background-color: #c4c4c4;
+      }
+    }
+  }
+  &.circular {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #ffa800;
+    background-color: inherit;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 12.79px;
+      height: 2px;
+      background-color: #ffa800;
+      border-radius: 2px;
+      transform: rotate(-90deg);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 12.79px;
+      height: 2px;
+      background-color: #ffa800;
+      border-radius: 2px;
+    }
+  }
+  &:hover {
+    border: none;
+  }
+  &:active {
+    border: 2px solid #928f94;
+    &::before {
+      display: none;
+    }
+    &::after {
+      background-color: #928f94;
+    }
+  }
+}
