@@ -8,26 +8,32 @@ import WiFi from "./img/WiFi.svg";
 const arrItem = [
   {
     icon: compartment,
+    name: "compartment",
     title: "Купе",
   },
   {
     icon: reservedSeat,
+    name: "reservedSeat",
     title: "Плацкарт",
   },
   {
     icon: sedentary,
+    name: "sedentary",
     title: "Сидячий",
   },
   {
     icon: luxury,
+    name: "luxury",
     title: "Люкс",
   },
   {
     icon: WiFi,
+    name: "WiFi",
     title: "Wi-Fi",
   },
   {
     icon: express,
+    name: "express",
     title: "Экспресс",
   },
 ];

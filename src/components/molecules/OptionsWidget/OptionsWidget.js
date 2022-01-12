@@ -11,7 +11,7 @@ function OptionsWidget() {
       <div className="OptionsWidget__row">
         {arrItem.map((item) => {
           return (
-            <div className="OptionsWidget__item item">
+            <div key={item.name} className="OptionsWidget__item item">
               <div className="item-icon">
                 <img src={item.icon} alt={item.title} className="item-img" />
               </div>

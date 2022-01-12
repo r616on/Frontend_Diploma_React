@@ -9,7 +9,6 @@ import locale from "antd/lib/locale/ru_RU";
 const GenPicker = generatePicker<Date>(moment);
 
 const DatePicker = (props) => {
-  console.log(props);
   return (
     <ConfigProvider locale={locale}>
       <GenPicker {...props} />
