@@ -1,0 +1,60 @@
+.OptionsWidget {
+}
+.OptionsWidget__row {
+  padding-left: 34px;
+  padding-right: 34px;
+  padding-top: 25px;
+  padding-bottom: 21px;
+  display: flex;
+  flex-direction: column;
+}
+.OptionsWidget__item {
+  &.item {
+    display: flex;
+    margin-bottom: 34px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .item-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 33px;
+  }
+  .item-img {
+  }
+  .item-text {
+    margin-left: 34px;
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+    color: #ffffff;
+    flex: 1 1 auto;
+  }
+  .btn-Switch {
+    width: 72px;
+    height: 20px;
+    border-radius: 10px;
+    background: #ffffff;
+    position: relative;
+    .ant-switch-handle {
+    }
+    .ant-switch-handle::before {
+      top: -7px;
+      left: -2px;
+      width: 28px;
+      height: 28px;
+      border-radius: 100%;
+      background: #c4c4c4;
+    }
+    &.ant-switch-checked {
+      background: #fcdc9d;
+      .ant-switch-handle::before {
+        background: #ffa800;
+      }
+    }
+  }
+}
