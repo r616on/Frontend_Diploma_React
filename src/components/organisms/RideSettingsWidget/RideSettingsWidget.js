@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DateWidget from "../../molecules/DateWidget/DateWidget";
 import OptionsWidget from "../../molecules/OptionsWidget/OptionsWidget";
 import Slider from "../../atom/Slider/Slider";
-import ThereWidget from "../../molecules/ThereWidget/ThereWidget";
+import WidgetTimeSelect from "../../molecules/WidgetTimeSelect/WidgetTimeSelect";
 // import { Link } from "react-router-dom";
 import "./style.scss";
 
@@ -37,16 +37,19 @@ function RideSettingsWidget() {
             range
             defaultValue={[0, 4500]}
             marks={marks}
-            tooltipVisible={false}
-            // trackStyle={"trackStyle"}
-            // handleStyle={"handleStyle"}
+            // tooltipVisible={false}
+            tooltipVisible
+            tooltipPlacement="bottom"
           />
         </div>
         <div className="end-line"></div>
       </div>
       <div className="RideSettingsWidget__ThereWidget ">
-        <ThereWidget />
+        <WidgetTimeSelect there />
         <div className="end-line"></div>
+      </div>
+      <div className="RideSettingsWidget__BackWidget ">
+        <WidgetTimeSelect back />
       </div>
     </section>
   );

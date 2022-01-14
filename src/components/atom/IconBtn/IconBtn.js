@@ -4,10 +4,15 @@ import classNames from "classnames";
 // import { Link } from "react-router-dom";
 import "./style.scss";
 
-function IconBtn({ square, circular }) {
+function IconBtn({ square, circular, active, handelClick }) {
   return (
     <button
-      className={classNames("IconBtn", { square: square, circular: circular })}
+      onClick={handelClick}
+      className={classNames("IconBtn", {
+        square: square,
+        circular: circular,
+        active: active,
+      })}
     />
   );
 }

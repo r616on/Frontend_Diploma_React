@@ -5,6 +5,12 @@
   margin: 0 auto;
   margin-bottom: 63px;
 
+  &.ant-slider:hover .ant-slider-track {
+    background-color: #ffa800;
+  }
+  &.ant-slider:hover .ant-slider-rail {
+    background-color: inherit;
+  }
   .ant-slider-rail {
     height: 20px;
     background-color: inherit;
@@ -31,6 +37,7 @@
     width: calc(100%-22px);
     height: 20px;
     border-radius: 8px;
+    display: none;
   }
   .ant-slider-dot {
     width: 22px;
@@ -45,11 +52,11 @@
     position: absolute;
 
     margin-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 90%;
-    margin-left: 4%;
-    margin-right: 6%;
+    // padding-left: 15px;
+    // padding-right: 15px;
+    // width: 90%;
+    // margin-left: 4%;
+    // margin-right: 6%;
   }
   .ant-slider-mark-text {
     font-family: Roboto;
@@ -59,4 +66,38 @@
 
     color: #e5e5e5;
   }
+  &.mini {
+    margin-bottom: 0px;
+    .ant-slider-rail {
+      height: 10px;
+      background-color: inherit;
+      border: 1px solid #c4c4c4;
+      box-sizing: border-box;
+      border-radius: 8px;
+    }
+    .ant-slider-track,
+    .ant-slider-track-1 {
+      height: 10px;
+    }
+    .ant-slider-handle {
+      width: 18px;
+      height: 18px;
+      margin-top: -4px;
+    }
+    .ant-slider-mark {
+      position: absolute;
+      margin-top: 8px;
+    }
+  }
+}
+.ant-tooltip-arrow {
+  display: none;
+}
+.ant-tooltip-inner {
+  margin-top: -15px;
+  background-color: inherit;
+  box-shadow: none;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 19px;
 }
