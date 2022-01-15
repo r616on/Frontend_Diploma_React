@@ -1,6 +1,10 @@
 .SelectTrain {
+  background-color: #e5e5e5;
   .row {
     display: flex;
     justify-content: space-between;
   }
+}
+.SelectTrain__LastTicketWidget {
+  margin-top: 90px;
 }
