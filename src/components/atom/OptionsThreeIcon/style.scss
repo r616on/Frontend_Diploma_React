@@ -1,0 +1,23 @@
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.options__item {
+  height: 20px;
+  color: #e5e5e5;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 17px;
+  &:last-child {
+    margin-right: 0px;
+  }
+}
+.icon-wiFi {
+}
+.icon-express {
+}
+.icon-coffee {
+}

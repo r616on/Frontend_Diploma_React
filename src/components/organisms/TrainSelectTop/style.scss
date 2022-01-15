@@ -1,0 +1,69 @@
+.TrainSelect-top {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #928f94;
+  display: flex;
+  justify-content: space-between;
+}
+.TrainSelect-top__found {
+}
+.TrainSelect-top__sort-by {
+}
+.sort-by {
+  display: flex;
+  align-items: center;
+}
+.sort-by__text {
+  margin-right: 11px;
+}
+.sort-by__select {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #292929;
+  .ant-select-focused {
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .ant-select-selector {
+    border: none !important;
+    background-color: inherit !important;
+    border-radius: inherit !important;
+  }
+  .ant-select-customize-input {
+  }
+}
+.sort-by__dropdown {
+  background-color: inherit;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #292929;
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: white;
+  }
+}
+
+.TrainSelect-top__show-by {
+}
+.show-by {
+  display: flex;
+}
+.show-by__text {
+}
+.show-by__item {
+  margin-left: 10px;
+  &.active {
+    color: #292929;
+  }
+}
+.acvtive {
+}
