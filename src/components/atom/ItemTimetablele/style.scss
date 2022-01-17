@@ -1,0 +1,28 @@
+.timetable__item {
+  display: block;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+  max-width: 155px;
+  margin-bottom: 0px;
+}
+.timetable__time {
+  font-family: Calibri;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 16px;
+}
+
+.timetable__city-name {
+  font-family: Calibri;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 12px;
+}
+.timetable__railway-station {
+  font-family: Calibri;
+  font-size: 16px;
+  line-height: 20px;
+  color: #928f94;
+}

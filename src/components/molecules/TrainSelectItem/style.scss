@@ -1,0 +1,133 @@
+.TrainSelect-Item {
+}
+.TrainSelect-Item__row {
+  width: 959px;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+}
+.TrainSelect-Item__Train-name {
+}
+.Train-name {
+  width: 197px;
+  background: #e4e0e9;
+  padding-left: 25px;
+  padding-right: 18px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Train-name__icon {
+  width: 86px;
+  height: 86px;
+  margin-bottom: 17px;
+}
+.Train-name__icon::before {
+  content: url("./img/trainIcon.svg");
+  width: 100%;
+  height: 100%;
+}
+.Train-name__name {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #3e3c41;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.Train-name__path {
+  display: block;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #292929;
+  li {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  li:first-child,
+  .icon-arrowRMini:first-child {
+    color: #928f94;
+  }
+  .icon-arrowRMini:before {
+    order: 2;
+    margin-left: 8px;
+  }
+}
+.TrainSelect-Item__timetable {
+}
+.timetable {
+  padding-top: 54px;
+  padding-left: 39px;
+  padding-right: 36px;
+  flex: 1 1 auto;
+}
+.timetable__row {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 61px;
+}
+
+.timetable__duration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 46px;
+}
+.duration-time {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #c4c4c4;
+  margin-bottom: 14px;
+}
+
+.there-icon {
+  width: 30px;
+  height: 20px;
+  &::before {
+    content: url("./img/arrow.svg");
+    width: 100%;
+    height: 100%;
+  }
+}
+.reverse {
+  .there-icon {
+    transform: rotate(180deg);
+  }
+}
+.timetable__back {
+}
+.TrainSelect-Item__Train-options {
+}
+.Train-options {
+  width: 283px;
+  border-left: 1px dashed #292929;
+  padding-top: 43px;
+  padding-left: 27px;
+  padding-right: 21px;
+  padding-bottom: 24px;
+}
+.Train-options__row {
+}
+.Train-options__item {
+  margin-bottom: 28px;
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}
