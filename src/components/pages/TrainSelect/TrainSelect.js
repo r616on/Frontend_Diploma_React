@@ -6,7 +6,7 @@ import StatusSteps from "../../molecules/StatusSteps/StatusSteps";
 import RideSettingsWidget from "../../organisms/RideSettingsWidget/RideSettingsWidget";
 import LastTicketWidget from "../../organisms/LastTicketWidget/LastTicketWidget";
 import TrainSelectTop from "../../organisms/TrainSelectTop/TrainSelectTop";
-import TrainSelectList from "../../organisms/TrainSelectList/TrainSelectList";
+import TicketList from "../../organisms/TicketList/TicketList";
 
 function TrainSelect() {
   const { Option } = Select;
@@ -26,7 +26,7 @@ function TrainSelect() {
               <TrainSelectTop />
             </div>
             <div className="TrainSelect-main__list">
-              <TrainSelectList />
+              <TicketList />
             </div>
           </div>
         </div>

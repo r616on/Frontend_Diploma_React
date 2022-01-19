@@ -3,7 +3,7 @@ import classNames from "classnames";
 // import { Link } from "react-router-dom";
 import "./style.scss";
 
-function OptionsThreeIcon({ className }) {
+function AdditionalServices({ className }) {
   return (
     <div className={classNames("options", { [className]: className })}>
       <div className="options__item icon-wiFi"></div>
@@ -13,4 +13,4 @@ function OptionsThreeIcon({ className }) {
   );
 }
 
-export default OptionsThreeIcon;
+export default AdditionalServices;

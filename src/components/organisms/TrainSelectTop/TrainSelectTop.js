@@ -5,7 +5,7 @@ import { Select } from "antd";
 function TrainSelectTop() {
   const { Option } = Select;
   return (
-    <div className="TrainSelect-main__top TrainSelect-top ">
+    <div className="TrainSelect-top ">
       <div className="TrainSelect-top__found "> Найденно 20</div>
       <div className="TrainSelect-top__sort-by sort-by">
         <div className="sort-by__text"> сортировать по :</div>

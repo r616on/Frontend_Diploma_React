@@ -1,10 +1,10 @@
-.Train-options-item {
+.Wagon-Type-Info {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
 }
-.Train-options-item__name {
+.Wagon-Type-Info__name {
   flex: 1 1 auto;
   font-family: Calibri;
   font-style: normal;
@@ -13,7 +13,7 @@
   line-height: 20px;
   color: #3e3c41;
 }
-.Train-options-item__amount {
+.Wagon-Type-Info__amount {
   font-family: Calibri;
   font-style: normal;
   font-weight: normal;
@@ -50,7 +50,7 @@
     }
   }
 }
-.Train-options-item__hidden-list {
+.Wagon-Type-Info__hidden-list {
 }
 .hidden-list {
   position: absolute;
@@ -68,14 +68,14 @@
     border: 8px solid transparent;
     border-bottom: 8px solid #f5f4f6;
   }
-  .Train-options-item__name {
+  .Wagon-Type-Info__name {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 19px;
   }
-  .Train-options-item__amount {
+  .Wagon-Type-Info__amount {
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;

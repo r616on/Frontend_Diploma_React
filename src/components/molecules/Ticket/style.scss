@@ -1,6 +1,6 @@
-.TrainSelect-Item {
+.Ticket {
 }
-.TrainSelect-Item__row {
+.Ticket__row {
   width: 959px;
   background: #ffffff;
   border: 1px solid #c4c4c4;
@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
 }
-.TrainSelect-Item__Train-name {
+.Ticket__Train-name {
 }
 .Train-name {
   width: 197px;
@@ -67,7 +67,7 @@
     margin-left: 8px;
   }
 }
-.TrainSelect-Item__timetable {
+.Ticket__timetable {
 }
 .timetable {
   padding-top: 54px;
@@ -113,7 +113,7 @@
 }
 .timetable__back {
 }
-.TrainSelect-Item__Train-options {
+.Ticket__Train-options {
 }
 .Train-options {
   width: 283px;
@@ -124,10 +124,4 @@
   padding-bottom: 24px;
 }
 .Train-options__row {
-}
-.Train-options__item {
-  margin-bottom: 28px;
-  &:last-child {
-    margin-bottom: 0px;
-  }
 }

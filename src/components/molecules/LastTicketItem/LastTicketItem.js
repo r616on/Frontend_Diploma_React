@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import OptionsThreeIcon from "../../atom/OptionsThreeIcon/OptionsThreeIcon";
+import AdditionalServices from "../../atom/AdditionalServices/AdditionalServices";
 
 // import { Link } from "react-router-dom";
 import "./style.scss";
@@ -18,7 +18,7 @@ function LastTicketItem() {
         </div>
       </div>
       <div className="LastTicketItem__bottom">
-        <OptionsThreeIcon className="LastTicketItem__options" />
+        <AdditionalServices className="LastTicketItem__options" />
         <div className="LastTicketItem__price">
           от
           <span>
