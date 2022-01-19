@@ -7,14 +7,16 @@
 
   color: #928f94;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 .TrainSelect-top__found {
 }
 .TrainSelect-top__sort-by {
 }
 .sort-by {
+  flex: 1 1 auto;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 .sort-by__text {
@@ -27,6 +29,7 @@
   font-size: 18px;
   line-height: 22px;
   color: #292929;
+  margin-right: 50px;
   .ant-select-focused {
     border: none !important;
     box-shadow: none !important;
@@ -47,6 +50,7 @@
   font-size: 18px;
   line-height: 22px;
   color: #292929;
+  background-color: white;
   .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
     background-color: white;
   }

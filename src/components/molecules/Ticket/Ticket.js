@@ -1,13 +1,18 @@
 import React from "react";
+import classNames from "classnames";
 import AdditionalServices from "../../atom/AdditionalServices/AdditionalServices";
 import Button from "../../atom/Button/Button";
 import ItemTimetablele from "../../atom/ItemTimetablele/ItemTimetableIe";
 import WagonTypeList from "../WagonTypeList/WagonTypeList";
 import "./style.scss";
 
-function Ticket() {
+function Ticket({ className }) {
   return (
-    <section className="Ticket">
+    <section
+      className={classNames("Ticket", {
+        [className]: className,
+      })}
+    >
       <div className="Ticket__row">
         <div className="Ticket__Train-name Train-name">
           <div className="Train-name__icon"></div>

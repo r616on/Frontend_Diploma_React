@@ -1,11 +1,16 @@
 import React from "react";
+import classNames from "classnames";
 import "./style.scss";
 import { Select } from "antd";
 
-function TrainSelectTop() {
+function TrainSelectTop({ className }) {
   const { Option } = Select;
   return (
-    <div className="TrainSelect-top ">
+    <div
+      className={classNames("TrainSelect-top ", {
+        [className]: className,
+      })}
+    >
       <div className="TrainSelect-top__found "> Найденно 20</div>
       <div className="TrainSelect-top__sort-by sort-by">
         <div className="sort-by__text"> сортировать по :</div>

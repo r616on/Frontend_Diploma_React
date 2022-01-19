@@ -22,12 +22,8 @@ function TrainSelect() {
             </div>
           </div>
           <div className="col TrainSelect__main TrainSelect-main">
-            <div className="TrainSelect-main__top ">
-              <TrainSelectTop />
-            </div>
-            <div className="TrainSelect-main__list">
-              <TicketList />
-            </div>
+            <TrainSelectTop className="TrainSelect-main__top" />
+            <TicketList className="TrainSelect-main__list" />
           </div>
         </div>
       </div>
