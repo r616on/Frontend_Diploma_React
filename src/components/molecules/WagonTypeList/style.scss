@@ -1,0 +1,8 @@
+.Wagon-Type-List {
+  .item {
+    margin-bottom: 28px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}

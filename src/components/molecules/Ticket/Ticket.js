@@ -1,13 +1,13 @@
 import React from "react";
 import ItemTimetablele from "../../atom/ItemTimetablele/ItemTimetableIe";
-import ItemTrainOptions from "../../atom/ItemTrainOptions/ItemTrainOptions";
+import WagonTypeList from "../WagonTypeList/WagonTypeList";
 import "./style.scss";
 
-function TrainSelectItem() {
+function Ticket() {
   return (
-    <section className="TrainSelect-Item">
-      <div className="TrainSelect-Item__row">
-        <div className="TrainSelect-Item__Train-name Train-name">
+    <section className="Ticket">
+      <div className="Ticket__row">
+        <div className="Ticket__Train-name Train-name">
           <div className="Train-name__icon"></div>
           <div className="Train-name__name">020У</div>
           <ul className="Train-name__path">
@@ -16,7 +16,7 @@ function TrainSelectItem() {
             <li>«Мегаполис»</li>
           </ul>
         </div>
-        <div className="TrainSelect-Item__timetable timetable">
+        <div className="Ticket__timetable timetable">
           <div className="timetable__row there">
             <ItemTimetablele
               time={"00:41"}
@@ -50,31 +50,12 @@ function TrainSelectItem() {
             />
           </div>
         </div>
-        <div className="TrainSelect-Item__Train-options Train-options">
-          <div className="Train-options__row">
-            <ItemTrainOptions
-              className="Train-options__item"
-              name={"Сидячий"}
-              amount={88}
-              price={"1 920"}
-            />
-            <ItemTrainOptions
-              className="Train-options__item"
-              name={"Плацкарт"}
-              amount={52}
-              price={"2 530"}
-            />
-            <ItemTrainOptions
-              className="Train-options__item"
-              name={"Купе"}
-              amount={24}
-              price={"3 820"}
-            />
-          </div>
+        <div className="Ticket__Train-options Train-options">
+          <WagonTypeList />
         </div>
       </div>
     </section>
   );
 }
 
-export default TrainSelectItem;
+export default Ticket;

@@ -3,35 +3,33 @@ import classNames from "classnames";
 // import { Link } from "react-router-dom";
 import "./style.scss";
 
-function ItemTrainOptions({ name, amount, price, className }) {
+function WagonTypeInfo({ name, amount, price, className }) {
   const [hidden, setHidden] = useState(false);
   const hendelHidden = () => {
     setHidden((prev) => !prev);
   };
   return (
-    <div
-      className={classNames("Train-options-item", { [className]: className })}
-    >
-      <div className="Train-options-item__name">{name}</div>
-      <div onClick={hendelHidden} className="Train-options-item__amount">
+    <div className={classNames("Wagon-Type-Info", { [className]: className })}>
+      <div className="Wagon-Type-Info__name">{name}</div>
+      <div onClick={hendelHidden} className="Wagon-Type-Info__amount">
         {amount}
       </div>
       <div className="Train-options-price">
         от <span className="icon-rub">{price}</span>
       </div>
       {hidden && (
-        <div className="Train-options-item__hidden-list hidden-list">
+        <div className="Wagon-Type-Info__hidden-list hidden-list">
           <div className="hidden-list__row">
             <div className="hidden-list__item">
-              <div className="Train-options-item__name">верхние</div>
-              <div className="Train-options-item__amount">{amount}</div>
+              <div className="Wagon-Type-Info__name">верхние</div>
+              <div className="Wagon-Type-Info__amount">{amount}</div>
               <div className="Train-options-price">
                 <span className="icon-rub">{price}</span>
               </div>
             </div>
             <div className="hidden-list__item">
-              <div className="Train-options-item__name">нижние</div>
-              <div className="Train-options-item__amount">{amount}</div>
+              <div className="Wagon-Type-Info__name">нижние</div>
+              <div className="Wagon-Type-Info__amount">{amount}</div>
               <div className="Train-options-price">
                 <span className="icon-rub">{price}</span>
               </div>
@@ -43,4 +41,4 @@ function ItemTrainOptions({ name, amount, price, className }) {
   );
 }
 
-export default ItemTrainOptions;
+export default WagonTypeInfo;
