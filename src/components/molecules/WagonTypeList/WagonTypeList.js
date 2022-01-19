@@ -1,12 +1,17 @@
 import React from "react";
 import WagonTypeInfo from "../../atom/WagonTypeInfo/WagonTypeInfo";
+import classNames from "classnames";
 // import { Link } from "react-router-dom";
 
 import "./style.scss";
 
-function WagonTypeList() {
+function WagonTypeList({ className }) {
   return (
-    <div className="Wagon-Type-List">
+    <div
+      className={classNames("Wagon-Type-List", {
+        [className]: className,
+      })}
+    >
       <WagonTypeInfo
         className="item"
         name={"Сидячий"}

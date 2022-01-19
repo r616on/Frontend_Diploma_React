@@ -1,4 +1,6 @@
 import React from "react";
+import AdditionalServices from "../../atom/AdditionalServices/AdditionalServices";
+import Button from "../../atom/Button/Button";
 import ItemTimetablele from "../../atom/ItemTimetablele/ItemTimetableIe";
 import WagonTypeList from "../WagonTypeList/WagonTypeList";
 import "./style.scss";
@@ -51,7 +53,9 @@ function Ticket() {
           </div>
         </div>
         <div className="Ticket__Train-options Train-options">
-          <WagonTypeList />
+          <WagonTypeList className={"Train-options__WagonTypeList"} />
+          <AdditionalServices className={"Train-options__AdditionalServices"} />
+          <Button type={"selectPlaces"} className={"Train-options__button"} />
         </div>
       </div>
     </section>

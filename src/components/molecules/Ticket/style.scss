@@ -123,5 +123,19 @@
   padding-right: 21px;
   padding-bottom: 24px;
 }
-.Train-options__row {
+.Train-options {
+  display: flex;
+  flex-direction: column;
+}
+.Train-options__WagonTypeList {
+  flex: 1 1 auto;
+}
+.Train-options__AdditionalServices {
+  color: #c4c4c4;
+  justify-content: flex-end;
+  margin-bottom: 18px;
+  margin-right: 8px;
+}
+.Train-options__button {
+  align-self: flex-end;
 }
