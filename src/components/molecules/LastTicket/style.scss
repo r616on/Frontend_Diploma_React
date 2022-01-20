@@ -1,4 +1,4 @@
-.LastTicketItem {
+.LastTicket {
   width: 360px;
   height: 161px;
   padding-left: 18px;
@@ -16,24 +16,24 @@
     margin-bottom: 0px;
   }
 }
-.LastTicketItem__top {
+.LastTicket__top {
   padding-right: 2px;
   display: flex;
   justify-content: space-between;
   flex: 1 1 auto;
 }
-.LastTicketItem__from {
+.LastTicket__from {
   display: flex;
   flex-direction: column;
 }
-.LastTicketItem__title {
+.LastTicket__title {
   font-family: Roboto;
   font-size: 20px;
   line-height: 23px;
   color: #292929;
   margin-bottom: 8px;
 }
-.LastTicketItem__body {
+.LastTicket__body {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -42,18 +42,18 @@
   color: #928f94;
   max-width: 105px;
 }
-.LastTicketItem__where {
+.LastTicket__where {
   display: flex;
   flex-direction: column;
 }
-.LastTicketItem__bottom {
+.LastTicket__bottom {
   display: flex;
   justify-content: space-between;
 }
-.LastTicketItem__options {
+.LastTicket__options {
 }
 
-.LastTicketItem__price {
+.LastTicket__price {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;

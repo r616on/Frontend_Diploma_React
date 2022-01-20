@@ -4,7 +4,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 // import { PersistGate } from "redux-persist/integration/react";
 // import { Provider } from "react-redux";
 // import store, { persistor } from "./store-toolkit/store";
-import Index from "./components/pages/Index/Index";
+//import Index from "./components/pages/Index/Index";
 import TrainSelect from "./components/pages/TrainSelect/TrainSelect";
 // import About from "./pages/About/About";
 // import Contacts from "./pages/Contacts/Contacts";

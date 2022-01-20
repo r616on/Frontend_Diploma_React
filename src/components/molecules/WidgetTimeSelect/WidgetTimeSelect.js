@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
-import classNames from "classnames";
 import "./style.scss";
 import IconBtn from "../../atom/IconBtn/IconBtn";
 import Slider from "../../atom/Slider/Slider";

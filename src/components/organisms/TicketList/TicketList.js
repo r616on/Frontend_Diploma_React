@@ -11,8 +11,7 @@ function TicketList({ className }) {
       })}
     >
       <div
-        className="TicketList__row"
-        className={classNames("Wagon-Type-List", {
+        className={classNames("TicketList__row", {
           [className]: className,
         })}
       >

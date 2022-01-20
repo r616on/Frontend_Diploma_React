@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 // import { Link } from "react-router-dom";
 import "./style.scss";
@@ -8,17 +8,14 @@ function Pagination({ className }) {
 
   const handelClick = (e) => {
     const value = e.target.value;
-    console.log(value);
     setActive(value);
   };
   const handelClickBefore = (e) => {
-    const value = e.target.value;
     if (active > 1) {
       setActive((prev) => prev - 1);
     }
   };
   const handelClickAfter = (e) => {
-    const value = e.target.value;
     if (active < 3) {
       setActive((prev) => prev + 1);
     }

@@ -1,6 +1,5 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-import classNames from "classnames";
 import { Switch } from "antd";
 import "./style.scss";
 import arrItem from "./data";

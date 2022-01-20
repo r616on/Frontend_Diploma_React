@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import DateWidget from "../../molecules/DateWidget/DateWidget";
 import OptionsWidget from "../../molecules/OptionsWidget/OptionsWidget";
 import Slider from "../../atom/Slider/Slider";

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import { Slider as SliderAnt } from "antd";
 // import { Link } from "react-router-dom";

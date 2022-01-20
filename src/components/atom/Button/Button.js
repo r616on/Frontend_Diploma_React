@@ -17,20 +17,23 @@ const arrButton = [
 function Button({ type = "learnMore", className }) {
   return (
     <Fragment>
-      {arrButton.map((item) => {
-        if (item.type === type) {
-          return (
-            <button
-              key={uuidv4()}
-              className={classNames("btn", item.type, {
-                [className]: className,
-              })}
-            >
-              {item.text}
-            </button>
-          );
-        }
-      })}
+      {
+        // eslint-disable-next-line
+        arrButton.map((item) => {
+          if (item.type === type) {
+            return (
+              <button
+                key={uuidv4()}
+                className={classNames("btn", item.type, {
+                  [className]: className,
+                })}
+              >
+                {item.text}
+              </button>
+            );
+          }
+        })
+      }
     </Fragment>
   );
 }
