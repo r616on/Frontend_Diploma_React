@@ -7,6 +7,7 @@ import RideSettingsWidget from "../../organisms/RideSettingsWidget/RideSettingsW
 import LastTicketWidget from "../../organisms/LastTicketWidget/LastTicketWidget";
 import TrainSelectTop from "../../organisms/TrainSelectTop/TrainSelectTop";
 import TicketList from "../../organisms/TicketList/TicketList";
+import Pagination from "../../molecules/Pagination/Pagination";
 
 function TrainSelect() {
   const { Option } = Select;
@@ -24,6 +25,7 @@ function TrainSelect() {
           <div className="col TrainSelect__main TrainSelect-main">
             <TrainSelectTop className="TrainSelect-main__top" />
             <TicketList className="TrainSelect-main__list" />
+            <Pagination className="TrainSelect-main__Pagination" />
           </div>
         </div>
       </div>
