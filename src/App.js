@@ -5,7 +5,8 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 // import { Provider } from "react-redux";
 // import store, { persistor } from "./store-toolkit/store";
 //import Index from "./components/pages/Index/Index";
-import TrainSelect from "./components/pages/TrainSelect/TrainSelect";
+//import TrainSelect from "./components/pages/TrainSelect/TrainSelect";
+import ChairSelectionPage from "./components/pages/ChairSelectionPage/ChairSelectionPage";
 // import About from "./pages/About/About";
 // import Contacts from "./pages/Contacts/Contacts";
 // import NotFound from "./pages/NotFound/NotFound";
@@ -25,7 +26,7 @@ function App() {
               <Route path="/cart" element={<CartPage />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/about" element={<About />} /> */}
-          <Route path="/" element={<TrainSelect />} />
+          <Route path="/" element={<ChairSelectionPage />} />
           {/* <Route path="/404" element={<NotFound />} />
               <Route path="*" element={<Navigate replace to="/404" />} /> */}
         </Routes>

@@ -1,11 +1,10 @@
 import React from "react";
-
-// import { Link } from "react-router-dom";
+import classNames from "classnames";
 import "./style.scss";
 
-function ItemTimetablele({ time, city, railway }) {
+function ItemTimetablele({ time, city, railway, className }) {
   return (
-    <ul className="timetable__item">
+    <ul className={classNames("timetable__item", { [className]: className })}>
       <li className="timetable__time">{time}</li>
       <li className="timetable__city-name">{city}</li>
       <li className="timetable__railway-station">{railway}</li>

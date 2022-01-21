@@ -1,0 +1,221 @@
+.ChairSelect {
+}
+.ChairSelect__title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  text-transform: uppercase;
+
+  color: #292929;
+  margin-bottom: 62px;
+}
+.ChairSelect__row {
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+.ChairSelect__top {
+}
+.ChairSelect-top {
+  height: 128px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 19px;
+  padding-right: 19px;
+}
+.ChairSelect-top__icon {
+  width: 76px;
+  height: 60px;
+  background: #ffa800;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  &.icon-arrowR {
+    font-size: 30px;
+    color: white;
+  }
+}
+.ChairSelect-top__another-train {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #292929;
+
+  width: 325px;
+  height: 60px;
+
+  border: 1px solid #292929;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ChairSelect__ticket {
+}
+.ChairSelect-ticket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ChairSelect-ticket__train-info {
+}
+.train-info {
+  display: flex;
+  align-items: center;
+  background: #f7f6f6;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  padding-right: 20px;
+}
+.train-info__icon {
+  margin-left: 35px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ffa800;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin-right: 27px;
+  &.icon-trainIcon {
+    font-size: 30px;
+    color: #ffa800;
+    //filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+}
+
+.train-info__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+.train-info__item {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #292929;
+  display: flex;
+  align-items: center;
+  // margin-bottom: 3px;
+  // &:last-child {
+  //   margin-bottom: 0;
+  // }
+  &.icon-arrowRMini::before {
+    order: 2;
+    margin-left: 8px;
+  }
+}
+.train-info__number {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #3e3c41;
+  margin-bottom: 8px;
+}
+.train-info__where {
+  color: #928f94;
+}
+
+.train-info__finish {
+}
+.ChairSelect-ticket__row-time-table {
+  flex: 1 1 auto;
+  margin-left: 2px;
+  margin-right: 2px;
+  background: #f7f6f6;
+  height: 127px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // padding-top: 28px;
+  // padding-bottom: 28px;
+  padding-left: 36px;
+  padding-right: 36px;
+}
+.ChairSelect-ticket__item-time-table {
+  &.timetable__item {
+  }
+  .timetable__time {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 8px;
+  }
+
+  .timetable__city-name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 7px;
+  }
+  .timetable__railway-station {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #928f94;
+    margin-bottom: 0px;
+  }
+}
+
+.ChairSelect-ticket__arrow {
+  &.icon-arrowR {
+    font-size: 30px;
+    color: rgba(255, 168, 0, 0.79);
+  }
+}
+.ChairSelect-ticket__length {
+}
+.length {
+  max-width: 237px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #f7f6f6;
+  height: 127px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.length__icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("./img/clockIcon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-right: 10px;
+}
+.length__list {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #000000;
+}
+.length__hour {
+}
+.length__minutes {
+}
