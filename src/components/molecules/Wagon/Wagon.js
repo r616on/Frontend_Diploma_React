@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 import "./style.scss";
+import Service from "../Service/Service";
 
 function Wagon({ className }) {
   return (
@@ -43,15 +44,7 @@ function Wagon({ className }) {
             <div className="table__item-price icon-rub">3 530</div>
           </div>
         </div>
-        <div className="Wagon-info__service Service">
-          <div className="Service__title">Обслуживание ФПК</div>
-          <div className="Service__row">
-            <div className="Service__item icon-conditioner"></div>
-            <div className="Service__item icon-wiFi"></div>
-            <div className="Service__item icon-cash"></div>
-            <div className="Service__item icon-coffee active"></div>
-          </div>
-        </div>
+        <Service className="Wagon-info__service" />
       </div>
       <div className="Wagon__scheme"></div>
     </section>

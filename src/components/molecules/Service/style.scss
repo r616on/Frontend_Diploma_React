@@ -1,0 +1,83 @@
+.Service {
+  .owerlay-Service {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+
+    height: 34px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background: #f5f4f6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color: #292929;
+    .ant-tooltip-inner {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+      color: #292929;
+      margin-top: -7px;
+    }
+  }
+}
+.Service__title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #928f94;
+  text-align: left;
+  margin-bottom: 18px;
+}
+.Service__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Service__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 35px;
+  border: 1px solid #292929;
+  border-radius: 5px;
+  font-size: 19px;
+  margin-right: 12px;
+  cursor: pointer;
+  &:last-child {
+    margin-right: 0;
+  }
+  &.active {
+    border: none;
+    background: rgba(255, 168, 0, 0.79);
+    color: white;
+  }
+  &:hover {
+    background: rgba(255, 168, 0, 0.79);
+  }
+  &.inactive {
+    background: #fcdc9d;
+    border: none;
+    color: #928f94;
+    cursor: default;
+  }
+  &.icon-conditioner {
+    //font-size: 19.89px;
+  }
+  &.icon-wiFi {
+    //font-size: 18.95px;
+  }
+  &.icon-cash {
+    // font-size: 20.84px;
+  }
+  &.icon-coffee {
+    // font-size: 17.08px;
+  }
+}
