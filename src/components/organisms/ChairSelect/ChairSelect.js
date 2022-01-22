@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import "./style.scss";
 import ItemTimetablele from "../../atom/ItemTimetablele/ItemTimetableIe";
+import Wagon from "../../molecules/Wagon/Wagon";
 
 function ChairSelect({ className }) {
   return (
@@ -51,8 +52,41 @@ function ChairSelect({ className }) {
             </div>
           </div>
         </div>
-        <div className="ChairSelect__numberOfTickets ChairSelect-number-of-tickets"></div>
-        <div className="ChairSelect__wagonType ChairSelect-wagon-type"></div>
+        <div className="ChairSelect__numberOfTickets ChairSelect-number-of-tickets">
+          <div className="ChairSelect-number-of-tickets__title">
+            Количество билетов
+          </div>
+          <div className="ChairSelect-number-of-tickets__row">
+            <div className="ChairSelect-number-of-tickets__item item adult">
+              <div className="item__count"> Взрослых - 2</div>
+              <div className="item__description">
+                Можно добавить еще 3 пассажиров
+              </div>
+            </div>
+            <div className="ChairSelect-number-of-tickets__item item children">
+              <div className="item__count"> Детских - 1</div>
+              <div className="item__description">
+                Можно добавить еще 3 детей до 10 лет.Свое место в вагоне, как у
+                взрослых, но дешевле в среднем на 50-65%
+              </div>
+            </div>
+            <div className="ChairSelect-number-of-tickets__item item">
+              <div className="item__count"> Детских «без места» - 0</div>
+              <div className="item__description"></div>
+            </div>
+          </div>
+        </div>
+        <div className="ChairSelect__wagonType ChairSelect-wagon-type">
+          <div className="ChairSelect-wagon-type__title">Тип вагона</div>
+          <div className="ChairSelect-wagon-type__row">
+            <div className="item sedentart">Сидячий</div>
+            <div className="item reservedSeat">Плацкарт</div>
+            <div className="item coupe">Купе</div>
+            <div className="item luxury">Люкс</div>
+          </div>
+        </div>
+
+        <Wagon className="ChairSelect__Wagon" />
       </div>
     </div>
   );

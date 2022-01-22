@@ -1,0 +1,208 @@
+.Wagon {
+}
+.Wagon__top {
+  padding-left: 33px;
+  padding-right: 17px;
+
+  height: 37px;
+  background: rgba(255, 168, 0, 0.44);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #292929;
+}
+.Wagon__number {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+
+  span {
+    position: relative;
+    top: 3px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    margin-left: 8px;
+
+    &.active {
+      color: #ffffff;
+    }
+  }
+}
+.Wagon__info {
+}
+.Wagon-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Wagon-info__num {
+  width: 190px;
+  height: 161px;
+  background: #ffd98f;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 30px 37px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 72px;
+
+  color: #292929;
+  span {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: left;
+
+    color: #292929;
+    margin-left: 3px;
+  }
+}
+.Wagon-info__table {
+  // margin-left: 85px;
+  margin-top: 33px;
+  &.table {
+    width: 100%;
+    max-width: 343px;
+    display: flex;
+    flex-direction: column;
+  }
+  .table__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 24px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .table__top {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #928f94;
+    margin-bottom: 21px;
+    .table__item-text {
+      span {
+        color: #000000;
+        ont-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        margin-left: 10px;
+      }
+    }
+    .table__item-price {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 21px;
+      color: #928f94;
+    }
+  }
+  .table__item-text {
+    span {
+      margin-left: 10px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 28px;
+      color: #000000;
+    }
+  }
+  .table__item-price {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+
+    display: flex;
+    align-items: center;
+
+    &.icon-rub::before {
+      order: 2;
+      font-size: 14px;
+      color: #928f94;
+      margin-left: 10px;
+    }
+  }
+}
+
+.Wagon-info__service {
+  margin-top: 33px;
+  margin-right: 59px;
+}
+.Service {
+}
+.Service__title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #928f94;
+  text-align: left;
+  margin-bottom: 18px;
+}
+.Service__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Service__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 35px;
+  border: 1px solid #292929;
+  border-radius: 5px;
+  font-size: 19px;
+  margin-right: 12px;
+  &:last-child {
+    margin-right: 0;
+  }
+  &.active {
+    border: none;
+    background: rgba(255, 168, 0, 0.79);
+    color: white;
+  }
+
+  &.icon-conditioner {
+    //font-size: 19.89px;
+  }
+  &.icon-wiFi {
+    //font-size: 18.95px;
+  }
+  &.icon-cash {
+    // font-size: 20.84px;
+  }
+  &.icon-coffee {
+    // font-size: 17.08px;
+  }
+}

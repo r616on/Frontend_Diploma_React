@@ -219,3 +219,144 @@
 }
 .length__minutes {
 }
+.ChairSelect__numberOfTickets {
+}
+.ChairSelect-number-of-tickets {
+  border-bottom: 1px dashed #c4c4c4;
+}
+.ChairSelect-number-of-tickets__title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 35px;
+  color: #292929;
+  margin-top: 40px;
+  margin-left: 19px;
+  margin-bottom: 13px;
+}
+.ChairSelect-number-of-tickets__row {
+  display: flex;
+  margin-bottom: 49px;
+}
+.ChairSelect-number-of-tickets__item {
+  width: 33.33%;
+  &.item {
+    height: 192px;
+    padding: 20px 36px;
+    &.adult {
+      background: #f7f6f6;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    }
+    &.children {
+      border: 1px solid rgba(255, 168, 0, 0.79);
+      .item__description {
+        color: #928f94;
+      }
+    }
+  }
+  .item__count {
+    width: 240px;
+    height: 50px;
+
+    background: #ffffff;
+    border: 1px solid #928f94;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 17px;
+    align-items: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #292929;
+    margin-bottom: 23px;
+  }
+  .item__description {
+    max-width: 240px;
+    width: 100%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+  }
+}
+.ChairSelect__wagonType {
+}
+.ChairSelect-wagon-type {
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #928f94;
+    cursor: pointer;
+    &:hover {
+      color: #ffa800;
+    }
+  }
+  .sedentart {
+    &::before {
+      content: url("./img/wagonType/sedentary.svg");
+      width: 30.43px;
+      height: 50px;
+      margin-bottom: 18px;
+    }
+  }
+  .reservedSeat {
+    &::before {
+      content: url("./img/wagonType/reservedSeat.svg");
+      width: 50px;
+      height: 50px;
+      margin-bottom: 18px;
+    }
+  }
+  .coupe {
+    &::before {
+      content: url("./img/wagonType/coupe.svg");
+      width: 50px;
+      height: 50px;
+      margin-bottom: 18px;
+    }
+  }
+  .luxury {
+    &::before {
+      content: url("./img/wagonType/luxury.svg");
+      width: 56.45px;
+      height: 50px;
+      margin-bottom: 18px;
+    }
+  }
+}
+.ChairSelect-wagon-type__title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 35px;
+
+  color: #292929;
+  margin-top: 27px;
+  margin-left: 20px;
+  margin-bottom: 25px;
+}
+.ChairSelect-wagon-type__row {
+  display: flex;
+  padding-left: 35px;
+  padding-right: 144px;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+.ChairSelect__Wagon {
+}

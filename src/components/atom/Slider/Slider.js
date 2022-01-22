@@ -8,12 +8,10 @@ import classNames from "classnames";
 function Slider(props) {
   const mini = props.mini;
   return (
-    <React.StrictMode>
-      <SliderAnt
-        {...props}
-        className={classNames(props.className, { mini: mini })}
-      />
-    </React.StrictMode>
+    <SliderAnt
+      {...props}
+      className={classNames(props.className, { mini: mini })}
+    />
   );
 }
 
