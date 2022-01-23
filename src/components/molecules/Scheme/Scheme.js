@@ -79,13 +79,13 @@ const SedentaryItem = (i, first, last) => {
 const SedentaryWagon = () => {
   const arr = [];
   arr.push(SedentaryItem(1, true));
-  arr.push(SedentaryItem(6));
-  arr.push(SedentaryItem(10));
-  arr.push(SedentaryItem(14));
-  arr.push(SedentaryItem(18));
-  arr.push(SedentaryItem(22));
-  arr.push(SedentaryItem(26));
-  arr.push(SedentaryItem(30, false, true));
+  arr.push(SedentaryItem(5));
+  arr.push(SedentaryItem(9));
+  arr.push(SedentaryItem(13));
+  arr.push(SedentaryItem(17));
+  arr.push(SedentaryItem(21));
+  arr.push(SedentaryItem(25));
+  arr.push(SedentaryItem(29, false, true));
   return arr;
 };
 const ReservedSeatItem = (i) => {
@@ -122,6 +122,7 @@ function Scheme({ className }) {
       <div className="Scheme__block">
         <div className="Scheme__img Sedentary"></div>
         <div className="Scheme__designations designations ">
+          <div className="designations__wagon-number">22</div>
           <div className="designations__row">
             {SedentaryWagon().map((item) => item)}
           </div>
