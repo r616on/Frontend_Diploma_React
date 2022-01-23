@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import "./style.scss";
 import Service from "../Service/Service";
+import Scheme from "../Scheme/Scheme";
 
 function Wagon({ className }) {
   return (
@@ -46,7 +47,7 @@ function Wagon({ className }) {
         </div>
         <Service className="Wagon-info__service" />
       </div>
-      <div className="Wagon__scheme"></div>
+      <Scheme className="Wagon__scheme" />
     </section>
   );
 }
