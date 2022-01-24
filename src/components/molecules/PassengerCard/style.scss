@@ -1,0 +1,131 @@
+.PassengerCard {
+  display: flex;
+  flex-direction: column;
+}
+.PassengerCard__top {
+  display: flex;
+  align-items: center;
+  height: 107px;
+  background: #f9f9f9;
+  padding-left: 23px;
+  padding-right: 40px;
+}
+.PassengerCard__top-iconBtn {
+  margin-right: 16px;
+}
+.PassengerCard__top-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 35px;
+  color: #292929;
+  flex: 1 1 auto;
+}
+.PassengerCard__top-iconExit {
+  transform: rotate(45deg);
+  &.icon-pluse::before {
+    font-size: 16px;
+  }
+}
+.PassengerCard__form {
+  label {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #928f94;
+  }
+  .input {
+    background: #ffffff;
+    border: 1px solid #928f94;
+    border-radius: 5px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #292929;
+
+    width: 281px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: black;
+  }
+}
+.PassengerCard-form {
+  background: #ffffff;
+  border-bottom: 1px dashed #928f94;
+  padding: 36px;
+}
+.PassengerCard-form__age {
+  width: 280px;
+  height: 50px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  // padding-left: 2px;
+  // padding-right: 11px;
+  color: #292929;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+
+  //box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  margin-bottom: 45px;
+}
+.PassengerCard-form__age-dropdown {
+  .ant-select-item {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: inherit;
+  }
+}
+.PassengerCard-form__gender {
+  width: 204px;
+  height: 50px;
+
+  background: #ffffff;
+  border: 1px solid #928f94;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  margin-right: 35px;
+  .PassengerCard-form__gender-buttn {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 35px;
+    text-transform: uppercase;
+
+    color: #000000;
+    &.ant-radio-group-solid,
+    &.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+      color: #000000;
+      background: #ffa800;
+      border-color: inherit;
+    }
+    &.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
+      display: none;
+    }
+  }
+}
