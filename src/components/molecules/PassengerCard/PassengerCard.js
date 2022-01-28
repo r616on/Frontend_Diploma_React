@@ -3,7 +3,16 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import IconBtn from "../../atom/IconBtn/IconBtn";
 import "./style.scss";
-import { Select, Row, Col, Form, Input, Radio, DatePicker } from "antd";
+import {
+  Select,
+  Row,
+  Col,
+  Form,
+  Input,
+  Radio,
+  DatePicker,
+  Checkbox,
+} from "antd";
 
 function PassengerCard({ className }) {
   const { Option } = Select;
@@ -45,7 +54,7 @@ function PassengerCard({ className }) {
           </Col>
           <Col>
             <Form.Item label="Отчество" className="label">
-              <Input className="input" />
+              <Input className="input" mask="99999-9999" />
             </Form.Item>
           </Col>
         </Row>
@@ -73,10 +82,13 @@ function PassengerCard({ className }) {
             </Form.Item>
           </Col>
           <Col>
-            <Form.Item label="Имя" className="label">
-              <input type={"date"} />
+            <Form.Item label="Дата рождения" className="label">
+              <input className="input-date" type={"date"} />
             </Form.Item>
           </Col>
+        </Row>
+        <Row>
+          <Checkbox className="checkbox">ограниченная подвижность</Checkbox>
         </Row>
       </Form>
     </div>

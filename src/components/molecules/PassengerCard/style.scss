@@ -56,6 +56,54 @@
     align-items: center;
     color: black;
   }
+  .input-date {
+    background: #ffffff;
+    border: 1px solid #928f94;
+    border-radius: 5px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #292929;
+
+    width: 281px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .checkbox {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+
+    color: #292929;
+    input {
+    }
+    .ant-checkbox {
+      margin-right: 12px;
+    }
+    .ant-checkbox-inner {
+      width: 28px;
+      height: 28px;
+
+      //background: #ffffff;
+      border: 1px solid #928f94;
+      box-sizing: border-box;
+      border-radius: 5px;
+
+      // position: relative;
+      // top: -2px;
+    }
+  }
 }
 .PassengerCard-form {
   background: #ffffff;
