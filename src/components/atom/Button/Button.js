@@ -11,10 +11,11 @@ const arrButton = [
   { type: "selectPlaces", text: "Выбрать места" },
   { type: "change", text: "Изменить" },
   { type: "confirm", text: "Подтвердить" },
+  { type: "typeEmpty", text: "" },
   // { type: "selectPlaces", text: "Выбрать места" },
 ];
 
-function Button({ type = "learnMore", className }) {
+function Button({ type = "learnMore", className, children }) {
   return (
     <Fragment>
       {
@@ -24,11 +25,14 @@ function Button({ type = "learnMore", className }) {
             return (
               <button
                 key={uuidv4()}
-                className={classNames("btn", item.type, {
+                className={classNames("btn", {
                   [className]: className,
+                  [item.type]: type,
+                  // typeEmpty: typeEmpty,
                 })}
               >
-                {item.text}
+                {!children && item.text}
+                {children && children}
               </button>
             );
           }
