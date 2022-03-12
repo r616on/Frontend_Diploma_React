@@ -1,10 +1,10 @@
 import React from "react";
-import classNames from "classnames";
+
 import "./style.scss";
 import ItemTimetablele from "../../atom/ItemTimetablele/ItemTimetableIe";
 import Wagon from "../../molecules/Wagon/Wagon";
 
-function ChairSelect({ className }) {
+function ChairSelect() {
   return (
     <div className="ChairSelect">
       <div className="ChairSelect__title">Выбор мест </div>

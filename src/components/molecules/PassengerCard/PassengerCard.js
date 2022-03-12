@@ -4,16 +4,7 @@ import classNames from "classnames";
 import IconBtn from "../../atom/IconBtn/IconBtn";
 import InputMask from "react-input-mask";
 import "./style.scss";
-import {
-  Select,
-  Row,
-  Col,
-  Form,
-  Input,
-  Radio,
-  DatePicker,
-  Checkbox,
-} from "antd";
+import { Select, Row, Col, Form, Input, Radio, Checkbox } from "antd";
 import Button from "../../atom/Button/Button";
 
 function PassengerCard({ className }) {

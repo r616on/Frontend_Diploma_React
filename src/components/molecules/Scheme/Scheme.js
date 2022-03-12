@@ -3,32 +3,32 @@ import classNames from "classnames";
 import { v4 as uuidv4 } from "uuid";
 
 import "./style.scss";
-const CoupeItem = (i) => {
-  return (
-    <div key={uuidv4()} className="designations__coupe-row">
-      <div className="designations__coupe_side">
-        <div className="designations__seat">{i}</div>
-        <div className="designations__seat top">{i + 1}</div>
-      </div>
-      <div className="designations__coupe_side">
-        <div className="designations__seat">{i + 2}</div>
-        <div className="designations__seat top">{i + 3}</div>
-      </div>
-    </div>
-  );
-};
-const LuxeItem = (i) => {
-  return (
-    <div key={uuidv4()} className="designations__coupe-row Luxe">
-      <div className="designations__coupe_side">
-        <div className="designations__seat">{i}</div>
-      </div>
-      <div className="designations__coupe_side">
-        <div className="designations__seat">{i + 2}</div>
-      </div>
-    </div>
-  );
-};
+// const CoupeItem = (i) => {
+//   return (
+//     <div key={uuidv4()} className="designations__coupe-row">
+//       <div className="designations__coupe_side">
+//         <div className="designations__seat">{i}</div>
+//         <div className="designations__seat top">{i + 1}</div>
+//       </div>
+//       <div className="designations__coupe_side">
+//         <div className="designations__seat">{i + 2}</div>
+//         <div className="designations__seat top">{i + 3}</div>
+//       </div>
+//     </div>
+//   );
+// };
+// const LuxeItem = (i) => {
+//   return (
+//     <div key={uuidv4()} className="designations__coupe-row Luxe">
+//       <div className="designations__coupe_side">
+//         <div className="designations__seat">{i}</div>
+//       </div>
+//       <div className="designations__coupe_side">
+//         <div className="designations__seat">{i + 2}</div>
+//       </div>
+//     </div>
+//   );
+// };
 const SedentaryItem = (i, first, last) => {
   return (
     <div key={uuidv4()} className="designations__coupe-row Sedentary">
@@ -88,26 +88,26 @@ const SedentaryWagon = () => {
   arr.push(SedentaryItem(29, false, true));
   return arr;
 };
-const ReservedSeatItem = (i) => {
-  return (
-    <div key={uuidv4()} className="designations__coupe-row ReservedSeat">
-      <div className="row">
-        <div className="designations__coupe_side">
-          <div className="designations__seat">{i}</div>
-          <div className="designations__seat top">{i + 1}</div>
-        </div>
-        <div className="designations__coupe_side">
-          <div className="designations__seat">{i + 2}</div>
-          <div className="designations__seat top">{i + 3}</div>
-        </div>
-      </div>
-      <div className="designations__coupe_bottom">
-        <div className="designations__seat">{i + 32}</div>
-        <div className="designations__seat">{i + 33}</div>
-      </div>
-    </div>
-  );
-};
+// const ReservedSeatItem = (i) => {
+//   return (
+//     <div key={uuidv4()} className="designations__coupe-row ReservedSeat">
+//       <div className="row">
+//         <div className="designations__coupe_side">
+//           <div className="designations__seat">{i}</div>
+//           <div className="designations__seat top">{i + 1}</div>
+//         </div>
+//         <div className="designations__coupe_side">
+//           <div className="designations__seat">{i + 2}</div>
+//           <div className="designations__seat top">{i + 3}</div>
+//         </div>
+//       </div>
+//       <div className="designations__coupe_bottom">
+//         <div className="designations__seat">{i + 32}</div>
+//         <div className="designations__seat">{i + 33}</div>
+//       </div>
+//     </div>
+//   );
+// };
 
 function Scheme({ className }) {
   return (

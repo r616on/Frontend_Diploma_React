@@ -4,7 +4,6 @@ import PageTemplate from "../../templates/PageTemplate/PageTemplate";
 import StatusSteps from "../../molecules/StatusSteps/StatusSteps";
 import RideSettingsWidget from "../../organisms/RideSettingsWidget/RideSettingsWidget";
 import LastTicketList from "../../organisms/LastTicketList/LastTicketList";
-import ChairSelect from "../../organisms/ChairSelect/ChairSelect";
 import PassengersList from "../../organisms/PassengersList/PassengersList";
 
 function PassengersPages() {
