@@ -8,10 +8,10 @@ import TicketList from "../../organisms/TicketList/TicketList";
 import Pagination from "../../molecules/Pagination/Pagination";
 import LastTicketList from "../../organisms/LastTicketList/LastTicketList";
 
-function TrainSelect() {
+function StepOne() {
   return (
-    <PageTemplate selectTrain>
-      <StatusSteps step={1} />
+    <PageTemplate stepOne>
+      <StatusSteps />
       <div className="main TrainSelect">
         <div className="row container">
           <div className="col TrainSelect__Left">
@@ -29,4 +29,4 @@ function TrainSelect() {
   );
 }
 
-export default TrainSelect;
+export default StepOne;

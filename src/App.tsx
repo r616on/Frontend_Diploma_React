@@ -1,11 +1,13 @@
-import React from "react";
+import React, { FC } from "react";
 import "./App.css";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import PassengersPages from "./components/pages/PassengersPages/PassengersPages";
+import Index from "./components/pages/Index/Index";
+import StepOne from "./components/pages/StepOne/StepOne";
 
-function App() {
+const App: FC = () => {
   return (
     <Provider store={store}>
       <Router>
@@ -16,7 +18,7 @@ function App() {
               <Route path="/cart" element={<CartPage />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/about" element={<About />} /> */}
-            <Route path="/" element={<PassengersPages />} />
+            <Route path="/" element={<StepOne />} />
             {/* <Route path="/404" element={<NotFound />} />
               <Route path="*" element={<Navigate replace to="/404" />} /> */}
           </Routes>
@@ -24,6 +26,6 @@ function App() {
       </Router>
     </Provider>
   );
-}
+};
 
 export default App;

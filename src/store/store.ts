@@ -1,13 +1,12 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
-import CatalogSlice from "./CatalogSlice";
+import AppStatus from "./AppStatusSlice";
 
 export const rootReducer = combineReducers({
-  CatalogSlice,
+  AppStatus,
 });
 
 function* rootSaga(): Generator {
-  yield console.log("1111");
   // yield fork(ItemsListSaga);
   // yield fork(FullPeopleSaga);
 }

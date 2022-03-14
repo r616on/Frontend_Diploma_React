@@ -1,13 +1,17 @@
-import React from "react";
+import React, { FC } from "react";
 import "./style.scss";
 import navItem from "./data.json";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
 import SearchTicket from "../../molecules/SearchTicket/SearchTicket";
+import { useSelector } from "react-redux";
+import { AppStoreType } from "../../../store/interfaces";
 
-function Header({ selectTrain }) {
+interface Iprops {}
+const Header: FC<Iprops> = () => {
+  const step = useSelector((state: AppStoreType) => state.AppStatus.step);
   return (
-    <header className={classNames("header", { selectTrain: selectTrain })}>
+    <header className={classNames("header", { selectTrain: step })}>
       <div className="header__logo ">
         <div className="logo container">Лого</div>
       </div>
@@ -22,11 +26,11 @@ function Header({ selectTrain }) {
       </nav>
       <div className="header__body"></div>
       <div className="header__form  container">
-        <SearchTicket selectTrain={selectTrain} />
+        <SearchTicket selectTrain={step} />
       </div>
-      {!selectTrain && <div className="header__line"></div>}
+      {!step && <div className="header__line"></div>}
     </header>
   );
-}
+};
 
 export default Header;

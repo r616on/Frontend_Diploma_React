@@ -1,16 +1,20 @@
-import React from "react";
+import React, { FC } from "react";
 // import { Link } from "react-router-dom";
 import classNames from "classnames";
 import "./style.scss";
+import { useSelector } from "react-redux";
+import { AppStoreType } from "../../../store/interfaces";
 
-function StatusSteps({ step = 1 }) {
+interface Iprops {}
+const StatusSteps: FC<Iprops> = () => {
+  const step = useSelector((state: AppStoreType) => state.AppStatus.step);
   return (
     <div className="status-steps">
       <div className="status-steps__background ">
         <div className="status-steps__background-left"></div>
         <div
           className="status-steps__background-right"
-          style={step > 3 ? { backgroundColor: "#ffa800" } : null}
+          style={step > 3 ? { backgroundColor: "#ffa800" } : {}}
         ></div>
       </div>
       <div className="status-steps__row container">
@@ -53,6 +57,6 @@ function StatusSteps({ step = 1 }) {
       </div>
     </div>
   );
-}
+};
 
 export default StatusSteps;
