@@ -1,5 +1,5 @@
 import { instanse } from "../../..";
-import { itemType } from "./interfaces";
+import { itemSeatsType } from "./interfaces";
 
 interface IgetIdSeats {
   id: string;
@@ -12,7 +12,7 @@ interface IgetIdSeats {
 }
 export const getIdSeats = async (
   params: IgetIdSeats
-): Promise<Array<itemType>> => {
+): Promise<Array<itemSeatsType>> => {
   const res = await instanse.get(`routes/${params.id}/seats`, {
     params: {
       ...params,

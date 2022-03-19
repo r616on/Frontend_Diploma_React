@@ -20,4 +20,4 @@ const item = {
   ],
 };
 
-export type itemType = typeof item;
+export type itemSeatsType = typeof item;

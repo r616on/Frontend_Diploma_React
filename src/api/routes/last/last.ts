@@ -1,7 +1,7 @@
 import { instanse } from "../..";
-import { itemType } from "./interfaces";
+import { itemLastType } from "./interfaces";
 
-export const getLast = async (): Promise<Array<itemType>> => {
+export const getLast = async (): Promise<Array<itemLastType>> => {
   const res = await instanse.get("routes/last");
   return res.data;
 };

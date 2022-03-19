@@ -27,6 +27,70 @@ export interface Iparameters {
   sort?: string;
 }
 
+// const item = {
+//   have_first_class: false,
+//   have_second_class: false,
+//   have_third_class: false,
+//   have_fourth_class: false,
+//   have_wifi: false,
+//   have_air_conditioning: false,
+//   is_express: false,
+//   min_price: 1971,
+//   available_seats: 127,
+//   available_seats_info: {
+//     second: 32,
+//     third: 96,
+//   },
+//   departure: {
+//     _id: "6212d3de5fc56b48553d53b3",
+//     have_first_class: false,
+//     have_second_class: true,
+//     have_third_class: true,
+//     have_fourth_class: false,
+//     have_wifi: true,
+//     have_air_conditioning: true,
+//     is_express: false,
+//     min_price: 1971,
+//     duration: 150300,
+//     available_seats: 127,
+//     available_seats_info: {
+//       second: 32,
+//       third: 96,
+//     },
+//     train: {
+//       _id: "6212d3ca5fc56b48553d4cd8",
+//       name: "Тройка - 89",
+//     },
+//     from: {
+//       railway_station_name: "Казанский",
+//       city: {
+//         _id: "6212d3c15fc56b48553d43bc",
+//         name: "москва",
+//       },
+//       datetime: 1645534735,
+//     },
+//     to: {
+//       railway_station_name: "Московский",
+//       city: {
+//         _id: "6212d3c15fc56b48553d43bd",
+//         name: "санкт-петербург",
+//       },
+//       datetime: 1645685035,
+//     },
+//     price_info: {
+//       second: {
+//         top_price: 2358,
+//         bottom_price: 1971,
+//       },
+//       third: {
+//         top_price: 3255,
+//         bottom_price: 3550,
+//         side_price: 4455,
+//       },
+//     },
+//   },
+// };
+
 const item = {
   have_first_class: false,
   have_second_class: false,
@@ -35,62 +99,155 @@ const item = {
   have_wifi: false,
   have_air_conditioning: false,
   is_express: false,
-  min_price: 1971,
-  available_seats: 127,
-  available_seats_info: {
-    second: 32,
-    third: 96,
-  },
-  departure: {
-    _id: "6212d3de5fc56b48553d53b3",
+  min_price: 0,
+  arrival: {
+    _id: "string",
     have_first_class: false,
-    have_second_class: true,
-    have_third_class: true,
+    have_second_class: false,
+    have_third_class: false,
     have_fourth_class: false,
-    have_wifi: true,
-    have_air_conditioning: true,
-    is_express: false,
-    min_price: 1971,
-    duration: 150300,
-    available_seats: 127,
-    available_seats_info: {
-      second: 32,
-      third: 96,
-    },
+    have_wifi: false,
+    have_air_conditioning: false,
     train: {
-      _id: "6212d3ca5fc56b48553d4cd8",
-      name: "Тройка - 89",
+      _id: "",
+      name: "",
     },
     from: {
-      railway_station_name: "Казанский",
+      railway_station_name: "",
       city: {
-        _id: "6212d3c15fc56b48553d43bc",
-        name: "москва",
+        _id: "",
+        name: "",
       },
-      datetime: 1645534735,
+      datetime: 0,
     },
     to: {
-      railway_station_name: "Московский",
+      railway_station_name: "",
       city: {
-        _id: "6212d3c15fc56b48553d43bd",
-        name: "санкт-петербург",
+        _id: "",
+        name: "",
       },
-      datetime: 1645685035,
+      datetime: 0,
     },
+    min_price: 0,
+    duration: 0,
     price_info: {
+      first: {
+        price: 0,
+        top_price: 0,
+        bottom_price: 0,
+        side_price: 0,
+        linens_price: 0,
+        wifi_price: 0,
+      },
       second: {
-        top_price: 2358,
-        bottom_price: 1971,
+        price: 0,
+        top_price: 0,
+        bottom_price: 0,
+        side_price: 0,
+        linens_price: 0,
+        wifi_price: 0,
       },
       third: {
-        top_price: 3255,
-        bottom_price: 3550,
-        side_price: 4455,
+        price: 0,
+        top_price: 0,
+        bottom_price: 0,
+        side_price: 0,
+        linens_price: 0,
+        wifi_price: 0,
+      },
+      fourth: {
+        price: 0,
+        top_price: 0,
+        bottom_price: 0,
+        side_price: 0,
+        linens_price: 0,
+        wifi_price: 0,
       },
     },
+    seats_info: {
+      first: 0,
+      second: 0,
+      third: 0,
+      fourth: 0,
+    },
   },
+  departure: {
+    _id: "",
+    have_first_class: false,
+    have_second_class: false,
+    have_third_class: false,
+    have_fourth_class: false,
+    have_wifi: false,
+    have_air_conditioning: false,
+    train: {
+      _id: "",
+      name: "",
+    },
+    from: {
+      railway_station_name: "",
+      city: {
+        _id: "",
+        name: "",
+      },
+      datetime: 0,
+    },
+    to: {
+      railway_station_name: "",
+      city: {
+        _id: "",
+        name: "",
+      },
+      datetime: 0,
+    },
+    min_price: 0,
+    duration: 0,
+    price_info: {
+      first: {
+        price: 0,
+        top_price: 0,
+        bottom_price: 0,
+        side_price: 0,
+        linens_price: 0,
+        wifi_price: 0,
+      },
+      second: {
+        price: 0,
+        top_price: 0,
+        bottom_price: 0,
+        side_price: 0,
+        linens_price: 0,
+        wifi_price: 0,
+      },
+      third: {
+        price: 0,
+        top_price: 0,
+        bottom_price: 0,
+        side_price: 0,
+        linens_price: 0,
+        wifi_price: 0,
+      },
+      fourth: {
+        price: 0,
+        top_price: 0,
+        bottom_price: 0,
+        side_price: 0,
+        linens_price: 0,
+        wifi_price: 0,
+      },
+    },
+    seats_info: {
+      first: 0,
+      second: 0,
+      third: 0,
+      fourth: 0,
+    },
+  },
+  total_avaliable_seats: 0,
 };
+
+export type itemRoutes = typeof item;
+
 export interface IgetRoutesResp {
   total_count: number;
-  items: typeof item;
+  items: Array<itemRoutes>;
 }

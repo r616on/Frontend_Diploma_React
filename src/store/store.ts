@@ -1,14 +1,25 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
+import { fork } from "redux-saga/effects";
 import AppStatus from "./AppStatusSlice";
+import { CitiesSaga, CitiesSlice } from "./Cities/effects";
+import { LastSaga, LastSlice } from "./Last/effects";
+import { RoutesSaga, RoutesSlice } from "./Routes/effects";
+import { SeatsSaga, SeatsSlice } from "./Seats/effects";
 
 export const rootReducer = combineReducers({
   AppStatus,
+  CitiesSlice,
+  LastSlice,
+  RoutesSlice,
+  SeatsSlice,
 });
 
 function* rootSaga(): Generator {
-  // yield fork(ItemsListSaga);
-  // yield fork(FullPeopleSaga);
+  yield fork(CitiesSaga);
+  yield fork(LastSaga);
+  yield fork(RoutesSaga);
+  yield fork(SeatsSaga);
 }
 const sagaMiddleware = createSagaMiddleware();
 
