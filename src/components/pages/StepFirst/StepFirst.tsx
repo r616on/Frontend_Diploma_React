@@ -8,7 +8,7 @@ import TicketList from "../../organisms/TicketList/TicketList";
 import Pagination from "../../molecules/Pagination/Pagination";
 import LastTicketList from "../../organisms/LastTicketList/LastTicketList";
 
-function StepOne() {
+function StepFirst() {
   return (
     <PageTemplate stepOne>
       <StatusSteps />
@@ -29,4 +29,4 @@ function StepOne() {
   );
 }
 
-export default StepOne;
+export default StepFirst;

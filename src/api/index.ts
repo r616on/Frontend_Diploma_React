@@ -1,14 +1,20 @@
 import axios from "axios";
+import { postOrder } from "./order/order";
+import { getCities } from "./routes/cities/cities";
+import { getIdSeats } from "./routes/id/seats/seats";
+import { getLast } from "./routes/last/last";
+import { getRoutes } from "./routes/routes";
+import { postSubscrube } from "./subscribe/subscrube";
 
-const instanse = axios.create({
-  baseURL: "https://swapi.dev/",
+export const instanse = axios.create({
+  baseURL: "http://80.87.192.113:3001/",
 });
 
 export const AppAPI = {
-  getItems() {
-    return instanse.get("api/people/").then((res) => res.data.results);
-  },
-  getFullPeole(id: string) {
-    return instanse.get(`api/people/${id}/`).then((res) => res.data);
-  },
+  getCities,
+  getRoutes,
+  getLast,
+  getIdSeats,
+  postOrder,
+  postSubscrube,
 };
