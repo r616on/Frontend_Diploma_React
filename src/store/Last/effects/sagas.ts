@@ -1,27 +1,24 @@
-//import { put, call, takeEvery, delay, select } from "redux-saga/effects";
-
-// import requestStatuses from "../../../../utils/requestStatuses";
+import { put, call, takeEvery } from "redux-saga/effects";
+import { AppAPI } from "../../../api";
+import { GetLastType } from "../../../api/interfaces";
+import requestStatuses from "../../../utils/requestStatuses";
+import { actionsLast } from "./slice";
 
 export function* handelSaga(): Generator {
-  // try {
-  //   const page: any = yield select(
-  //     (state: AppStoreType) => state.PlanetsList.page
-  //   );
-  //   yield put(ActionsPlanetsList.setRequestStatus(requestStatuses.loading));
-  //   yield delay(200);
-  //   const items: any = yield call(AppAPI.getPlanets, page);
-  //   yield put(ActionsPlanetsList.setPlanets(items.results));
-  //   yield put(ActionsPlanetsList.setTotal(+items.count));
-  //   yield put(ActionsPlanetsList.setRequestStatus(requestStatuses.ok));
-  // } catch {
-  //   yield put(ActionsPlanetsList.setRequestStatus(requestStatuses.setError));
-  // }
+  try {
+    yield put(actionsLast.setRequestStatus(requestStatuses.loading));
+    const data: any = yield call<GetLastType>(AppAPI.getLast);
+    yield put(actionsLast.setItems(data));
+    yield put(actionsLast.setRequestStatus(requestStatuses.ok));
+  } catch {
+    yield put(actionsLast.setRequestStatus(requestStatuses.setError));
+  }
 }
 
 export function* watchSaga(): Generator {
-  // yield takeEvery(ActionsPlanetsList.getPlanets, handelSaga);
+  yield takeEvery(actionsLast.getItems, handelSaga);
 }
 
 export default function* rootSaga(): Generator {
-  // yield watchSaga();
+  yield watchSaga();
 }

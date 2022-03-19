@@ -9,10 +9,10 @@ import { SeatsSaga, SeatsSlice } from "./Seats/effects";
 
 export const rootReducer = combineReducers({
   AppStatus,
-  CitiesSlice,
-  LastSlice,
-  RoutesSlice,
-  SeatsSlice,
+  Cities: CitiesSlice,
+  Last: LastSlice,
+  Routes: RoutesSlice,
+  Seats: SeatsSlice,
 });
 
 function* rootSaga(): Generator {
