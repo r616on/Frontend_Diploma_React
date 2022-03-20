@@ -1,3 +1,4 @@
+@import "../../../scss/config.scss";
 .LastTicketList {
   max-width: 360px;
   width: 100%;
@@ -5,7 +6,7 @@
   flex-direction: column;
 }
 .LastTicketList__Title {
-  font-family: Roboto;
+  font-family: $font;
   font-weight: 500;
   font-size: 30px;
   line-height: 35px;

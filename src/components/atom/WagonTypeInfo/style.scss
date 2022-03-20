@@ -70,14 +70,14 @@
     border-bottom: 8px solid #f5f4f6;
   }
   .Wagon-Type-Info__name {
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 19px;
   }
   .Wagon-Type-Info__amount {
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -87,7 +87,7 @@
   }
   .Train-options-price {
     .icon-rub {
-      font-family: Roboto;
+      font-family: $font;
       font-style: normal;
       font-weight: bold;
       font-size: 24px;

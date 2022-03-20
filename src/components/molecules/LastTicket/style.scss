@@ -28,14 +28,14 @@
   flex-direction: column;
 }
 .LastTicket__title {
-  font-family: Roboto;
+  font-family: $font;
   font-size: 20px;
   line-height: 23px;
   color: #292929;
   margin-bottom: 8px;
 }
 .LastTicket__body {
-  font-family: Roboto;
+  font-family: $font;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -55,7 +55,7 @@
 }
 
 .LastTicket__price {
-  font-family: Roboto;
+  font-family: $font;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -63,7 +63,7 @@
   text-align: right;
   color: #928f94;
   span {
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: bold;
     font-size: 36px;

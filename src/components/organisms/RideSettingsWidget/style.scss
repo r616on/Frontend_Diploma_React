@@ -1,3 +1,4 @@
+@import "../../../scss/config.scss";
 .RideSettingsWidget {
   width: 360px;
   background: #3e3c41;
@@ -25,7 +26,7 @@
     padding-top: 37px;
   }
   .Price__title {
-    font-family: Roboto;
+    font-family: $font;
     font-size: 30px;
     line-height: 35px;
     color: #ffffff;
@@ -35,7 +36,7 @@
   .Price__text {
     display: flex;
     justify-content: space-between;
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;

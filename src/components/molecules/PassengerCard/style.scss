@@ -15,7 +15,7 @@
   margin-right: 16px;
 }
 .PassengerCard__top-text {
-  font-family: Roboto;
+  font-family: $font;
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
@@ -31,7 +31,7 @@
 }
 .PassengerCard__form {
   label {
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -43,7 +43,7 @@
     background: #ffffff;
     border: 1px solid #928f94;
     border-radius: 5px;
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -76,7 +76,7 @@
     background: #ffffff;
     border: 1px solid #928f94;
     border-radius: 5px;
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -93,7 +93,7 @@
     padding-right: 10px;
   }
   .checkbox {
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -131,7 +131,7 @@
 }
 .PassengerCard-form__select {
   height: 50px;
-  font-family: Roboto;
+  font-family: $font;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -163,7 +163,7 @@
     min-width: 444px !important;
   }
   .ant-select-item {
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -189,7 +189,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: 900;
     font-size: 30px;

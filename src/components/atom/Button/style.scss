@@ -1,7 +1,7 @@
 @import "../../../scss/config.scss";
 .btn {
   &.typeEmpty {
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -25,7 +25,7 @@
     box-sizing: border-box;
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0);
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -50,7 +50,7 @@
     box-sizing: border-box;
     border-radius: 3px;
     background: #2d2b2f;
-    font-family: Roboto;
+    font-family: $font;
     font-size: 24px;
     line-height: 28px;
     text-transform: uppercase;
@@ -70,7 +70,7 @@
     height: 60px;
     background: $primary;
     border-radius: 5px;
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -92,7 +92,7 @@
   &.next {
     width: 222px;
     height: 60px;
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -120,7 +120,7 @@
     height: 39px;
     background: $primary;
     border-radius: 5px;
-    font-family: Roboto;
+    font-family: $font;
     font-weight: bold;
     font-size: 24px;
     line-height: 28px;
@@ -141,7 +141,7 @@
     }
   }
   &.change {
-    font-family: Roboto;
+    font-family: $font;
     font-weight: bold;
     font-size: 24px;
     line-height: 28px;
@@ -165,7 +165,7 @@
     }
   }
   &.confirm {
-    font-family: Roboto;
+    font-family: $font;
     font-weight: bold;
     font-size: 24px;
     line-height: 28px;

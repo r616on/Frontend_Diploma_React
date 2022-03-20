@@ -2,7 +2,7 @@
 .ChairSelect {
 }
 .ChairSelect__title {
-  font-family: Roboto;
+  font-family: $font;
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -43,7 +43,7 @@
   }
 }
 .ChairSelect-top__another-train {
-  font-family: Roboto;
+  font-family: $font;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
@@ -103,7 +103,7 @@
   margin-bottom: 0;
 }
 .train-info__item {
-  font-family: Roboto;
+  font-family: $font;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -151,7 +151,7 @@
   &.timetable__item {
   }
   .timetable__time {
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -160,7 +160,7 @@
   }
 
   .timetable__city-name {
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -168,7 +168,7 @@
     margin-bottom: 7px;
   }
   .timetable__railway-station {
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -208,7 +208,7 @@
 .length__list {
   display: flex;
   flex-direction: column;
-  font-family: Roboto;
+  font-family: $font;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -226,7 +226,7 @@
   border-bottom: 1px dashed #c4c4c4;
 }
 .ChairSelect-number-of-tickets__title {
-  font-family: Roboto;
+  font-family: $font;
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
@@ -268,7 +268,7 @@
     justify-content: flex-start;
     padding-left: 17px;
     align-items: center;
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -280,7 +280,7 @@
   .item__description {
     max-width: 240px;
     width: 100%;
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -295,7 +295,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Roboto;
+    font-family: $font;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -341,7 +341,7 @@
   }
 }
 .ChairSelect-wagon-type__title {
-  font-family: Roboto;
+  font-family: $font;
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
