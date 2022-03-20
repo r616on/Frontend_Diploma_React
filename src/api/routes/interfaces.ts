@@ -1,30 +1,56 @@
 export interface Iparameters {
   from_city_id: string;
+  // Идентификатор города, откуда планируется путешествие
   to_city_id: string;
+  // Идентификатор города, куда планируется путешествие
   date_start?: string;
+  // Дата отбытия туда (в формате YYYY-DD-MM; например 2030-03-01)
   date_end?: string;
+  // Дата отбытия обратно (в формате YYYY-DD-MM; например 2030-03-01)
   date_start_arrival?: string;
+  // Дата прибытия туда (в формате YYYY-DD-MM; например 2030-03-01)
   date_end_arrival?: string;
+  // Дата прибытия обратно (в формате YYYY-DD-MM; например 2030-03-01)
   have_first_class?: boolean;
+  // Люкс
   have_second_class?: boolean;
+  // Купе
   have_third_class?: boolean;
+  // Плацкарт
   have_fourth_class?: boolean;
+  // Сидячее место
   have_wifi?: boolean;
+  // Имеется WiFi
   have_air_conditioning?: boolean;
+  // Имеется кондиционер
   have_express?: boolean;
+  // Экспресс
   price_from?: number;
+  // Цена от
   price_to?: number;
+  // Цена до
   start_departure_hour_from?: number;
+  // Час отбытия от
   start_departure_hour_to?: number;
+  // Час отбытия до
   start_arrival_hour_from?: number;
+  // Час прибытия от
   start_arrival_hour_to?: number;
+  // Час прибытия до
   end_departure_hour_from?: number;
+  // Час отбытия назад от
   end_departure_hour_to?: number;
+  // Час отбытия назад до
   end_arrival_hour_from?: number;
+  // Час прибытия назад от (работает при установленном параметре date_end)
   end_arrival_hour_to?: number;
+  // Час прибытия назад до (работает при установленном параметре date_end)
   limit?: number;
+  // Количество результатов на странице
   offset?: number;
+  // Количество результатов, которое необходимо пропустить в выдаче
   sort?: string;
+  // Сортировка результатов Available values : date, price, duration
 }
 
 // const item = {
