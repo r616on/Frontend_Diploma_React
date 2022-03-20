@@ -1,3 +1,4 @@
+@import "../../../scss/config.scss";
 .about {
   height: 561px;
   padding-left: 30px;
@@ -37,7 +38,7 @@
   content: "";
   width: 9px;
   height: 231px;
-  background: #ffa800;
+  background: $primary;
   display: block;
   top: 4px;
   left: 0;

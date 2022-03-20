@@ -1,3 +1,4 @@
+@import "../../../scss/config.scss";
 .Slider {
   position: relative;
   height: 24px;
@@ -6,7 +7,7 @@
   margin-bottom: 63px;
 
   &.ant-slider:hover .ant-slider-track {
-    background-color: #ffa800;
+    background-color: $primary;
   }
   &.ant-slider:hover .ant-slider-rail {
     background-color: inherit;
@@ -21,7 +22,7 @@
   .ant-slider-track,
   .ant-slider-track-1 {
     height: 20px;
-    background: #ffa800;
+    background: $primary;
     border-radius: 8px;
   }
   .ant-slider-handle {

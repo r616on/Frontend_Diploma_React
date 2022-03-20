@@ -1,3 +1,4 @@
+@import "../../../scss/config.scss";
 .status-steps {
   position: relative;
   max-width: 100%;
@@ -15,7 +16,7 @@
 }
 .status-steps__background-left {
   width: 25%;
-  background: #ffa800;
+  background: $primary;
 }
 
 .status-steps__background-right {
@@ -41,14 +42,14 @@
     margin-right: 37px;
     // border-radius: 4px;
     &.active {
-      background: #ffa800;
+      background: $primary;
       &.item::after {
         display: block;
       }
     }
     &.previous {
       &.item::before {
-        background-color: #ffa800;
+        background-color: $primary;
       }
     }
     &::before {
@@ -74,7 +75,7 @@
       bottom: 2px;
       $size: 47px;
       border-top: $size solid transparent;
-      border-left: 36px solid #ffa800;
+      border-left: 36px solid $primary;
       border-bottom: $size solid transparent;
       z-index: 4;
       display: none;

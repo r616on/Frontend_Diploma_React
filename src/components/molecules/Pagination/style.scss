@@ -1,3 +1,4 @@
+@import "../../../scss/config.scss";
 .Pagination {
 }
 .Pagination__row {
@@ -41,11 +42,11 @@
     }
   }
   &:hover {
-    border: 2px solid #ffa800;
-    color: #ffa800;
+    border: 2px solid $primary;
+    color: $primary;
   }
   &.active {
-    background: #ffa800;
+    background: $primary;
     color: #ffffff;
   }
 }

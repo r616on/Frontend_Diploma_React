@@ -1,3 +1,4 @@
+@import "../../../scss/config.scss";
 .PassengerCard {
   display: flex;
   flex-direction: column;
@@ -199,7 +200,7 @@
     &.ant-radio-group-solid,
     &.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
       color: #000000;
-      background: #ffa800;
+      background: $primary;
       border-color: inherit;
     }
     &.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {

@@ -1,3 +1,4 @@
+@import "../../../scss/config.scss";
 .btn {
   &.typeEmpty {
     font-family: Roboto;
@@ -67,7 +68,7 @@
   &.findTickets {
     width: 323px;
     height: 60px;
-    background: #ffa800;
+    background: $primary;
     border-radius: 5px;
     font-family: Roboto;
     font-style: normal;
@@ -81,11 +82,11 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     &:active {
-      border: 1px solid #ffa800;
+      border: 1px solid $primary;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
       border-radius: 5px;
       background: rgba(0, 0, 0, 0);
-      color: #ffa800;
+      color: $primary;
     }
   }
   &.next {
@@ -99,7 +100,7 @@
     text-align: center;
     text-transform: uppercase;
     color: #ffffff;
-    background: #ffa800;
+    background: $primary;
     border-radius: 5px;
     &.inactive {
       background: #928f94;
@@ -108,16 +109,16 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     &:active {
-      border: 1px solid #ffa800;
+      border: 1px solid $primary;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
       background: rgba(0, 0, 0, 0);
-      color: #ffa800;
+      color: $primary;
     }
   }
   &.selectPlaces {
     width: 228px;
     height: 39px;
-    background: #ffa800;
+    background: $primary;
     border-radius: 5px;
     font-family: Roboto;
     font-weight: bold;
@@ -132,11 +133,11 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     &:active {
-      border: 1px solid #ffa800;
+      border: 1px solid $primary;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
       border-radius: 5px;
       background: rgba(0, 0, 0, 0);
-      color: #ffa800;
+      color: $primary;
     }
   }
   &.change {
@@ -154,10 +155,10 @@
     background: rgba(0, 0, 0, 0);
     &:hover {
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      color: #ffa800;
+      color: $primary;
     }
     &:active {
-      border: 1px solid #ffa800;
+      border: 1px solid $primary;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
       background: rgba(0, 0, 0, 0);
       color: #292929;
@@ -174,7 +175,7 @@
     color: #ffffff;
     width: 323px;
     height: 60px;
-    background: #ffa800;
+    background: $primary;
     border-radius: 5px;
     &.inactive {
       background: #928f94;
@@ -183,11 +184,11 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     &:active {
-      border: 1px solid #ffa800;
+      border: 1px solid $primary;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
       border-radius: 5px;
       background: rgba(0, 0, 0, 0);
-      color: #ffa800;
+      color: $primary;
     }
   }
 }
