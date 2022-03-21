@@ -1,121 +1,56 @@
 export interface Iparameters {
-  from_city_id: string;
+  from_city_id: string | null;
   // Идентификатор города, откуда планируется путешествие
-  to_city_id: string;
+  to_city_id: string | null;
   // Идентификатор города, куда планируется путешествие
-  date_start?: string;
+  date_start?: string | null;
   // Дата отбытия туда (в формате YYYY-DD-MM; например 2030-03-01)
-  date_end?: string;
+  date_end?: string | null;
   // Дата отбытия обратно (в формате YYYY-DD-MM; например 2030-03-01)
-  date_start_arrival?: string;
+  date_start_arrival?: string | null;
   // Дата прибытия туда (в формате YYYY-DD-MM; например 2030-03-01)
-  date_end_arrival?: string;
+  date_end_arrival?: string | null;
   // Дата прибытия обратно (в формате YYYY-DD-MM; например 2030-03-01)
-  have_first_class?: boolean;
+  have_first_class?: boolean | null;
   // Люкс
-  have_second_class?: boolean;
-  // Купе
-  have_third_class?: boolean;
+  have_second_class?: boolean | null;
+  have_third_class?: boolean | null;
   // Плацкарт
-  have_fourth_class?: boolean;
+  have_fourth_class?: boolean | null;
   // Сидячее место
-  have_wifi?: boolean;
+  have_wifi?: boolean | null;
   // Имеется WiFi
-  have_air_conditioning?: boolean;
+  have_air_conditioning?: boolean | null;
   // Имеется кондиционер
-  have_express?: boolean;
+  have_express?: boolean | null;
   // Экспресс
-  price_from?: number;
+  price_from?: number | null;
   // Цена от
-  price_to?: number;
+  price_to?: number | null;
   // Цена до
-  start_departure_hour_from?: number;
+  start_departure_hour_from?: number | null;
   // Час отбытия от
-  start_departure_hour_to?: number;
+  start_departure_hour_to?: number | null;
   // Час отбытия до
-  start_arrival_hour_from?: number;
+  start_arrival_hour_from?: number | null;
   // Час прибытия от
-  start_arrival_hour_to?: number;
+  start_arrival_hour_to?: number | null;
   // Час прибытия до
-  end_departure_hour_from?: number;
+  end_departure_hour_from?: number | null;
   // Час отбытия назад от
-  end_departure_hour_to?: number;
+  end_departure_hour_to?: number | null;
   // Час отбытия назад до
-  end_arrival_hour_from?: number;
+  end_arrival_hour_from?: number | null;
   // Час прибытия назад от (работает при установленном параметре date_end)
-  end_arrival_hour_to?: number;
+  end_arrival_hour_to?: number | null;
   // Час прибытия назад до (работает при установленном параметре date_end)
-  limit?: number;
+  limit?: number | null;
   // Количество результатов на странице
-  offset?: number;
+  offset?: number | null;
   // Количество результатов, которое необходимо пропустить в выдаче
-  sort?: string;
+  sort?: string | null;
   // Сортировка результатов Available values : date, price, duration
 }
-
-// const item = {
-//   have_first_class: false,
-//   have_second_class: false,
-//   have_third_class: false,
-//   have_fourth_class: false,
-//   have_wifi: false,
-//   have_air_conditioning: false,
-//   is_express: false,
-//   min_price: 1971,
-//   available_seats: 127,
-//   available_seats_info: {
-//     second: 32,
-//     third: 96,
-//   },
-//   departure: {
-//     _id: "6212d3de5fc56b48553d53b3",
-//     have_first_class: false,
-//     have_second_class: true,
-//     have_third_class: true,
-//     have_fourth_class: false,
-//     have_wifi: true,
-//     have_air_conditioning: true,
-//     is_express: false,
-//     min_price: 1971,
-//     duration: 150300,
-//     available_seats: 127,
-//     available_seats_info: {
-//       second: 32,
-//       third: 96,
-//     },
-//     train: {
-//       _id: "6212d3ca5fc56b48553d4cd8",
-//       name: "Тройка - 89",
-//     },
-//     from: {
-//       railway_station_name: "Казанский",
-//       city: {
-//         _id: "6212d3c15fc56b48553d43bc",
-//         name: "москва",
-//       },
-//       datetime: 1645534735,
-//     },
-//     to: {
-//       railway_station_name: "Московский",
-//       city: {
-//         _id: "6212d3c15fc56b48553d43bd",
-//         name: "санкт-петербург",
-//       },
-//       datetime: 1645685035,
-//     },
-//     price_info: {
-//       second: {
-//         top_price: 2358,
-//         bottom_price: 1971,
-//       },
-//       third: {
-//         top_price: 3255,
-//         bottom_price: 3550,
-//         side_price: 4455,
-//       },
-//     },
-//   },
-// };
 
 const item = {
   have_first_class: false,
@@ -277,3 +212,31 @@ export interface IgetRoutesResp {
   total_count: number;
   items: Array<itemRoutes>;
 }
+
+// type ParamsType =
+//   | "from_city_id"
+//   | "to_city_id"
+//   | "date_start"
+//   | "date_end"
+//   | "date_start_arrival"
+//   | "date_end_arrival"
+//   | "have_first_class"
+//   | "have_second_class"
+//   | "have_third_class"
+//   | "have_fourth_class"
+//   | "have_wifi"
+//   | "have_air_conditioning"
+//   | "have_express"
+//   | "price_from"
+//   | "price_to"
+//   | "start_departure_hour_from"
+//   | "start_departure_hour_to"
+//   | "start_arrival_hour_from"
+//   | "start_arrival_hour_to"
+//   | "end_departure_hour_from"
+//   | "end_departure_hour_to"
+//   | "end_arrival_hour_from"
+//   | "end_arrival_hour_to"
+//   | "limit"
+//   | "offset"
+//   | "sort";

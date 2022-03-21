@@ -5,6 +5,7 @@ import AppStatus from "./AppStatusSlice";
 import { CitiesSaga, CitiesSlice } from "./Cities/effects";
 import { LastSaga, LastSlice } from "./Last/effects";
 import { RoutesSaga, RoutesSlice } from "./Routes/effects";
+import { FilterRoutesSlice } from "./Routes/FilterRoutes/effects";
 import { SeatsSaga, SeatsSlice } from "./Seats/effects";
 
 export const rootReducer = combineReducers({
@@ -13,6 +14,7 @@ export const rootReducer = combineReducers({
   Last: LastSlice,
   Routes: RoutesSlice,
   Seats: SeatsSlice,
+  FilterRoutes: FilterRoutesSlice,
 });
 
 function* rootSaga(): Generator {

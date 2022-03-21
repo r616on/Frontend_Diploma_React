@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { itemRoutes } from "../../../api/routes/interfaces";
 import { IRequestStatus } from "../../../utils/requestStatuses";
+import { itemRoutes } from "../interfaces";
 
 interface IinitialState {
   total_count: number;

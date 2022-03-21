@@ -9,15 +9,12 @@ import Pagination from "../../molecules/Pagination/Pagination";
 import LastTicketList from "../../organisms/LastTicketList/LastTicketList";
 import { useDispatch, useSelector } from "react-redux";
 import { AppStoreType } from "../../../store/interfaces";
-import { actionsLast } from "../../../store/Last/effects/slice";
 
 function StepFirst() {
   const dispatch = useDispatch();
   const items = useSelector((state: AppStoreType) => state.Last.items);
   console.log(items);
-  useEffect(() => {
-    dispatch(actionsLast.getItems());
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <PageTemplate stepOne>
