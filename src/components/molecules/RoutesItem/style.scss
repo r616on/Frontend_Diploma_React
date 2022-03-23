@@ -1,6 +1,10 @@
-.Ticket {
+.toUpperCase {
+  text-transform: capitalize;
 }
-.Ticket__row {
+
+.RoutesItem {
+}
+.RoutesItem__row {
   width: 959px;
   background: #ffffff;
   border: 1px solid #c4c4c4;
@@ -9,7 +13,7 @@
   display: flex;
   justify-content: space-between;
 }
-.Ticket__Train-name {
+.RoutesItem__Train-name {
 }
 .Train-name {
   width: 197px;
@@ -67,7 +71,7 @@
     margin-left: 8px;
   }
 }
-.Ticket__timetable {
+.RoutesItem__timetable {
 }
 .timetable {
   padding-top: 54px;
@@ -113,7 +117,7 @@
 }
 .timetable__back {
 }
-.Ticket__Train-options {
+.RoutesItem__Train-options {
 }
 .Train-options {
   width: 283px;

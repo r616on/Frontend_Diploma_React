@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { FC, Fragment } from "react";
 import classNames from "classnames";
 import { v4 as uuidv4 } from "uuid";
 // import { Link } from "react-router-dom";
@@ -14,8 +14,12 @@ const arrButton = [
   { type: "typeEmpty", text: "" },
   // { type: "selectPlaces", text: "Выбрать места" },
 ];
-
-function Button({ type = "learnMore", className, children }) {
+interface Ibutton {
+  className?: any;
+  type: string;
+  children?: string;
+}
+const Button: FC<Ibutton> = ({ type = "learnMore", className, children }) => {
   return (
     <Fragment>
       {
@@ -40,6 +44,6 @@ function Button({ type = "learnMore", className, children }) {
       }
     </Fragment>
   );
-}
+};
 
 export default Button;

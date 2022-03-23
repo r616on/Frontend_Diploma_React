@@ -1,5 +1,8 @@
 import { instanse } from "..";
-import { IgetRoutesResp, Iparameters } from "../../store/Routes/interfaces";
+import {
+  IgetRoutesResp,
+  Iparameters,
+} from "../../components/organisms/Routes/interfaces";
 
 export const getRoutes = async (
   parameters: Iparameters

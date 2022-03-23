@@ -1,0 +1,37 @@
+.main {
+  background-color: #e5e5e5;
+  padding-top: 100px;
+}
+.Roures {
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.Roures__LastTicketWidget {
+  margin-top: 90px;
+}
+.Roures__Left {
+  width: 30.2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Roures__main {
+  width: 69.8%;
+  margin: 0 auto;
+}
+.Roures-main {
+  width: 959px;
+}
+.Roures-main__top {
+}
+.Roures-main__list {
+  margin-top: 47px;
+  margin-bottom: 142px;
+}
+.Roures-main__Pagination {
+  margin-bottom: 190px;
+  display: flex;
+  justify-content: flex-end;
+}

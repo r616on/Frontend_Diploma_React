@@ -1,11 +1,15 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 import { fork } from "redux-saga/effects";
+import {
+  RoutesSaga,
+  RoutesSlice,
+} from "../components/organisms/Routes/effects";
+import { FilterRoutesSlice } from "../components/organisms/Routes/FilterRoutes/effects";
 import AppStatus from "./AppStatusSlice";
 import { CitiesSaga, CitiesSlice } from "./Cities/effects";
 import { LastSaga, LastSlice } from "./Last/effects";
-import { RoutesSaga, RoutesSlice } from "./Routes/effects";
-import { FilterRoutesSlice } from "./Routes/FilterRoutes/effects";
+
 import { SeatsSaga, SeatsSlice } from "./Seats/effects";
 
 export const rootReducer = combineReducers({

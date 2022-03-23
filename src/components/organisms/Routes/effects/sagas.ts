@@ -1,7 +1,7 @@
 import { put, call, takeEvery } from "redux-saga/effects";
-import { AppAPI } from "../../../api";
-import { GetRoutesType } from "../../../api/interfaces";
-import requestStatuses from "../../../utils/requestStatuses";
+import { AppAPI } from "../../../../api";
+import { GetRoutesType } from "../../../../api/interfaces";
+import requestStatuses from "../../../../utils/requestStatuses";
 import { actionsRoutes } from "./slice";
 
 export function* handelSaga(): Generator {

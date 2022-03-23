@@ -1,8 +1,18 @@
-import React from "react";
+import React, { FC } from "react";
 import classNames from "classnames";
 import "./style.scss";
-
-function ItemTimetablele({ time, city, railway, className }) {
+interface IitemTimetablele {
+  time: number | undefined | string;
+  city: string | undefined;
+  railway: string | undefined;
+  className?: any;
+}
+const ItemTimetablele: FC<IitemTimetablele> = ({
+  time,
+  city,
+  railway,
+  className,
+}) => {
   return (
     <ul className={classNames("timetable__item", { [className]: className })}>
       <li className="timetable__time">{time}</li>
@@ -10,6 +20,6 @@ function ItemTimetablele({ time, city, railway, className }) {
       <li className="timetable__railway-station">{railway}</li>
     </ul>
   );
-}
+};
 
 export default ItemTimetablele;

@@ -1,5 +1,6 @@
+@import "./config.scss";
 * {
-  font-family: "$font";
+  font-family: $font;
 }
 .container {
   max-width: 1490px;

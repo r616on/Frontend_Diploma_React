@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IRequestStatus } from "../../../utils/requestStatuses";
-import { itemRoutes } from "../interfaces";
+import { IRequestStatus } from "../../../../utils/requestStatuses";
+import { IitemRoutes } from "../interfaces";
 
 interface IinitialState {
   total_count: number;
-  items: Array<itemRoutes>;
+  items: Array<IitemRoutes>;
   requestStatus: IRequestStatus;
 }
 const initialState: IinitialState = {
@@ -22,7 +22,7 @@ const Routes = createSlice({
   initialState: initialState,
   reducers: {
     getItems() {},
-    setItems(state, action: { type: string; payload: Array<itemRoutes> }) {
+    setItems(state, action: { type: string; payload: Array<IitemRoutes> }) {
       state.items = action.payload;
     },
     setTotalCount(state, action: { type: string; payload: number }) {
