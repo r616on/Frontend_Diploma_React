@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { format } from "date-fns";
 import classNames from "classnames";
 import AdditionalServices from "../../atom/AdditionalServices/AdditionalServices";
 import Button from "../../atom/Button/Button";
@@ -12,9 +13,8 @@ interface IroutesItem {
 }
 
 const RoutesItem: FC<IroutesItem> = ({ className, item }) => {
-  let a = new Date();
-  a.setUTCDate(1645643651);
-  console.log(item);
+  console.log(format(new Date(1645643651000), "HH-mm"));
+  console.log(item.departure?.from);
   return (
     <section
       className={classNames("RoutesItem", {
