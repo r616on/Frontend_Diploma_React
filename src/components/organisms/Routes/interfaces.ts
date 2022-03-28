@@ -196,7 +196,8 @@ export interface IitemRoutes {
         wifi_price?: number;
       };
     };
-    seats_info?: {
+    available_seats?: number;
+    available_seats_info?: {
       first?: number;
       second?: number;
       third?: number;

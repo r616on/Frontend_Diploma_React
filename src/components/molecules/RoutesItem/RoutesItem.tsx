@@ -9,12 +9,11 @@ import "./style.scss";
 import { IitemRoutes } from "../../organisms/Routes/interfaces";
 interface IroutesItem {
   className?: any;
-  item: IitemRoutes;
+  route: IitemRoutes;
 }
 
-const RoutesItem: FC<IroutesItem> = ({ className, item }) => {
-  console.log(format(new Date(1645643651000), "HH-mm"));
-  console.log(item.departure?.from);
+const RoutesItem: FC<IroutesItem> = ({ className, route }) => {
+  console.log(route);
   return (
     <section
       className={classNames("RoutesItem", {
@@ -24,55 +23,70 @@ const RoutesItem: FC<IroutesItem> = ({ className, item }) => {
       <div className="RoutesItem__row">
         <div className="RoutesItem__Train-name Train-name">
           <div className="Train-name__icon"></div>
-          <div className="Train-name__name">{item.departure?.train?.name}</div>
+          <div className="Train-name__name">{route.departure?.train?.name}</div>
           <ul className="Train-name__path">
             <li className="icon-arrowRMini toUpperCase">
-              {item.departure?.from?.city?.name}
+              {route.departure?.from?.city?.name}
             </li>
             <li className="icon-arrowRMini toUpperCase">
-              {item.departure?.to?.city?.name}
+              {route.departure?.to?.city?.name}
             </li>
             <li className="toUpperCase">
-              {item.departure?.to?.railway_station_name}
+              {route.departure?.to?.railway_station_name}
             </li>
           </ul>
         </div>
         <div className="RoutesItem__timetable timetable">
           <div className="timetable__row there">
             <ItemTimetablele
-              time={item.departure?.from?.datetime}
-              city={item.departure?.from?.city?.name}
-              railway={item.departure?.from?.railway_station_name}
+              time={route.departure?.from?.datetime}
+              city={route.departure?.from?.city?.name}
+              railway={route.departure?.from?.railway_station_name}
             />
             <div className="timetable__duration">
-              <div className="duration-time">8 : 32</div>
+              <div className="duration-time">
+                {format(
+                  new Date(+`${route.departure?.duration}000`),
+                  "HH : mm"
+                )}
+              </div>
               <div className="there-icon"></div>
             </div>
             <ItemTimetablele
-              time={item.departure?.to?.datetime}
-              city={item.departure?.to?.city?.name}
-              railway={item.departure?.to?.railway_station_name}
+              time={route.departure?.to?.datetime}
+              city={route.departure?.to?.city?.name}
+              railway={route.departure?.to?.railway_station_name}
             />
           </div>
-          <div className="timetable__row back">
-            <ItemTimetablele
-              time={item.departure?.from?.datetime}
-              city={item.departure?.from?.city?.name}
-              railway={item.departure?.from?.railway_station_name}
-            />
-            <div className="timetable__duration reverse">
-              <div className="duration-time">8 : 32</div>
-              <div className="there-icon"></div>
+          {route?.arrival && (
+            <div className="timetable__row back">
+              <ItemTimetablele
+                time={route.arrival?.from?.datetime}
+                city={route.arrival?.from?.city?.name}
+                railway={route.arrival?.from?.railway_station_name}
+              />
+              <div className="timetable__duration reverse">
+                <div className="duration-time">
+                  {format(
+                    new Date(+`${route.arrival?.duration}000`),
+                    "HH : mm"
+                  )}
+                </div>
+                <div className="there-icon"></div>
+              </div>
+              <ItemTimetablele
+                time={route.arrival?.to?.datetime}
+                city={route.arrival?.to?.city?.name}
+                railway={route.arrival?.to?.railway_station_name}
+              />
             </div>
-            <ItemTimetablele
-              time={item.departure?.to?.datetime}
-              city={item.departure?.to?.city?.name}
-              railway={item.departure?.to?.railway_station_name}
-            />
-          </div>
+          )}
         </div>
         <div className="RoutesItem__Train-options Train-options">
-          <WagonTypeList className={"Train-options__WagonTypeList"} />
+          <WagonTypeList
+            className={"Train-options__WagonTypeList"}
+            route={route}
+          />
           <AdditionalServices className={"Train-options__AdditionalServices"} />
           <Button type={"selectPlaces"} className={"Train-options__button"} />
         </div>

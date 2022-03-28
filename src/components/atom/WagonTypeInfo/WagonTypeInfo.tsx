@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import classNames from "classnames";
 // import { Link } from "react-router-dom";
 import "./style.scss";
-
-function WagonTypeInfo({ name, amount, price, className }) {
+interface IwagonTypeInfo {
+  className?: any;
+  name: string;
+  amount?: string | number;
+  price?: string | number;
+}
+const WagonTypeInfo: FC<IwagonTypeInfo> = ({
+  name,
+  amount,
+  price,
+  className,
+}) => {
   const [hidden, setHidden] = useState(false);
   const hendelHidden = () => {
     setHidden((prev) => !prev);
@@ -39,6 +49,6 @@ function WagonTypeInfo({ name, amount, price, className }) {
       )}
     </div>
   );
-}
+};
 
-export default WagonTypeInfo;
+export default React.memo(WagonTypeInfo);
