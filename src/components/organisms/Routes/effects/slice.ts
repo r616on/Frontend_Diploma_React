@@ -4,13 +4,11 @@ import { IitemRoutes } from "../interfaces";
 
 interface IinitialState {
   total_count: number;
-  pageSize: number;
   items: Array<IitemRoutes>;
   requestStatus: IRequestStatus;
 }
 const initialState: IinitialState = {
   total_count: 0,
-  pageSize: 5,
   items: [],
   requestStatus: {
     loading: false,
@@ -29,9 +27,6 @@ const Routes = createSlice({
     },
     setTotalCount(state, action: { type: string; payload: number }) {
       state.total_count = action.payload;
-    },
-    setPageSize(state, action: { type: string; payload: number }) {
-      state.pageSize = action.payload;
     },
     setRequestStatus(state, action: { type: string; payload: IRequestStatus }) {
       state.requestStatus = action.payload;

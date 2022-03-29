@@ -44,7 +44,7 @@ export interface Iparameters {
   // Час прибытия назад от (работает при установленном параметре date_end)
   end_arrival_hour_to?: number | null;
   // Час прибытия назад до (работает при установленном параметре date_end)
-  limit?: number | null;
+  limit: number;
   // Количество результатов на странице
   offset?: number | null;
   // Количество результатов, которое необходимо пропустить в выдаче

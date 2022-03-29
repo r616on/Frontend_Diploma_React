@@ -25,8 +25,8 @@ const initialState: Iparameters = {
   end_departure_hour_to: null,
   end_arrival_hour_from: null,
   end_arrival_hour_to: null,
-  limit: null,
-  offset: null,
+  limit: 5,
+  offset: 0,
   sort: null,
 };
 

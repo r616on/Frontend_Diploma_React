@@ -4,6 +4,7 @@ import "./style.scss";
 import { Select } from "antd";
 import { useDispatch } from "react-redux";
 import { actionsRoutes } from "../../organisms/Routes/effects/slice";
+import { actionsFilterRoutes } from "../../organisms/Routes/FilterRoutes/effects/slice";
 
 interface IrouresTop {
   className?: any;
@@ -14,7 +15,7 @@ const RouresTop: FC<IrouresTop> = ({ className, total, pageSize }) => {
   const { Option } = Select;
   const dispatch = useDispatch();
   const pageSizeHandler = (e: any) => {
-    dispatch(actionsRoutes.setPageSize(+e.target.innerText));
+    dispatch(actionsFilterRoutes.setLimit(+e.target.innerText));
   };
   return (
     <div

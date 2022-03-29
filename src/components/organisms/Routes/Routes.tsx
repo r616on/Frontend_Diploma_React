@@ -15,12 +15,13 @@ function Routes() {
   const items = useSelector((state: AppStoreType) => state.Routes.items);
   // const ofset = useSelector((state: AppStoreType) => state.FilterRoutes.offset);
   // console.log(ofset);
-  const { total_count, pageSize } = useSelector(
-    (state: AppStoreType) => state.Routes
+  const { total_count } = useSelector((state: AppStoreType) => state.Routes);
+  const { limit, offset } = useSelector(
+    (state: AppStoreType) => state.FilterRoutes
   );
   useEffect(() => {
     dispatch(actionsRoutes.getItems());
-  }, [dispatch]);
+  }, [dispatch, limit, offset]);
 
   return (
     <div className="main Roures">
@@ -33,13 +34,13 @@ function Routes() {
           <RouresTop
             className="Roures-main__top"
             total={total_count}
-            pageSize={pageSize}
+            pageSize={limit}
           />
           <RoutesList className="Roures-main__list" items={items} />
           <Pagination
             className="Roures-main__Pagination"
             total={total_count}
-            pageSize={pageSize}
+            pageSize={limit}
           />
         </div>
       </div>
