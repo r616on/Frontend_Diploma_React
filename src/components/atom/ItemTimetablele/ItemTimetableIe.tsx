@@ -25,4 +25,4 @@ const ItemTimetablele: FC<IitemTimetablele> = ({
   );
 };
 
-export default ItemTimetablele;
+export default React.memo(ItemTimetablele);

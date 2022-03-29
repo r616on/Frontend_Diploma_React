@@ -13,6 +13,7 @@ import { actionsRoutes } from "./effects/slice";
 function Routes() {
   const dispatch = useDispatch();
   const items = useSelector((state: AppStoreType) => state.Routes.items);
+  const total = useSelector((state: AppStoreType) => state.Routes.total_count);
   useEffect(() => {
     dispatch(actionsRoutes.getItems());
   }, [dispatch]);
@@ -25,7 +26,7 @@ function Routes() {
           <LastTicketList className="Roures__LastTicketWidget" />
         </div>
         <div className="col Roures__main Roures-main">
-          <RouresTop className="Roures-main__top" />
+          <RouresTop className="Roures-main__top" total={total} />
           <RoutesList className="Roures-main__list" items={items} />
           <Pagination className="Roures-main__Pagination" />
         </div>

@@ -16,8 +16,17 @@
   }
 }
 .icon-wiFi {
+  &.active {
+    color: #ffa800;
+  }
 }
 .icon-express {
+  &.active {
+    color: #ffa800;
+  }
 }
 .icon-coffee {
+  &.active {
+    color: #ffa800;
+  }
 }

@@ -13,7 +13,6 @@ interface IroutesItem {
 }
 
 const RoutesItem: FC<IroutesItem> = ({ className, route }) => {
-  console.log(route);
   return (
     <section
       className={classNames("RoutesItem", {
@@ -87,7 +86,11 @@ const RoutesItem: FC<IroutesItem> = ({ className, route }) => {
             className={"Train-options__WagonTypeList"}
             route={route}
           />
-          <AdditionalServices className={"Train-options__AdditionalServices"} />
+          <AdditionalServices
+            className={"Train-options__AdditionalServices"}
+            express={route?.is_express}
+            wiFi={route?.have_wifi}
+          />
           <Button type={"selectPlaces"} className={"Train-options__button"} />
         </div>
       </div>
