@@ -13,7 +13,11 @@ import { actionsRoutes } from "./effects/slice";
 function Routes() {
   const dispatch = useDispatch();
   const items = useSelector((state: AppStoreType) => state.Routes.items);
-  const total = useSelector((state: AppStoreType) => state.Routes.total_count);
+  // const ofset = useSelector((state: AppStoreType) => state.FilterRoutes.offset);
+  // console.log(ofset);
+  const { total_count, pageSize } = useSelector(
+    (state: AppStoreType) => state.Routes
+  );
   useEffect(() => {
     dispatch(actionsRoutes.getItems());
   }, [dispatch]);
@@ -26,9 +30,17 @@ function Routes() {
           <LastTicketList className="Roures__LastTicketWidget" />
         </div>
         <div className="col Roures__main Roures-main">
-          <RouresTop className="Roures-main__top" total={total} />
+          <RouresTop
+            className="Roures-main__top"
+            total={total_count}
+            pageSize={pageSize}
+          />
           <RoutesList className="Roures-main__list" items={items} />
-          <Pagination className="Roures-main__Pagination" />
+          <Pagination
+            className="Roures-main__Pagination"
+            total={total_count}
+            pageSize={pageSize}
+          />
         </div>
       </div>
     </div>

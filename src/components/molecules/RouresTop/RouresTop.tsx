@@ -1,13 +1,21 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 import "./style.scss";
-import { Select, Pagination } from "antd";
+import { Select } from "antd";
+import { useDispatch } from "react-redux";
+import { actionsRoutes } from "../../organisms/Routes/effects/slice";
+
 interface IrouresTop {
   className?: any;
   total?: number;
+  pageSize?: number;
 }
-const RouresTop: FC<IrouresTop> = ({ className, total }) => {
+const RouresTop: FC<IrouresTop> = ({ className, total, pageSize }) => {
   const { Option } = Select;
+  const dispatch = useDispatch();
+  const pageSizeHandler = (e: any) => {
+    dispatch(actionsRoutes.setPageSize(+e.target.innerText));
+  };
   return (
     <div
       className={classNames("Roures-top ", {
@@ -34,13 +42,34 @@ const RouresTop: FC<IrouresTop> = ({ className, total }) => {
           </Option>
         </Select>
       </div>
-      <Pagination defaultCurrent={1} total={total} defaultPageSize={5} />
-      {/* <div className="Roures-top__show-by show-by ">
+      {/*  */}
+      <div className="Roures-top__show-by show-by ">
         <div className="show-by__text">Показывать по : </div>
-        <div className="show-by__item active">5</div>
-        <div className="show-by__item">10</div>
-        <div className="show-by__item">20</div>
-      </div> */}
+        <div
+          className={classNames("show-by__item", {
+            active: pageSize === 5,
+          })}
+          onClick={(e) => pageSizeHandler(e)}
+        >
+          5
+        </div>
+        <div
+          className={classNames("show-by__item", {
+            active: pageSize === 10,
+          })}
+          onClick={(e) => pageSizeHandler(e)}
+        >
+          10
+        </div>
+        <div
+          className={classNames("show-by__item", {
+            active: pageSize === 20,
+          })}
+          onClick={(e) => pageSizeHandler(e)}
+        >
+          20
+        </div>
+      </div>
     </div>
   );
 };

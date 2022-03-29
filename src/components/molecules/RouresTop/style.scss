@@ -65,6 +65,7 @@
 }
 .show-by__item {
   margin-left: 10px;
+  cursor: pointer;
   &.active {
     color: #292929;
   }
