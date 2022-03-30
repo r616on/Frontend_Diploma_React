@@ -1,7 +1,8 @@
 import { put, call, takeEvery } from "redux-saga/effects";
-import { AppAPI } from "../../../api";
-import { GetLastType } from "../../../api/interfaces";
-import requestStatuses from "../../../utils/requestStatuses";
+import { AppAPI } from "../../../../api";
+import { GetLastType } from "../../../../api/interfaces";
+import requestStatuses from "../../../../utils/requestStatuses";
+
 import { actionsLast } from "./slice";
 
 export function* handelSaga(): Generator {

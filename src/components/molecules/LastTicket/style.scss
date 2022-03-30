@@ -33,6 +33,7 @@
   line-height: 23px;
   color: #292929;
   margin-bottom: 8px;
+  text-transform: capitalize;
 }
 .LastTicket__body {
   font-family: $font;
@@ -42,6 +43,7 @@
   line-height: 19px;
   color: #928f94;
   max-width: 105px;
+  text-transform: capitalize;
 }
 .LastTicket__where {
   display: flex;

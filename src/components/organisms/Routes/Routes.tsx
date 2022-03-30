@@ -4,7 +4,7 @@ import RideSettingsWidget from "../../organisms/RideSettingsWidget/RideSettingsW
 
 import RoutesList from "../../molecules/RoutesList/RoutesList";
 import Pagination from "../../molecules/Pagination/Pagination";
-import LastTicketList from "../../organisms/LastTicketList/LastTicketList";
+import LastList from "../LastList/LastList";
 import { useDispatch, useSelector } from "react-redux";
 import { AppStoreType } from "../../../store/interfaces";
 import RouresTop from "../../molecules/RouresTop/RouresTop";
@@ -28,7 +28,7 @@ function Routes() {
       <div className="row container">
         <div className="col Roures__Left">
           <RideSettingsWidget />
-          <LastTicketList className="Roures__LastTicketWidget" />
+          <LastList className="Roures__LastTicketWidget" />
         </div>
         <div className="col Roures__main Roures-main">
           <RouresTop

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { itemLastType } from "../../../api/routes/last/interfaces";
-import { IRequestStatus } from "../../../utils/requestStatuses";
+import { itemLastType } from "../interfaces";
+import { IRequestStatus } from "../../../../utils/requestStatuses";
 
 interface IinitialState {
   items: Array<itemLastType>;

@@ -9,7 +9,7 @@ import Routes from "../../organisms/Routes/Routes";
 function StepFirst() {
   const dispatch = useDispatch();
   const items = useSelector((state: AppStoreType) => state.Last.items);
-  console.log(items);
+  // console.log(items);
   useEffect(() => {}, []);
 
   return (

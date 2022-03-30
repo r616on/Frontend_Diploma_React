@@ -89,7 +89,7 @@ const RoutesItem: FC<IroutesItem> = ({ className, route }) => {
           <AdditionalServices
             className={"Train-options__AdditionalServices"}
             express={route?.is_express}
-            wiFi={route?.have_wifi}
+            wiFi={route?.departure?.have_wifi}
           />
           <Button type={"selectPlaces"} className={"Train-options__button"} />
         </div>
