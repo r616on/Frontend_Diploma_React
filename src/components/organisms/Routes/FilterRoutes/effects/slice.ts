@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { Iparameters } from "../../interfaces";
 
 const initialState: Iparameters = {
-  from_city_id: null,
-  to_city_id: null,
+  from_city_id: "6212d3c15fc56b48553d43bc",
+  to_city_id: "6212d3c15fc56b48553d43bd",
   date_start: null,
   date_end: null,
   date_start_arrival: null,
