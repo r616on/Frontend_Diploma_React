@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 // import { Link } from "react-router-dom";
 import "./style.scss";
 import IconBtn from "../../atom/IconBtn/IconBtn";
 import Slider from "../../atom/Slider/Slider";
-
-function WidgetTimeSelect({ there, back }) {
+interface IWidgetTimeSelect {
+  there?: boolean;
+  back?: boolean;
+}
+const WidgetTimeSelect: FC<IWidgetTimeSelect> = ({ there, back }) => {
   const [full, setFull] = useState(false);
   const marks = {
     0: "00:00",
     1440: "24:00",
   };
-  const tipFormatter = (val) => {
-    let hours = Math.floor(+val / 60);
-    let min = +val - hours * 60;
+  const tipFormatter = (val: string) => {
+    let hours: number | string = Math.floor(+val / 60);
+    let min: number | string = +val - hours * 60;
     if (String(hours).length === 1) {
       hours = `0${hours}`;
     }
@@ -28,7 +31,7 @@ function WidgetTimeSelect({ there, back }) {
     <div className="ThereWidget">
       <div className="ThereWidget__mini ThereWidget-mini">
         <div
-          style={back ? { transform: " rotate(180deg)" } : null}
+          style={back ? { transform: " rotate(180deg)" } : undefined}
           className="ThereWidget-mini__icon icon-arrowR"
         ></div>
         <div className="ThereWidget-mini__text">
@@ -72,6 +75,6 @@ function WidgetTimeSelect({ there, back }) {
       )}
     </div>
   );
-}
+};
 
-export default WidgetTimeSelect;
+export default React.memo(WidgetTimeSelect);

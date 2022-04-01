@@ -1,10 +1,23 @@
-import React from "react";
+import React, { FC } from "react";
 import classNames from "classnames";
 
 // import { Link } from "react-router-dom";
 import "./style.scss";
+interface IIconBtn {
+  square?: boolean;
+  circular?: boolean;
+  active?: boolean;
+  handelClick: any;
+  className?: any;
+}
 
-function IconBtn({ square, circular, active, handelClick, className }) {
+const IconBtn: FC<IIconBtn> = ({
+  square,
+  circular,
+  active,
+  handelClick,
+  className,
+}) => {
   return (
     <button
       onClick={handelClick}
@@ -16,6 +29,6 @@ function IconBtn({ square, circular, active, handelClick, className }) {
       })}
     />
   );
-}
+};
 
-export default IconBtn;
+export default React.memo(IconBtn);

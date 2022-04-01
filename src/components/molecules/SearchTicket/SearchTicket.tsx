@@ -1,12 +1,24 @@
-import React from "react";
+import React, { FC } from "react";
 // import { Link } from "react-router-dom";
 import classNames from "classnames";
 import "./style.scss";
 import Button from "../../atom/Button/Button";
 import DatePicker from "../../atom/DatePicker/DatePicker";
+import { useDispatch } from "react-redux";
+import { actionsFilterRoutes } from "../../organisms/Routes/FilterRoutes/effects/slice";
 
-function SearchTicket({ selectTrain }) {
+interface ISearchTicket {
+  selectTrain: number;
+}
+
+const SearchTicket: FC<ISearchTicket> = ({ selectTrain }) => {
   const dateFormat = "DD/MM/YYYY";
+  const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(actionsRoutes.getItems());
+  // }, [dispatch, date_start, date_end]);
+
   return (
     <div className={classNames("search-ticket", { selectTrain })}>
       <h1 className="search-ticket__title">Вся жизнь - путешествие!</h1>
@@ -25,12 +37,22 @@ function SearchTicket({ selectTrain }) {
             // className="DateWidget__date-picker"
             allowClear={false}
             format={dateFormat}
+            onChange={(date: any) => {
+              dispatch(
+                actionsFilterRoutes.setDate_start(date.format("YYYY-MM-DD"))
+              );
+            }}
           />
           <DatePicker
             className="search-ticket-form__item"
             // className="DateWidget__date-picker"
             allowClear={false}
             format={dateFormat}
+            onChange={(date: any) => {
+              dispatch(
+                actionsFilterRoutes.setDate_end(date.format("YYYY-MM-DD"))
+              );
+            }}
           />
         </div>
         <div className="search-ticket-form__button">
@@ -39,6 +61,6 @@ function SearchTicket({ selectTrain }) {
       </form>
     </div>
   );
-}
+};
 
-export default SearchTicket;
+export default React.memo(SearchTicket);

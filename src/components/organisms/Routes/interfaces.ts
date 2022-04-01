@@ -4,13 +4,13 @@ export interface Iparameters {
   to_city_id: string | null;
   // Идентификатор города, куда планируется путешествие
   date_start?: string | null;
-  // Дата отбытия туда (в формате YYYY-DD-MM; например 2030-03-01)
+  // Дата отбытия туда (в формате YYYY-MM-DD; например 2030-03-01)
   date_end?: string | null;
-  // Дата отбытия обратно (в формате YYYY-DD-MM; например 2030-03-01)
+  // Дата отбытия обратно (в формате YYYY-MM-DD; например 2030-03-01)
   date_start_arrival?: string | null;
-  // Дата прибытия туда (в формате YYYY-DD-MM; например 2030-03-01)
+  // Дата прибытия туда (в формате YYYY-MM-DD; например 2030-03-01)
   date_end_arrival?: string | null;
-  // Дата прибытия обратно (в формате YYYY-DD-MM; например 2030-03-01)
+  // Дата прибытия обратно (в формате YYYY-MM-DD; например 2030-03-01)
   have_first_class?: boolean | null;
   // Люкс
   have_second_class?: boolean | null;

@@ -21,7 +21,7 @@ const RoutesList: FC<IroutesList> = ({ className, items }) => {
           [className]: className,
         })}
       >
-        {items.length > 0 &&
+        {items?.length > 0 &&
           items.map((item) => {
             return (
               <RoutesItem key={uuidv4()} className="RoutesItem" route={item} />

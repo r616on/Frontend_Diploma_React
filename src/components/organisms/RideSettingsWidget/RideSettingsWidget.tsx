@@ -1,17 +1,24 @@
-import React from "react";
+import React, { FC } from "react";
 import DateWidget from "../../molecules/DateWidget/DateWidget";
 import OptionsWidget from "../../molecules/OptionsWidget/OptionsWidget";
 import Slider from "../../atom/Slider/Slider";
 import WidgetTimeSelect from "../../molecules/WidgetTimeSelect/WidgetTimeSelect";
 // import { Link } from "react-router-dom";
 import "./style.scss";
+import { useDispatch } from "react-redux";
+import { actionsFilterRoutes } from "../Routes/FilterRoutes/effects/slice";
 
-function RideSettingsWidget() {
+const RideSettingsWidget: FC = () => {
+  const dispatch = useDispatch();
+
   const marks = {
-    1920: "1920",
+    600: "600",
     7000: "7000",
   };
-
+  const onChangeHandler = (value: Array<number>) => {
+    dispatch(actionsFilterRoutes.setPrice_to(+value[1]));
+    dispatch(actionsFilterRoutes.setPrice_from(+value[0]));
+  };
   return (
     <section className="RideSettingsWidget">
       <div className="RideSettingsWidget__date ">
@@ -32,7 +39,7 @@ function RideSettingsWidget() {
           </div>
           <Slider
             className="Slider"
-            min={1920}
+            min={600}
             max={7000}
             range
             defaultValue={[0, 4500]}
@@ -40,6 +47,9 @@ function RideSettingsWidget() {
             // tooltipVisible={false}
             tooltipVisible
             tooltipPlacement="bottom"
+            onAfterChange={(value: Array<number>) => {
+              onChangeHandler(value);
+            }}
           />
         </div>
         <div className="end-line"></div>
@@ -53,6 +63,6 @@ function RideSettingsWidget() {
       </div>
     </section>
   );
-}
+};
 
-export default RideSettingsWidget;
+export default React.memo(RideSettingsWidget);

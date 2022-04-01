@@ -9,6 +9,7 @@ const OptionsWidget: FC = () => {
   const onChangeHandel = (checked: boolean, e: Event, reducer: Function) => {
     dispatch(reducer(checked));
   };
+
   return (
     <div className="OptionsWidget">
       <div className="OptionsWidget__row">

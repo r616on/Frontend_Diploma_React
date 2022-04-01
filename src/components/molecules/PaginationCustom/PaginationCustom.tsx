@@ -23,6 +23,7 @@ const PaginationCustom: FC<IpaginationCustom> = ({
     <section className={classNames("Pagination", { [className]: className })}>
       <Pagination
         defaultCurrent={1}
+        current={activPage}
         total={total}
         defaultPageSize={5}
         pageSize={pageSize}
@@ -32,7 +33,7 @@ const PaginationCustom: FC<IpaginationCustom> = ({
   );
 };
 
-export default PaginationCustom;
+export default React.memo(PaginationCustom);
 
 // function Pagination({ className }) {
 //   const [active, setActive] = useState(1);
