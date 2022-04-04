@@ -104,6 +104,15 @@ const FilterRoutes = createSlice({
     ) {
       state.start_departure_hour_to = action.payload;
     },
+    setStart_arrival_hour_from(
+      state,
+      action: { type: string; payload: number }
+    ) {
+      state.start_arrival_hour_from = action.payload;
+    },
+    setStart_arrival_hour_to(state, action: { type: string; payload: number }) {
+      state.start_arrival_hour_to = action.payload;
+    },
     setEnd_departure_hour_from(
       state,
       action: { type: string; payload: number }

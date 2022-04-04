@@ -28,6 +28,14 @@ function Routes() {
     date_end,
     price_from,
     price_to,
+    start_departure_hour_from,
+    start_departure_hour_to,
+    start_arrival_hour_from,
+    start_arrival_hour_to,
+    end_departure_hour_from,
+    end_departure_hour_to,
+    end_arrival_hour_from,
+    end_arrival_hour_to,
   } = useSelector((state: AppStoreType) => state.FilterRoutes);
 
   useEffect(() => {
@@ -46,6 +54,14 @@ function Routes() {
     date_end,
     price_from,
     price_to,
+    start_departure_hour_from,
+    start_departure_hour_to,
+    start_arrival_hour_from,
+    start_arrival_hour_to,
+    end_departure_hour_from,
+    end_departure_hour_to,
+    end_arrival_hour_from,
+    end_arrival_hour_to,
   ]);
 
   return (
