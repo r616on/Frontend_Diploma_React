@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 // import { Link } from "react-router-dom";
 import classNames from "classnames";
 import "./style.scss";
@@ -6,6 +6,7 @@ import Button from "../../atom/Button/Button";
 import DatePicker from "../../atom/DatePicker/DatePicker";
 import { useDispatch } from "react-redux";
 import { actionsFilterRoutes } from "../../organisms/Routes/FilterRoutes/effects/slice";
+import SearchItem from "../../atom/SearchItem/SearchItem";
 
 interface ISearchTicket {
   selectTrain: number;
@@ -20,20 +21,24 @@ const SearchTicket: FC<ISearchTicket> = ({ selectTrain }) => {
   // }, [dispatch, date_start, date_end]);
 
   return (
-    <div className={classNames("search-ticket", { selectTrain })}>
-      <h1 className="search-ticket__title">Вся жизнь - путешествие!</h1>
-      <form className="search-ticket__form search-ticket-form">
+    <div className={classNames("SearchTicket", { selectTrain })}>
+      <h1 className="SearchTicket__title">Вся жизнь - путешествие!</h1>
+      <form className="SearchTicket__form SearchTicket-form">
         <div className="row">
-          <h3 className="search-ticket-form__title">Направление</h3>
-          <input className="search-ticket-form__item" />
-          <span className="search-ticket-form__icon"></span>
-          <input className="search-ticket-form__item" />
+          <h3 className="SearchTicket-form__title">Направление</h3>
+
+          <div className="SearchTicket-form__item">
+            <SearchItem />
+          </div>
+
+          <span className="SearchTicket-form__icon"></span>
+          <input className="SearchTicket-form__item" />
         </div>
 
         <div className="row">
-          <h3 className="search-ticket-form__title">Дата</h3>
+          <h3 className="SearchTicket-form__title">Дата</h3>
           <DatePicker
-            className="search-ticket-form__item"
+            className="SearchTicket-form__item"
             // className="DateWidget__date-picker"
             allowClear={false}
             format={dateFormat}
@@ -44,7 +49,7 @@ const SearchTicket: FC<ISearchTicket> = ({ selectTrain }) => {
             }}
           />
           <DatePicker
-            className="search-ticket-form__item"
+            className="SearchTicket-form__item"
             // className="DateWidget__date-picker"
             allowClear={false}
             format={dateFormat}
@@ -55,7 +60,7 @@ const SearchTicket: FC<ISearchTicket> = ({ selectTrain }) => {
             }}
           />
         </div>
-        <div className="search-ticket-form__button">
+        <div className="SearchTicket-form__button">
           <Button type="findTickets" />
         </div>
       </form>
