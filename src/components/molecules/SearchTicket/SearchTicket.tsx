@@ -6,7 +6,7 @@ import Button from "../../atom/Button/Button";
 import DatePicker from "../../atom/DatePicker/DatePicker";
 import { useDispatch } from "react-redux";
 import { actionsFilterRoutes } from "../../organisms/Routes/FilterRoutes/effects/slice";
-import SearchItem from "../../atom/SearchItem/SearchItem";
+import SearchCity from "../../atom/SearchCity/SearchCity";
 
 interface ISearchTicket {
   selectTrain: number;
@@ -28,7 +28,7 @@ const SearchTicket: FC<ISearchTicket> = ({ selectTrain }) => {
           <h3 className="SearchTicket-form__title">Направление</h3>
 
           <div className="SearchTicket-form__item">
-            <SearchItem />
+            <SearchCity />
           </div>
 
           <span className="SearchTicket-form__icon"></span>

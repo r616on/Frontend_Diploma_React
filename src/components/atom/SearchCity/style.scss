@@ -1,17 +1,24 @@
 @import "../../../scss/config.scss";
-.Search-item {
+.SearchCity {
   width: 100%;
   height: 100%;
   position: relative;
   background: #ffffff;
-  font-family: $font;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 21px;
+
   /* identical to box height */
   color: black;
+  display: flex;
+  align-items: center;
+
   .input {
+    margin-left: 7px;
+    width: 100%;
+    font-family: $font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-transform: capitalize;
   }
   .row-City {
     position: absolute;
@@ -30,5 +37,6 @@
     font-variant: small-caps;
     text-transform: uppercase;
     padding: 7px 28px;
+    text-transform: capitalize;
   }
 }

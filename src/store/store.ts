@@ -1,6 +1,7 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 import { fork } from "redux-saga/effects";
+import { CitiesSaga, CitiesSlice } from "../components/atom/SearchCity/effects";
 import { LastSaga, LastSlice } from "../components/organisms/LastList/effects";
 import {
   RoutesSaga,
@@ -8,7 +9,6 @@ import {
 } from "../components/organisms/Routes/effects";
 import { FilterRoutesSlice } from "../components/organisms/Routes/FilterRoutes/effects";
 import AppStatus from "./AppStatusSlice";
-import { CitiesSaga, CitiesSlice } from "./Cities/effects";
 
 import { SeatsSaga, SeatsSlice } from "./Seats/effects";
 
