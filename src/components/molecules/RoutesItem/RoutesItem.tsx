@@ -91,7 +91,11 @@ const RoutesItem: FC<IroutesItem> = ({ className, route }) => {
             express={route?.is_express}
             wiFi={route?.departure?.have_wifi}
           />
-          <Button type={"selectPlaces"} className={"Train-options__button"} />
+          <Button
+            type={"selectPlaces"}
+            className={"Train-options__button"}
+            handler={() => console.log("11")}
+          />
         </div>
       </div>
     </section>

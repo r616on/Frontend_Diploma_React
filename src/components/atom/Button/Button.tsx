@@ -1,4 +1,4 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment, MouseEventHandler } from "react";
 import classNames from "classnames";
 import { v4 as uuidv4 } from "uuid";
 // import { Link } from "react-router-dom";
@@ -18,8 +18,14 @@ interface Ibutton {
   className?: any;
   type: string;
   children?: string;
+  handler: MouseEventHandler;
 }
-const Button: FC<Ibutton> = ({ type = "learnMore", className, children }) => {
+const Button: FC<Ibutton> = ({
+  type = "learnMore",
+  className,
+  children,
+  handler,
+}) => {
   return (
     <Fragment>
       {
@@ -29,6 +35,7 @@ const Button: FC<Ibutton> = ({ type = "learnMore", className, children }) => {
             return (
               <button
                 key={uuidv4()}
+                onClick={handler}
                 className={classNames("btn", {
                   [className]: className,
                   [item.type]: type,

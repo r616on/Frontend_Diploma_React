@@ -1,12 +1,14 @@
-import React, { FC, useState } from "react";
+import React, { FC, MouseEventHandler, useState } from "react";
 // import { Link } from "react-router-dom";
 import classNames from "classnames";
 import "./style.scss";
 import Button from "../../atom/Button/Button";
 import DatePicker from "../../atom/DatePicker/DatePicker";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { actionsFilterRoutes } from "../../organisms/Routes/FilterRoutes/effects/slice";
 import SearchCity from "../../atom/SearchCity/SearchCity";
+import { AppStoreType } from "../../../store/interfaces";
+import { actionsRoutes } from "../../organisms/Routes/effects/slice";
 
 interface ISearchTicket {
   selectTrain: number;
@@ -15,10 +17,16 @@ interface ISearchTicket {
 const SearchTicket: FC<ISearchTicket> = ({ selectTrain }) => {
   const dateFormat = "DD/MM/YYYY";
   const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(actionsRoutes.getItems());
-  // }, [dispatch, date_start, date_end]);
+  const { from_city_id, to_city_id } = useSelector(
+    (state: AppStoreType) => state.FilterRoutes
+  );
+  const handlerSerch: MouseEventHandler<HTMLButtonElement> = (e) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    e.preventDefault();
+    if (from_city_id && to_city_id) {
+      dispatch(actionsRoutes.getItems());
+    }
+  };
 
   return (
     <div className={classNames("SearchTicket", { selectTrain })}>
@@ -63,7 +71,7 @@ const SearchTicket: FC<ISearchTicket> = ({ selectTrain }) => {
           />
         </div>
         <div className="SearchTicket-form__button">
-          <Button type="findTickets" />
+          <Button type="findTickets" handler={handlerSerch} />
         </div>
       </form>
     </div>
