@@ -1,9 +1,8 @@
-import { put, call, takeEvery, select } from "redux-saga/effects";
+import { put, call, select, takeLatest } from "redux-saga/effects";
 import { AppAPI } from "../../../../api";
 import { GetRoutesType } from "../../../../api/interfaces";
 import { AppStoreType } from "../../../../store/interfaces";
 import requestStatuses from "../../../../utils/requestStatuses";
-import { Iparameters } from "../interfaces";
 import { actionsRoutes } from "./slice";
 
 export function* handelSaga(): Generator {
@@ -28,7 +27,7 @@ export function* handelSaga(): Generator {
 }
 
 export function* watchSaga(): Generator {
-  yield takeEvery(actionsRoutes.getItems, handelSaga);
+  yield takeLatest(actionsRoutes.getItems, handelSaga);
 }
 
 export default function* rootSaga(): Generator {

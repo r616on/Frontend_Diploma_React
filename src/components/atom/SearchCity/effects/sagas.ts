@@ -1,18 +1,26 @@
-import { put, call, takeEvery, delay, select } from "redux-saga/effects";
+import {
+  put,
+  call,
+  takeEvery,
+  delay,
+  select,
+  debounce,
+  spawn,
+  takeLatest,
+} from "redux-saga/effects";
 import { AppStoreType } from "../../../../store/interfaces";
 import { actionsCities } from "./slice";
 
 import requestStatuses from "../../../../utils/requestStatuses";
 import { AppAPI } from "../../../../api";
 
-export function* handelSaga(): Generator {
+export function* handelReqGet(): Generator {
   try {
     const params: any = yield select(
-      (state: AppStoreType) => state.Cities.searchStr
+      (state: AppStoreType) => state.Cities.searchTime
     );
     if (params !== "") {
       yield put(actionsCities.setRequestStatus(requestStatuses.loading));
-      yield delay(200);
       const items: any = yield call(AppAPI.getCities, params);
       yield put(actionsCities.setItems(items));
       yield put(actionsCities.setRequestStatus(requestStatuses.ok));
@@ -21,11 +29,18 @@ export function* handelSaga(): Generator {
     yield put(actionsCities.setRequestStatus(requestStatuses.setError));
   }
 }
+function* handleChangeSearchSaga() {
+  yield put(actionsCities.getItems());
+}
 
+function* watchChangeSearchSaga() {
+  yield debounce(300, actionsCities.changeSearchField, handleChangeSearchSaga);
+}
 export function* watchSaga(): Generator {
-  yield takeEvery(actionsCities.getItems, handelSaga);
+  yield takeLatest(actionsCities.getItems, handelReqGet);
 }
 
 export default function* rootSaga(): Generator {
-  yield watchSaga();
+  yield spawn(watchSaga);
+  yield spawn(watchChangeSearchSaga);
 }

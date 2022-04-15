@@ -5,10 +5,14 @@ import { IRequestStatus } from "../../../../utils/requestStatuses";
 interface IinitialState {
   items: Array<IitemCities>;
   requestStatus: IRequestStatus;
-  searchStr: string;
+  searchTime: string;
+  from: string;
+  to: string;
 }
 const initialState: IinitialState = {
-  searchStr: "",
+  from: "",
+  to: "",
+  searchTime: "",
   items: [],
   requestStatus: {
     loading: false,
@@ -21,8 +25,15 @@ const Cities = createSlice({
   name: "Cities",
   initialState: initialState,
   reducers: {
-    getItems(state, action: { type: string; payload: string }) {
-      state.searchStr = action.payload;
+    changeSearchField(state, action: { type: string; payload: string }) {
+      state.searchTime = action.payload;
+    },
+    getItems() {},
+    setFrom(state, action: { type: string; payload: string }) {
+      state.from = action.payload;
+    },
+    setTo(state, action: { type: string; payload: string }) {
+      state.to = action.payload;
     },
     setItems(state, action: { type: string; payload: Array<IitemCities> }) {
       state.items = action.payload;

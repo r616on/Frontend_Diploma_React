@@ -28,11 +28,13 @@ const SearchTicket: FC<ISearchTicket> = ({ selectTrain }) => {
           <h3 className="SearchTicket-form__title">Направление</h3>
 
           <div className="SearchTicket-form__item">
-            <SearchCity />
+            <SearchCity cityFrom />
           </div>
 
           <span className="SearchTicket-form__icon"></span>
-          <input className="SearchTicket-form__item" />
+          <div className="SearchTicket-form__item">
+            <SearchCity cityTo />
+          </div>
         </div>
 
         <div className="row">

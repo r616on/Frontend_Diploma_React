@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
-import { fork } from "redux-saga/effects";
+import { spawn } from "redux-saga/effects";
 import { CitiesSaga, CitiesSlice } from "../components/atom/SearchCity/effects";
 import { LastSaga, LastSlice } from "../components/organisms/LastList/effects";
 import {
@@ -22,10 +22,10 @@ export const rootReducer = combineReducers({
 });
 
 function* rootSaga(): Generator {
-  yield fork(CitiesSaga);
-  yield fork(LastSaga);
-  yield fork(RoutesSaga);
-  yield fork(SeatsSaga);
+  yield spawn(CitiesSaga);
+  yield spawn(LastSaga);
+  yield spawn(RoutesSaga);
+  yield spawn(SeatsSaga);
 }
 const sagaMiddleware = createSagaMiddleware();
 
