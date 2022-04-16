@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import "./style.scss";
 import RideSettingsWidget from "../../organisms/RideSettingsWidget/RideSettingsWidget";
 import RoutesList from "../../molecules/RoutesList/RoutesList";
@@ -9,11 +9,11 @@ import RouresTop from "../../molecules/RouresTop/RouresTop";
 import { actionsRoutes } from "./effects/slice";
 import PaginationCustom from "../../molecules/PaginationCustom/PaginationCustom";
 
-function Routes() {
+const Routes: FC = () => {
   const dispatch = useDispatch();
   const items = useSelector((state: AppStoreType) => state.Routes.items);
   // const ofset = useSelector((state: AppStoreType) => state.FilterRoutes.offset);
-  // console.log(ofset);
+  console.log(items);
   const { total_count } = useSelector((state: AppStoreType) => state.Routes);
   const {
     limit,
@@ -87,6 +87,6 @@ function Routes() {
       </div>
     </div>
   );
-}
+};
 
-export default Routes;
+export default React.memo(Routes);

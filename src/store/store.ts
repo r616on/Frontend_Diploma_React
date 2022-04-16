@@ -8,9 +8,12 @@ import {
   RoutesSlice,
 } from "../components/organisms/Routes/effects";
 import { FilterRoutesSlice } from "../components/organisms/Routes/FilterRoutes/effects";
+import {
+  SeatsSaga,
+  SeatsSlice,
+} from "../components/pages/LocationSelectPage/effects";
+import { FilterSeatsSlice } from "../components/pages/LocationSelectPage/FilterSeats/effects";
 import AppStatus from "./AppStatusSlice";
-
-import { SeatsSaga, SeatsSlice } from "./Seats/effects";
 
 export const rootReducer = combineReducers({
   AppStatus,
@@ -19,6 +22,7 @@ export const rootReducer = combineReducers({
   Routes: RoutesSlice,
   Seats: SeatsSlice,
   FilterRoutes: FilterRoutesSlice,
+  FilterSeats: FilterSeatsSlice,
 });
 
 function* rootSaga(): Generator {

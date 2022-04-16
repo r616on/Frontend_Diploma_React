@@ -40,10 +40,12 @@ const SearchCity: FC<ISearchItem> = ({ cityFrom, cityTo }) => {
     if (cityFrom) {
       dispatch(actionsCities.setFrom(value));
       dispatch(actionsFilterRoutes.setFrom_city_id(id));
+      dispatch(actionsCities.changeSearchField(""));
       dispatch(actionsCities.setItems([]));
     } else if (cityTo) {
       dispatch(actionsCities.setTo(value));
       dispatch(actionsFilterRoutes.setTo_city_id(id));
+      dispatch(actionsCities.changeSearchField(""));
       dispatch(actionsCities.setItems([]));
     }
   };

@@ -1,10 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 
 import "./style.scss";
 import ItemTimetablele from "../../atom/ItemTimetablele/ItemTimetableIe";
 import Wagon from "../../molecules/Wagon/Wagon";
+import { useSelector } from "react-redux";
+import { AppStoreType } from "../../../store/interfaces";
+import { itemSeatsType } from "../../../api/routes/id/seats/interfaces";
 
-function ChairSelect() {
+const LocationSelect: FC = () => {
+  const items: Array<itemSeatsType> = useSelector(
+    (state: AppStoreType) => state.Seats.items
+  );
   return (
     <div className="ChairSelect">
       <div className="ChairSelect__title">Выбор мест </div>
@@ -32,14 +38,14 @@ function ChairSelect() {
           <div className="ChairSelect-ticket__row-time-table">
             <ItemTimetablele
               className={"ChairSelect-ticket__item-time-table"}
-              time={"00:10"}
+              time={12233445}
               city={"Москва"}
               railway={"Курский вокзал"}
             />
             <div className="ChairSelect-ticket__arrow icon-arrowR"></div>
             <ItemTimetablele
               className={"ChairSelect-ticket__item-time-table"}
-              time={"09:52"}
+              time={12233445}
               city={"Санкт-Петербург"}
               railway={"Ладожский вокзал"}
             />
@@ -90,6 +96,6 @@ function ChairSelect() {
       </div>
     </div>
   );
-}
+};
 
-export default ChairSelect;
+export default React.memo(LocationSelect);

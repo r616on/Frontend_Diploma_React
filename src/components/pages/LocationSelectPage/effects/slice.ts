@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { itemSeatsType } from "../../../api/routes/id/seats/interfaces";
-import { IRequestStatus } from "../../../utils/requestStatuses";
+import { itemSeatsType } from "../../../../api/routes/id/seats/interfaces";
+import { IRequestStatus } from "../../../../utils/requestStatuses";
 
 interface IinitialState {
   items: Array<itemSeatsType>;

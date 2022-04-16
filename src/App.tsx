@@ -6,6 +6,7 @@ import store from "./store/store";
 //import PassengersPages from "./components/pages/PassengersPages/PassengersPages";
 // import Index from "./components/pages/Index/Index";
 import StepFirst from "./components/pages/StepFirst/StepFirst";
+import LocationSelectPage from "./components/pages/LocationSelectPage/LocationSelectPage";
 
 const App: FC = () => {
   return (
@@ -18,7 +19,8 @@ const App: FC = () => {
               <Route path="/cart" element={<CartPage />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/about" element={<About />} /> */}
-            <Route path="/" element={<StepFirst />} />
+            {/* <Route path="/" element={<StepFirst />} /> */}
+            <Route path="/" element={<LocationSelectPage />} />
             {/* <Route path="/404" element={<NotFound />} />
               <Route path="*" element={<Navigate replace to="/404" />} /> */}
           </Routes>

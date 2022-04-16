@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import classNames from "classnames";
 import "./style.scss";
 interface IitemTimetablele {
-  time: number | undefined | string;
+  time: number | undefined;
   city: string | undefined;
   railway: string | undefined;
   className?: any;

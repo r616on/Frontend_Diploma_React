@@ -7,9 +7,7 @@ import { actionsRoutes } from "./slice";
 
 export function* handelSaga(): Generator {
   try {
-    const filterObj: any = yield select(
-      (state: AppStoreType) => state.FilterRoutes
-    );
+    const filterObj: any = select((state: AppStoreType) => state.FilterRoutes);
     const respParams: any = {};
     for (let key in filterObj) {
       if (filterObj[key] !== null) {
