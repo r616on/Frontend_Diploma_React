@@ -1,7 +1,7 @@
 @import "../../../scss/config.scss";
-.ChairSelect {
+.LocationSelect {
 }
-.ChairSelect__title {
+.LocationSelect__title {
   font-family: $font;
   font-style: normal;
   font-weight: 500;
@@ -12,15 +12,15 @@
   color: #292929;
   margin-bottom: 62px;
 }
-.ChairSelect__row {
+.LocationSelect__row {
   background: #ffffff;
   border: 1px solid #c4c4c4;
   box-sizing: border-box;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
-.ChairSelect__top {
+.LocationSelect__top {
 }
-.ChairSelect-top {
+.LocationSelect-top {
   height: 128px;
   display: flex;
   justify-content: flex-start;
@@ -28,7 +28,7 @@
   padding-left: 19px;
   padding-right: 19px;
 }
-.ChairSelect-top__icon {
+.LocationSelect-top__icon {
   width: 76px;
   height: 60px;
   background: $primary;
@@ -42,7 +42,7 @@
     color: white;
   }
 }
-.ChairSelect-top__another-train {
+.LocationSelect-top__another-train {
   font-family: $font;
   font-style: normal;
   font-weight: bold;
@@ -61,14 +61,16 @@
   justify-content: center;
   align-items: center;
 }
-.ChairSelect__ticket {
+.LocationSelect__ticket {
 }
-.ChairSelect-ticket {
+.LocationSelect-ticket {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 127px;
 }
-.ChairSelect-ticket__train-info {
+.LocationSelect-ticket__train-info {
+  height: 100%;
 }
 .train-info {
   display: flex;
@@ -77,6 +79,7 @@
   padding-top: 17px;
   padding-bottom: 17px;
   padding-right: 20px;
+  text-transform: capitalize;
 }
 .train-info__icon {
   margin-left: 35px;
@@ -133,7 +136,7 @@
 
 .train-info__finish {
 }
-.ChairSelect-ticket__row-time-table {
+.LocationSelect-ticket__row-time-table {
   flex: 1 1 auto;
   margin-left: 2px;
   margin-right: 2px;
@@ -144,10 +147,10 @@
   align-items: center;
   // padding-top: 28px;
   // padding-bottom: 28px;
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
-.ChairSelect-ticket__item-time-table {
+.LocationSelect-ticket__item-time-table {
   &.timetable__item {
   }
   .timetable__time {
@@ -178,13 +181,13 @@
   }
 }
 
-.ChairSelect-ticket__arrow {
+.LocationSelect-ticket__arrow {
   &.icon-arrowR {
     font-size: 30px;
     color: rgba(255, 168, 0, 0.79);
   }
 }
-.ChairSelect-ticket__length {
+.LocationSelect-ticket__length {
 }
 .length {
   max-width: 237px;
@@ -220,12 +223,15 @@
 }
 .length__minutes {
 }
-.ChairSelect__numberOfTickets {
+.LocationSelect__numberOfTickets {
 }
-.ChairSelect-number-of-tickets {
+.LocationSelect-number-of-tickets {
   border-bottom: 1px dashed #c4c4c4;
 }
-.ChairSelect-number-of-tickets__title {
+.LocationSelect-ticket__item-time-table {
+  max-width: 145px !important;
+}
+.LocationSelect-number-of-tickets__title {
   font-family: $font;
   font-style: normal;
   font-weight: bold;
@@ -236,11 +242,11 @@
   margin-left: 19px;
   margin-bottom: 13px;
 }
-.ChairSelect-number-of-tickets__row {
+.LocationSelect-number-of-tickets__row {
   display: flex;
   margin-bottom: 49px;
 }
-.ChairSelect-number-of-tickets__item {
+.LocationSelect-number-of-tickets__item {
   width: 33.33%;
   &.item {
     height: 192px;
@@ -288,9 +294,9 @@
     color: #000000;
   }
 }
-.ChairSelect__wagonType {
+.LocationSelect__wagonType {
 }
-.ChairSelect-wagon-type {
+.LocationSelect-wagon-type {
   .item {
     display: flex;
     flex-direction: column;
@@ -340,7 +346,7 @@
     }
   }
 }
-.ChairSelect-wagon-type__title {
+.LocationSelect-wagon-type__title {
   font-family: $font;
   font-style: normal;
   font-weight: bold;
@@ -352,12 +358,12 @@
   margin-left: 20px;
   margin-bottom: 25px;
 }
-.ChairSelect-wagon-type__row {
+.LocationSelect-wagon-type__row {
   display: flex;
   padding-left: 35px;
   padding-right: 144px;
   justify-content: space-between;
   margin-bottom: 26px;
 }
-.ChairSelect__Wagon {
+.LocationSelect__Wagon {
 }

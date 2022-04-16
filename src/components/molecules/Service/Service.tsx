@@ -1,10 +1,14 @@
-import React from "react";
+import React, { FC, useRef } from "react";
 import classNames from "classnames";
 import { Tooltip } from "antd";
-
 import "./style.scss";
 
-function Service({ className }) {
+import { itemSeatsType } from "../../../api/routes/id/seats/interfaces";
+interface IService {
+  className?: any;
+}
+
+const Service: FC<IService> = ({ className }) => {
   return (
     <section
       className={classNames("Service", {
@@ -17,14 +21,16 @@ function Service({ className }) {
           title="Кондиционер"
           placement="bottom"
           overlayClassName="owerlay-Service"
-          getPopupContainer={() => document.querySelector(".Service")}
+          // @ts-ignore: Unreachable code error
+          getPopupContainer={document.querySelector(".Service")}
         >
-          <div className="Service__item icon-conditioner"></div>
+          <div className="Service__item icon-conditioner inactive"></div>
         </Tooltip>
         <Tooltip
           title="WI-FI"
           placement="bottom"
           overlayClassName="owerlay-Service"
+          // @ts-ignore: Unreachable code error
           getPopupContainer={() => document.querySelector(".Service")}
         >
           <div className="Service__item icon-wiFi inactive"></div>
@@ -33,15 +39,17 @@ function Service({ className }) {
           title="Белье"
           placement="bottom"
           overlayClassName="owerlay-Service"
+          // @ts-ignore: Unreachable code error
           getPopupContainer={() => document.querySelector(".Service")}
         >
-          <div className="Service__item icon-cash"></div>
+          <div className="Service__item icon-cash inactive"></div>
         </Tooltip>
 
         <Tooltip
           title="Питание"
           placement="bottom"
           overlayClassName="owerlay-Service"
+          // @ts-ignore: Unreachable code error
           getPopupContainer={() => document.querySelector(".Service")}
         >
           <div className="Service__item icon-coffee active"></div>
@@ -49,6 +57,6 @@ function Service({ className }) {
       </div>
     </section>
   );
-}
+};
 
 export default Service;

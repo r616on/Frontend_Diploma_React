@@ -7,12 +7,20 @@ import ItemTimetablele from "../../atom/ItemTimetablele/ItemTimetableIe";
 import WagonTypeList from "../WagonTypeList/WagonTypeList";
 import "./style.scss";
 import { IitemRoutes } from "../../organisms/Routes/interfaces";
+import { useDispatch } from "react-redux";
+import { actionCurrentUserData } from "../../../store/CurrentUserData";
 interface IroutesItem {
   className?: any;
   route: IitemRoutes;
 }
 
 const RoutesItem: FC<IroutesItem> = ({ className, route }) => {
+  const dispatch = useDispatch();
+  const handlerOnClick = (e: any) => {
+    e.preventDefault();
+    console.log(route);
+    dispatch(actionCurrentUserData.setRoute(route));
+  };
   return (
     <section
       className={classNames("RoutesItem", {
@@ -94,7 +102,7 @@ const RoutesItem: FC<IroutesItem> = ({ className, route }) => {
           <Button
             type={"selectPlaces"}
             className={"Train-options__button"}
-            handler={() => console.log("11")}
+            handler={handlerOnClick}
           />
         </div>
       </div>

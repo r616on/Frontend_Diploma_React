@@ -61,6 +61,11 @@ export interface IitemRoutes {
   have_air_conditioning?: boolean;
   is_express?: boolean;
   min_price?: number;
+  available_seats?: number;
+  available_seats_info?: {
+    second: number;
+    third: number;
+  };
   arrival?: {
     _id?: string;
     have_first_class?: boolean;
@@ -134,12 +139,13 @@ export interface IitemRoutes {
   };
   departure?: {
     _id?: string;
-    have_first_class?: false;
-    have_second_class?: false;
-    have_third_class?: false;
-    have_fourth_class?: false;
-    have_wifi?: false;
-    have_air_conditioning?: false;
+    have_first_class?: boolean;
+    have_second_class?: boolean;
+    have_third_class?: boolean;
+    have_fourth_class?: boolean;
+    have_wifi?: boolean;
+    have_air_conditioning?: boolean;
+    is_express?: boolean;
     train?: {
       _id?: string;
       name?: string;

@@ -13,7 +13,7 @@ const LocationSelectPage: FC = () => {
   const dispatch = useDispatch();
   const items = useSelector((state: AppStoreType) => state.Seats.items);
   // const ofset = useSelector((state: AppStoreType) => state.FilterRoutes.offset);
-  // console.log(ofset);
+  console.log(items);
   const {
     id,
     have_first_class,

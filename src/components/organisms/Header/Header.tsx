@@ -9,7 +9,7 @@ import { AppStoreType } from "../../../store/interfaces";
 
 interface Iprops {}
 const Header: FC<Iprops> = () => {
-  const step = useSelector((state: AppStoreType) => state.AppStatus.step);
+  const step = useSelector((state: AppStoreType) => state.CurrentUserData.step);
   return (
     <header className={classNames("header", { selectTrain: step })}>
       <div className="header__logo ">

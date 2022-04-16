@@ -1,90 +1,107 @@
 import React, { FC } from "react";
-
+import { format } from "date-fns";
 import "./style.scss";
 import ItemTimetablele from "../../atom/ItemTimetablele/ItemTimetableIe";
 import Wagon from "../../molecules/Wagon/Wagon";
 import { useSelector } from "react-redux";
 import { AppStoreType } from "../../../store/interfaces";
 import { itemSeatsType } from "../../../api/routes/id/seats/interfaces";
+import { IitemRoutes } from "../Routes/interfaces";
 
 const LocationSelect: FC = () => {
+  const routeCurrent: IitemRoutes = useSelector(
+    (state: AppStoreType) => state.CurrentUserData.route
+  );
   const items: Array<itemSeatsType> = useSelector(
     (state: AppStoreType) => state.Seats.items
   );
+  console.log(items);
   return (
-    <div className="ChairSelect">
-      <div className="ChairSelect__title">Выбор мест </div>
-      <div className="ChairSelect__row">
-        <div className="ChairSelect__top ChairSelect-top">
-          <div className="ChairSelect-top__icon icon-arrowR"></div>
-          <div className="ChairSelect-top__another-train">
+    <div className="LocationSelect">
+      <div className="LocationSelect__title">Выбор мест </div>
+      <div className="LocationSelect__row">
+        <div className="LocationSelect__top LocationSelect-top">
+          <div className="LocationSelect-top__icon icon-arrowR"></div>
+          <div className="LocationSelect-top__another-train">
             Выбрать другой поезд
           </div>
         </div>
-        <div className="ChairSelect__ticket ChairSelect-ticket">
-          <div className="ChairSelect-ticket__train-info train-info">
+        <div className="LocationSelect__ticket LocationSelect-ticket">
+          <div className="LocationSelect-ticket__train-info train-info">
             <div className="train-info__icon icon-trainIcon"></div>
             <ul className="train-info__list">
-              <li className="train-info__item  train-info__number">11bC</li>
-              <li className="train-info__item  train-info__where icon-arrowRMini">
-                Адлер
+              <li className="train-info__item  train-info__number">
+                {routeCurrent.departure?.train?.name}
               </li>
-              <li className="train-info__item icon-arrowRMini">Москва</li>
+              <li className="train-info__item  train-info__where icon-arrowRMini">
+                {routeCurrent.departure?.from?.city?.name}
+              </li>
+
               <li className="train-info__item train-info__finish">
-                Санкт-Петербург
+                {routeCurrent.departure?.to?.city?.name}
               </li>
             </ul>
           </div>
-          <div className="ChairSelect-ticket__row-time-table">
+          <div className="LocationSelect-ticket__row-time-table">
             <ItemTimetablele
-              className={"ChairSelect-ticket__item-time-table"}
-              time={12233445}
-              city={"Москва"}
-              railway={"Курский вокзал"}
+              className={"LocationSelect-ticket__item-time-table"}
+              time={routeCurrent.departure?.from?.datetime}
+              city={routeCurrent.departure?.from?.city?.name}
+              railway={routeCurrent.departure?.from?.railway_station_name}
             />
-            <div className="ChairSelect-ticket__arrow icon-arrowR"></div>
+            <div className="LocationSelect-ticket__arrow icon-arrowR"></div>
             <ItemTimetablele
-              className={"ChairSelect-ticket__item-time-table"}
-              time={12233445}
-              city={"Санкт-Петербург"}
-              railway={"Ладожский вокзал"}
+              className={"LocationSelect-ticket__item-time-table"}
+              time={routeCurrent.departure?.to?.datetime}
+              city={routeCurrent.departure?.to?.city?.name}
+              railway={routeCurrent.departure?.to?.railway_station_name}
             />
           </div>
-          <div className="ChairSelect-ticket__length length">
+          <div className="LocationSelect-ticket__length length">
             <div className="length__icon"></div>
             <div className="length__list">
-              <div className="length__hour">9 часов</div>
-              <div className="length__minutes">42 минуты</div>
+              <div className="length__hour">
+                {` ${format(
+                  new Date(+`${routeCurrent.departure?.duration}000`),
+                  "HH"
+                )}  часов`}
+              </div>
+              <div className="length__minutes">
+                {` ${format(
+                  new Date(+`${routeCurrent.departure?.duration}000`),
+                  "mm"
+                )}  минут`}
+              </div>
             </div>
           </div>
         </div>
-        <div className="ChairSelect__numberOfTickets ChairSelect-number-of-tickets">
-          <div className="ChairSelect-number-of-tickets__title">
+        <div className="LocationSelect__numberOfTickets LocationSelect-number-of-tickets">
+          <div className="LocationSelect-number-of-tickets__title">
             Количество билетов
           </div>
-          <div className="ChairSelect-number-of-tickets__row">
-            <div className="ChairSelect-number-of-tickets__item item adult">
+          <div className="LocationSelect-number-of-tickets__row">
+            <div className="LocationSelect-number-of-tickets__item item adult">
               <div className="item__count"> Взрослых - 2</div>
               <div className="item__description">
                 Можно добавить еще 3 пассажиров
               </div>
             </div>
-            <div className="ChairSelect-number-of-tickets__item item children">
+            <div className="LocationSelect-number-of-tickets__item item children">
               <div className="item__count"> Детских - 1</div>
               <div className="item__description">
                 Можно добавить еще 3 детей до 10 лет.Свое место в вагоне, как у
                 взрослых, но дешевле в среднем на 50-65%
               </div>
             </div>
-            <div className="ChairSelect-number-of-tickets__item item">
+            <div className="LocationSelect-number-of-tickets__item item">
               <div className="item__count"> Детских «без места» - 0</div>
               <div className="item__description"></div>
             </div>
           </div>
         </div>
-        <div className="ChairSelect__wagonType ChairSelect-wagon-type">
-          <div className="ChairSelect-wagon-type__title">Тип вагона</div>
-          <div className="ChairSelect-wagon-type__row">
+        <div className="LocationSelect__wagonType LocationSelect-wagon-type">
+          <div className="LocationSelect-wagon-type__title">Тип вагона</div>
+          <div className="LocationSelect-wagon-type__row">
             <div className="item sedentart">Сидячий</div>
             <div className="item reservedSeat">Плацкарт</div>
             <div className="item coupe">Купе</div>
@@ -92,7 +109,9 @@ const LocationSelect: FC = () => {
           </div>
         </div>
 
-        <Wagon className="ChairSelect__Wagon" />
+        {items.map((item) => {
+          return <Wagon className="LocationSelect__Wagon" coach={item} />;
+        })}
       </div>
     </div>
   );
