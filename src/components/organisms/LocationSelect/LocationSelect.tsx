@@ -117,7 +117,7 @@ const LocationSelect: FC = () => {
               onClick={() => handelClassType("fourth")}
             >
               <Fourth fill={classType === "fourth" ? "#ffa800" : "#C4C4C4"} />
-              Сидячий
+              <span className="text">Сидячий</span>
             </div>
             <div
               className={classNames("item", {
@@ -126,7 +126,7 @@ const LocationSelect: FC = () => {
               onClick={() => handelClassType("third")}
             >
               <Third fill={classType === "third" ? "#ffa800" : "#C4C4C4"} />
-              Плацкарт
+              <span className="text">Плацкарт</span>
             </div>
             <div
               className={classNames("item", {
@@ -135,7 +135,7 @@ const LocationSelect: FC = () => {
               onClick={() => handelClassType("second")}
             >
               <Second fill={classType === "second" ? "#ffa800" : "#C4C4C4"} />
-              Купе
+              <span className="text">Купе</span>
             </div>
             <div
               className={classNames("item", {
@@ -144,7 +144,7 @@ const LocationSelect: FC = () => {
               onClick={() => handelClassType("first")}
             >
               <First fill={classType === "first" ? "#ffa800" : "#C4C4C4"} />
-              Люкс
+              <span className="text">Люкс</span>
             </div>
           </div>
         </div>

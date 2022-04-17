@@ -306,9 +306,11 @@
     font-weight: normal;
     font-size: 24px;
     line-height: 28px;
-
     color: #928f94;
     cursor: pointer;
+    .text {
+      margin-top: 18px;
+    }
     &.active {
       color: #ffa800;
     }
