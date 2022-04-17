@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { format } from "date-fns";
 import "./style.scss";
 import ItemTimetablele from "../../atom/ItemTimetablele/ItemTimetableIe";
@@ -7,15 +7,23 @@ import { useSelector } from "react-redux";
 import { AppStoreType } from "../../../store/interfaces";
 import { itemSeatsType } from "../../../api/routes/id/seats/interfaces";
 import { IitemRoutes } from "../Routes/interfaces";
+import classNames from "classnames";
+import Icon from "../../icon";
 
 const LocationSelect: FC = () => {
+  const { First, Fourth, Second, Third } = Icon;
+  const [classType, setclassType] = useState("");
+  console.log(classType);
   const routeCurrent: IitemRoutes = useSelector(
     (state: AppStoreType) => state.CurrentUserData.route
   );
   const items: Array<itemSeatsType> = useSelector(
     (state: AppStoreType) => state.Seats.items
   );
-  console.log(items);
+  const handelClassType = (str: string) => {
+    setclassType(str);
+  };
+
   return (
     <div className="LocationSelect">
       <div className="LocationSelect__title">Выбор мест </div>
@@ -102,10 +110,42 @@ const LocationSelect: FC = () => {
         <div className="LocationSelect__wagonType LocationSelect-wagon-type">
           <div className="LocationSelect-wagon-type__title">Тип вагона</div>
           <div className="LocationSelect-wagon-type__row">
-            <div className="item sedentart">Сидячий</div>
-            <div className="item reservedSeat">Плацкарт</div>
-            <div className="item coupe">Купе</div>
-            <div className="item luxury">Люкс</div>
+            <div
+              className={classNames("item", {
+                active: classType === "fourth",
+              })}
+              onClick={() => handelClassType("fourth")}
+            >
+              <Fourth fill={classType === "fourth" ? "#ffa800" : "#C4C4C4"} />
+              Сидячий
+            </div>
+            <div
+              className={classNames("item", {
+                active: classType === "third",
+              })}
+              onClick={() => handelClassType("third")}
+            >
+              <Third fill={classType === "third" ? "#ffa800" : "#C4C4C4"} />
+              Плацкарт
+            </div>
+            <div
+              className={classNames("item", {
+                active: classType === "second",
+              })}
+              onClick={() => handelClassType("second")}
+            >
+              <Second fill={classType === "second" ? "#ffa800" : "#C4C4C4"} />
+              Купе
+            </div>
+            <div
+              className={classNames("item", {
+                active: classType === "first",
+              })}
+              onClick={() => handelClassType("first")}
+            >
+              <First fill={classType === "first" ? "#ffa800" : "#C4C4C4"} />
+              Люкс
+            </div>
           </div>
         </div>
 

@@ -309,42 +309,22 @@
 
     color: #928f94;
     cursor: pointer;
-    &:hover {
-      color: $primary;
+    &.active {
+      color: #ffa800;
     }
+    // &:hover {
+    //   color: $primary;
+    // }
   }
-  .sedentart {
-    &::before {
-      content: url("./img/wagonType/sedentary.svg");
-      width: 30.43px;
-      height: 50px;
-      margin-bottom: 18px;
-    }
-  }
-  .reservedSeat {
-    &::before {
-      content: url("./img/wagonType/reservedSeat.svg");
-      width: 50px;
-      height: 50px;
-      margin-bottom: 18px;
-    }
-  }
-  .coupe {
-    &::before {
-      content: url("./img/wagonType/coupe.svg");
-      width: 50px;
-      height: 50px;
-      margin-bottom: 18px;
-    }
-  }
-  .luxury {
-    &::before {
-      content: url("./img/wagonType/luxury.svg");
-      width: 56.45px;
-      height: 50px;
-      margin-bottom: 18px;
-    }
-  }
+
+  // .coupe {
+  //   &::before {
+  //     content: url("./img/wagonType/coupe.svg");
+  //     width: 50px;
+  //     height: 50px;
+  //     margin-bottom: 18px;
+  //   }
+  // }
 }
 .LocationSelect-wagon-type__title {
   font-family: $font;

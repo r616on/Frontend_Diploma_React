@@ -56,7 +56,7 @@ const Wagon: FC<IWagon> = ({ className, coach }) => {
             </div>
           </div>
         </div>
-        <Service className="Wagon-info__service" />
+        <Service className="Wagon-info__service" coach={coach.coach} />
       </div>
       <Scheme className="Wagon__scheme" />
     </section>

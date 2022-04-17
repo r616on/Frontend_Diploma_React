@@ -3,12 +3,13 @@ import classNames from "classnames";
 import { Tooltip } from "antd";
 import "./style.scss";
 
-import { itemSeatsType } from "../../../api/routes/id/seats/interfaces";
+import { Icoach } from "../../../api/routes/id/seats/interfaces";
 interface IService {
   className?: any;
+  coach: Icoach;
 }
 
-const Service: FC<IService> = ({ className }) => {
+const Service: FC<IService> = ({ className, coach }) => {
   return (
     <section
       className={classNames("Service", {
@@ -24,8 +25,13 @@ const Service: FC<IService> = ({ className }) => {
           // @ts-ignore: Unreachable code error
           getPopupContainer={document.querySelector(".Service")}
         >
-          <div className="Service__item icon-conditioner inactive"></div>
+          <div
+            className={classNames("Service__item icon-conditioner", {
+              inactive: coach.have_air_conditioning,
+            })}
+          ></div>
         </Tooltip>
+
         <Tooltip
           title="WI-FI"
           placement="bottom"
@@ -33,7 +39,11 @@ const Service: FC<IService> = ({ className }) => {
           // @ts-ignore: Unreachable code error
           getPopupContainer={() => document.querySelector(".Service")}
         >
-          <div className="Service__item icon-wiFi inactive"></div>
+          <div
+            className={classNames("Service__item icon-wiFi", {
+              inactive: coach.have_wifi,
+            })}
+          ></div>
         </Tooltip>
         <Tooltip
           title="Белье"
@@ -42,7 +52,11 @@ const Service: FC<IService> = ({ className }) => {
           // @ts-ignore: Unreachable code error
           getPopupContainer={() => document.querySelector(".Service")}
         >
-          <div className="Service__item icon-cash inactive"></div>
+          <div
+            className={classNames("Service__item icon-cash", {
+              inactive: coach.is_linens_included,
+            })}
+          ></div>
         </Tooltip>
 
         <Tooltip
@@ -52,7 +66,7 @@ const Service: FC<IService> = ({ className }) => {
           // @ts-ignore: Unreachable code error
           getPopupContainer={() => document.querySelector(".Service")}
         >
-          <div className="Service__item icon-coffee active"></div>
+          <div className={classNames("Service__item icon-coffee")}></div>
         </Tooltip>
       </div>
     </section>
