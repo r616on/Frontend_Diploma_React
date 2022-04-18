@@ -11,7 +11,7 @@ import classNames from "classnames";
 import Icon from "../../icon";
 
 const LocationSelect: FC = () => {
-  const { First, Fourth, Second, Third } = Icon;
+  const { First, Fourth, Second, Third } = Icon.wagonType;
   const [classType, setclassType] = useState("");
   console.log(classType);
   const routeCurrent: IitemRoutes = useSelector(

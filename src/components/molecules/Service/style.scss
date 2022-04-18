@@ -47,38 +47,12 @@
   align-items: center;
   width: 36px;
   height: 35px;
-  border: 1px solid #292929;
-  border-radius: 5px;
+  // border: 1px solid #292929;
+  // border-radius: 5px;
   font-size: 19px;
   margin-right: 12px;
   cursor: pointer;
   &:last-child {
     margin-right: 0;
-  }
-  &.active {
-    border: none;
-    background: rgba(255, 168, 0, 0.79);
-    color: white;
-  }
-  &:hover {
-    background: rgba(255, 168, 0, 0.79);
-  }
-  &.inactive {
-    background: #fcdc9d;
-    border: none;
-    color: #928f94;
-    cursor: default;
-  }
-  &.icon-conditioner {
-    //font-size: 19.89px;
-  }
-  &.icon-wiFi {
-    //font-size: 18.95px;
-  }
-  &.icon-cash {
-    // font-size: 20.84px;
-  }
-  &.icon-coffee {
-    // font-size: 17.08px;
   }
 }
