@@ -1,24 +1,14 @@
 import React, { FC } from "react";
+import { IiconService } from "./interfaces";
 
-interface Iicon {
-  width?: number;
-  height?: number;
-  fill?: string;
-  background?: string;
-  border?: string;
-  inactive?: boolean;
-  selected?: boolean;
-  hover?: boolean;
-}
-
-const Coffee: FC<Iicon> = ({
+const Coffee: FC<IiconService> = ({
   width,
   height,
   fill,
   background,
   border,
   inactive,
-  selected,
+  active,
   hover,
 }) => {
   if (inactive) {
@@ -26,15 +16,17 @@ const Coffee: FC<Iicon> = ({
     background = "#FCDC9D";
     border = "#FCDC9D";
   }
-  if (selected) {
-    fill = "#F4F2F6";
-    background = "#FDB935";
-    border = "#FDB935";
-  }
-  if (hover) {
-    fill = "#292929";
-    background = "#FFA800";
-    border = "#292929";
+  if (!inactive) {
+    if (active) {
+      fill = "#F4F2F6";
+      background = "#FDB935";
+      border = "#FDB935";
+    }
+    if (hover) {
+      fill = "#292929";
+      background = "#FFA800";
+      border = "#292929";
+    }
   }
   return (
     <svg

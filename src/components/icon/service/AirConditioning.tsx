@@ -1,20 +1,33 @@
 import React, { FC } from "react";
+import { IiconService } from "./interfaces";
 
-interface Iicon {
-  width?: number;
-  height?: number;
-  fill?: string;
-  background?: string;
-  border?: string;
-}
-
-const AirConditioning: FC<Iicon> = ({
+const AirConditioning: FC<IiconService> = ({
   width,
   height,
   fill,
   background,
   border,
+  inactive,
+  active,
+  hover,
 }) => {
+  if (inactive) {
+    fill = "#928F94";
+    background = "#FCDC9D";
+    border = "#FCDC9D";
+  }
+  if (!inactive) {
+    if (active) {
+      fill = "#F4F2F6";
+      background = "#FDB935";
+      border = "#FDB935";
+    }
+    if (hover) {
+      fill = "#292929";
+      background = "#FFA800";
+      border = "#292929";
+    }
+  }
   return (
     <svg
       width={width}
@@ -52,7 +65,7 @@ AirConditioning.defaultProps = {
   width: 35,
   height: 36,
   fill: "#292929",
-  background: "#FFA800",
+  background: "#FFFFFF",
   border: "#292929",
 };
 
