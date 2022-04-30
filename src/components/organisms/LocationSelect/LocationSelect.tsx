@@ -149,15 +149,17 @@ const LocationSelect: FC = () => {
           </div>
         </div>
 
-        {items.map((item) => {
-          return (
-            <Wagon
-              key={item.coach._id}
-              className="LocationSelect__Wagon"
-              coach={item}
-            />
-          );
-        })}
+        {items &&
+          items.length > 0 &&
+          items.map((item) => {
+            return (
+              <Wagon
+                key={item.coach._id}
+                className="LocationSelect__Wagon"
+                coach={item}
+              />
+            );
+          })}
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { IparamIdSeats } from "../../../../../api/routes/id/seats/interfaces";
 
 const initialState: IparamIdSeats = {
-  id: "6212d3de5fc56b48553d53b3",
+  id: "6265ec8eb18b153899fc37be",
   // Идентификатор направления
   have_first_class: null,
   // Люкс
