@@ -1,0 +1,122 @@
+@import "../../../scss/config.scss";
+
+.Scheme__block {
+  position: relative;
+}
+.Scheme__img {
+  width: 921px;
+  height: 145px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  &.Sedentary {
+    background-image: url("./img/sedentary_img.jpg");
+  }
+}
+.Scheme__designations {
+}
+.designations {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.designations__row {
+  display: flex;
+
+  margin-top: 30px;
+  justify-content: flex-start;
+  padding-left: 131px;
+  // margin-left: 33px;
+}
+.designations__coupe-row {
+  display: flex;
+  justify-content: space-between;
+  width: 88px;
+
+  margin-right: 2px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.designations__coupe_side {
+  display: flex;
+  flex-direction: column;
+  width: 28px;
+}
+
+.designations__seat {
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  order: 2;
+  font-family: $font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 14px;
+  background-color: #e5e5e5;
+  color: black;
+  cursor: pointer;
+  &:hover {
+    border: 2px solid $primary;
+  }
+  //background-color: #e5e5e5;
+  &.top {
+    height: 31px;
+    order: 1;
+  }
+  &.none {
+    display: none;
+  }
+}
+
+.Sedentary {
+  &.designations__coupe-row {
+    height: 107px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 0px;
+  }
+  .designations__coupe_side {
+  }
+  .designations__coupe_row {
+    padding-top: 3px;
+    padding-bottom: 4px;
+    padding-left: 13px;
+    padding-right: 3px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .designations__seat {
+    width: 26px;
+    height: 18px;
+    margin-bottom: 4px;
+    font-size: 13px;
+    order: 1;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.designations__wagon-number {
+  position: absolute;
+  width: 33px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333333;
+  color: white;
+  font-family: $font;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 14px;
+  left: 40px;
+}
