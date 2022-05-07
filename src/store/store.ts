@@ -13,10 +13,10 @@ import {
   SeatsSlice,
 } from "../components/pages/LocationSelectPage/effects";
 import { FilterSeatsSlice } from "../components/pages/LocationSelectPage/FilterSeats/effects";
-import CurrentUserData from "./CurrentUserData";
+import CurrentUserInfo from "./CurrentUserInfo";
 
 export const rootReducer = combineReducers({
-  CurrentUserData: CurrentUserData,
+  CurrentUserData: CurrentUserInfo,
   Cities: CitiesSlice,
   Last: LastSlice,
   Routes: RoutesSlice,

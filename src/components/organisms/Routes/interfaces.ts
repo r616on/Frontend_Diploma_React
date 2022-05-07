@@ -137,8 +137,8 @@ export interface IitemRoutes {
       fourth?: number;
     };
   };
-  departure?: {
-    _id?: string;
+  departure: {
+    _id: string;
     have_first_class?: boolean;
     have_second_class?: boolean;
     have_third_class?: boolean;

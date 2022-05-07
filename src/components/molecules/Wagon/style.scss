@@ -20,17 +20,18 @@
 }
 .Wagon__number {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
+  font-size: 20px;
 
   span {
     position: relative;
-    top: 3px;
+    top: 0px;
     font-family: $font;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 20px;
+
     margin-left: 8px;
 
     &.active {
@@ -56,11 +57,12 @@
   font-family: $font;
   font-style: normal;
   font-weight: bold;
-  font-size: 72px;
-  line-height: 72px;
+  font-size: 25px;
+  line-height: 25px;
 
   color: #292929;
   span {
+    margin-top: 10px;
     font-family: $font;
     font-style: normal;
     font-weight: normal;

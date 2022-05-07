@@ -1,5 +1,5 @@
 export interface IparamIdSeats {
-  id: string;
+  id: string | undefined;
   // Идентификатор направления
   have_first_class?: boolean | null;
   // Люкс
@@ -15,7 +15,7 @@ export interface IparamIdSeats {
   // Имеется кондиционер
 }
 
-interface Iseats {
+export interface Iseats {
   index: number;
   available: boolean;
 }

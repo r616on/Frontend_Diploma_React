@@ -58,12 +58,7 @@
   font-weight: bold;
   font-size: 14px;
   line-height: 14px;
-  background-color: #e5e5e5;
-  color: black;
-  cursor: pointer;
-  &:hover {
-    border: 2px solid $primary;
-  }
+
   //background-color: #e5e5e5;
   &.top {
     height: 31px;

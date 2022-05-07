@@ -112,5 +112,5 @@ const FilterSeats = createSlice({
   },
 });
 
-export const actionsFilterSeats = FilterSeats.actions;
+export const actFilterSeatReq = FilterSeats.actions;
 export default FilterSeats.reducer;

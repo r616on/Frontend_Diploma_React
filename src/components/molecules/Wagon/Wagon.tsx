@@ -8,10 +8,20 @@ import { itemSeatsType } from "../../../api/routes/id/seats/interfaces";
 import numberWithSpaces from "../../../utils/numberWithSpaces";
 interface IWagon {
   className?: any;
+  vagonName: Array<string>;
+  selectedClassType: string;
   coach: itemSeatsType;
+  selectedSeat: Array<{ id: string; number: number; price: number }>;
+  setSelectedSeat: Function;
 }
-const Wagon: FC<IWagon> = ({ className, coach }) => {
-  const randomCoach = Math.floor(Math.random() * 100) + 1;
+const Wagon: FC<IWagon> = ({
+  className,
+  selectedClassType,
+  vagonName,
+  coach,
+  selectedSeat,
+  setSelectedSeat,
+}) => {
   return (
     <section
       className={classNames("Wagon", {
@@ -20,14 +30,16 @@ const Wagon: FC<IWagon> = ({ className, coach }) => {
     >
       <div className="Wagon__top">
         <div className="Wagon__number">
-          Вагоны <span className="active">{randomCoach}</span>
-          <span>{randomCoach + 3}</span>
+          Вагоны: <span className="active">{coach.coach.name} </span>
+          <span>
+            {vagonName.filter((item) => item !== coach.coach.name).join(", ")}
+          </span>
         </div>
         Нумерация вагонов начинается с головы поезда
       </div>
       <div className="Wagon__info Wagon-info">
         <div className="Wagon-info__num">
-          {randomCoach}
+          {coach.coach.name}
           <span>вагон</span>
         </div>
         <div className="Wagon-info__table table">
@@ -58,7 +70,13 @@ const Wagon: FC<IWagon> = ({ className, coach }) => {
         </div>
         <Service className="Wagon-info__service" coach={coach.coach} />
       </div>
-      <Scheme className="Wagon__scheme" />
+      <Scheme
+        selectedClassType={selectedClassType}
+        className="Wagon__scheme"
+        coach={coach}
+        selectedSeat={selectedSeat}
+        setSelectedSeat={setSelectedSeat}
+      />
     </section>
   );
 };

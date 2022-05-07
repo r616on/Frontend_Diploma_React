@@ -307,12 +307,15 @@
     font-size: 24px;
     line-height: 28px;
     color: #928f94;
-    cursor: pointer;
+    cursor: not-allowed;
     .text {
       margin-top: 18px;
     }
     &.active {
       color: #ffa800;
+    }
+    &.available {
+      cursor: pointer;
     }
     // &:hover {
     //   color: $primary;

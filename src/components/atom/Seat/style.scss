@@ -1,0 +1,19 @@
+@import "../../../scss/config.scss";
+
+.SeatItem {
+  background-color: #cccccc;
+  color: white;
+  cursor: not-allowed;
+  &.select {
+    border: 2px solid $primary;
+  }
+  &.available {
+    background-color: #f2f2f2;
+    color: black;
+    cursor: pointer;
+
+    &:hover {
+      border: 2px solid $primary;
+    }
+  }
+}

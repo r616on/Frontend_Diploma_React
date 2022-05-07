@@ -1,29 +1,44 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { format } from "date-fns";
 import "./style.scss";
 import ItemTimetablele from "../../atom/ItemTimetablele/ItemTimetableIe";
 import Wagon from "../../molecules/Wagon/Wagon";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AppStoreType } from "../../../store/interfaces";
 import { itemSeatsType } from "../../../api/routes/id/seats/interfaces";
 import { IitemRoutes } from "../Routes/interfaces";
 import classNames from "classnames";
 import Icon from "../../icon";
+import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
 
 const LocationSelect: FC = () => {
   const { First, Fourth, Second, Third } = Icon.wagonType;
-  const [classType, setclassType] = useState("");
-  console.log(classType);
+  const dispatch = useDispatch();
+  const [selectedClassType, setclassType] = useState("");
+  const [selectedSeat, setSelectedSeat] = useState([]);
+  console.log(selectedSeat);
   const routeCurrent: IitemRoutes = useSelector(
     (state: AppStoreType) => state.CurrentUserData.route
   );
   const items: Array<itemSeatsType> = useSelector(
     (state: AppStoreType) => state.Seats.items
   );
-  const handelClassType = (str: string) => {
-    setclassType(str);
-  };
+  console.log(items);
+  const firstArr = items.filter((item) => item.coach.class_type === "first");
+  const secondArr = items.filter((item) => item.coach.class_type === "second");
+  const thirdArr = items.filter((item) => item.coach.class_type === "third");
+  const fourthArr = items.filter((item) => item.coach.class_type === "fourth");
 
+  const handelClassType = (str: string) => {
+    const arrClass = items.filter((item) => item.coach.class_type === str);
+    if (arrClass.length > 0) {
+      dispatch(actCurrentUserInfo.setSeats(arrClass));
+      setclassType(str);
+    }
+  };
+  const vagonName = items
+    .filter((item) => item.coach.class_type === selectedClassType)
+    .map((item) => item.coach.name);
   return (
     <div className="LocationSelect">
       <div className="LocationSelect__title">Выбор мест </div>
@@ -112,54 +127,71 @@ const LocationSelect: FC = () => {
           <div className="LocationSelect-wagon-type__row">
             <div
               className={classNames("item", {
-                active: classType === "fourth",
+                active: selectedClassType === "fourth",
+                available: fourthArr.length > 0,
               })}
               onClick={() => handelClassType("fourth")}
             >
-              <Fourth fill={classType === "fourth" ? "#ffa800" : "#C4C4C4"} />
+              <Fourth
+                fill={selectedClassType === "fourth" ? "#ffa800" : "#C4C4C4"}
+              />
               <span className="text">Сидячий</span>
             </div>
             <div
               className={classNames("item", {
-                active: classType === "third",
+                active: selectedClassType === "third",
+                available: thirdArr.length > 0,
               })}
               onClick={() => handelClassType("third")}
             >
-              <Third fill={classType === "third" ? "#ffa800" : "#C4C4C4"} />
+              <Third
+                fill={selectedClassType === "third" ? "#ffa800" : "#C4C4C4"}
+              />
               <span className="text">Плацкарт</span>
             </div>
             <div
               className={classNames("item", {
-                active: classType === "second",
+                active: selectedClassType === "second",
+                available: secondArr.length > 0,
               })}
               onClick={() => handelClassType("second")}
             >
-              <Second fill={classType === "second" ? "#ffa800" : "#C4C4C4"} />
+              <Second
+                fill={selectedClassType === "second" ? "#ffa800" : "#C4C4C4"}
+              />
               <span className="text">Купе</span>
             </div>
             <div
               className={classNames("item", {
-                active: classType === "first",
+                active: selectedClassType === "first",
+                available: firstArr.length > 0,
               })}
               onClick={() => handelClassType("first")}
             >
-              <First fill={classType === "first" ? "#ffa800" : "#C4C4C4"} />
+              <First
+                fill={selectedClassType === "first" ? "#ffa800" : "#C4C4C4"}
+              />
               <span className="text">Люкс</span>
             </div>
           </div>
         </div>
 
-        {items &&
-          items.length > 0 &&
-          items.map((item) => {
-            return (
-              <Wagon
-                key={item.coach._id}
-                className="LocationSelect__Wagon"
-                coach={item}
-              />
-            );
-          })}
+        {selectedClassType &&
+          items
+            .filter((item) => item.coach.class_type === selectedClassType)
+            .map((item) => {
+              return (
+                <Wagon
+                  selectedClassType={selectedClassType}
+                  vagonName={vagonName}
+                  key={item.coach._id}
+                  className="LocationSelect__Wagon"
+                  coach={item}
+                  selectedSeat={selectedSeat}
+                  setSelectedSeat={setSelectedSeat}
+                />
+              );
+            })}
       </div>
     </div>
   );

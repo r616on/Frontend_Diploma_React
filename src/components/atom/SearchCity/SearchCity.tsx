@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
 import { AppStoreType } from "../../../store/interfaces";
 import { actionsFilterRoutes } from "../../organisms/Routes/FilterRoutes/effects/slice";
 import { actionsCities } from "./effects/slice";
@@ -39,11 +40,13 @@ const SearchCity: FC<ISearchItem> = ({ cityFrom, cityTo }) => {
   const handleClick = (e: any, value: string, id: string) => {
     if (cityFrom) {
       dispatch(actionsCities.setFrom(value));
+      dispatch(actCurrentUserInfo.setFrom_city_id(id));
       dispatch(actionsFilterRoutes.setFrom_city_id(id));
       dispatch(actionsCities.changeSearchField(""));
       dispatch(actionsCities.setItems([]));
     } else if (cityTo) {
       dispatch(actionsCities.setTo(value));
+      dispatch(actCurrentUserInfo.setTo_city_id(id));
       dispatch(actionsFilterRoutes.setTo_city_id(id));
       dispatch(actionsCities.changeSearchField(""));
       dispatch(actionsCities.setItems([]));

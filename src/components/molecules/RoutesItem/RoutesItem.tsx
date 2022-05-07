@@ -8,7 +8,9 @@ import WagonTypeList from "../WagonTypeList/WagonTypeList";
 import "./style.scss";
 import { IitemRoutes } from "../../organisms/Routes/interfaces";
 import { useDispatch } from "react-redux";
-import { actionCurrentUserData } from "../../../store/CurrentUserData";
+import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
+import { useNavigate } from "react-router-dom";
+import { actFilterSeatReq } from "../../pages/LocationSelectPage/FilterSeats/effects/slice";
 interface IroutesItem {
   className?: any;
   route: IitemRoutes;
@@ -16,10 +18,13 @@ interface IroutesItem {
 
 const RoutesItem: FC<IroutesItem> = ({ className, route }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handlerOnClick = (e: any) => {
     e.preventDefault();
-    console.log(route);
-    dispatch(actionCurrentUserData.setRoute(route));
+    dispatch(actCurrentUserInfo.setRoute(route));
+    dispatch(actFilterSeatReq.setId(route.departure._id));
+    dispatch(actCurrentUserInfo.setStatusStep(2));
+    navigate("/two");
   };
   return (
     <section

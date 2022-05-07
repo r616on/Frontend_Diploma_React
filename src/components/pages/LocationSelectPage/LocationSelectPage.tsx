@@ -8,12 +8,16 @@ import LocationSelect from "../../organisms/LocationSelect/LocationSelect";
 import { useDispatch, useSelector } from "react-redux";
 import { AppStoreType } from "../../../store/interfaces";
 import { actionsSeats } from "./effects/slice";
+import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
 
 const LocationSelectPage: FC = () => {
   const dispatch = useDispatch();
   const items = useSelector((state: AppStoreType) => state.Seats.items);
+  const route = useSelector(
+    (state: AppStoreType) => state.CurrentUserData.route
+  );
   // const ofset = useSelector((state: AppStoreType) => state.FilterRoutes.offset);
-  console.log(items);
+
   const {
     id,
     have_first_class,

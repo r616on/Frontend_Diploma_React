@@ -1,5 +1,5 @@
 import React, { FC, MouseEventHandler, useState } from "react";
-// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import classNames from "classnames";
 import "./style.scss";
 import Button from "../../atom/Button/Button";
@@ -9,6 +9,7 @@ import { actionsFilterRoutes } from "../../organisms/Routes/FilterRoutes/effects
 import SearchCity from "../../atom/SearchCity/SearchCity";
 import { AppStoreType } from "../../../store/interfaces";
 import { actionsRoutes } from "../../organisms/Routes/effects/slice";
+import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
 
 interface ISearchTicket {
   selectTrain: number;
@@ -17,6 +18,7 @@ interface ISearchTicket {
 const SearchTicket: FC<ISearchTicket> = ({ selectTrain }) => {
   const dateFormat = "DD/MM/YYYY";
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { from_city_id, to_city_id } = useSelector(
     (state: AppStoreType) => state.FilterRoutes
   );
@@ -25,6 +27,7 @@ const SearchTicket: FC<ISearchTicket> = ({ selectTrain }) => {
     e.preventDefault();
     if (from_city_id && to_city_id) {
       dispatch(actionsRoutes.getItems());
+      navigate("/first");
     }
   };
 
@@ -54,6 +57,9 @@ const SearchTicket: FC<ISearchTicket> = ({ selectTrain }) => {
             format={dateFormat}
             onChange={(date: any) => {
               dispatch(
+                actCurrentUserInfo.setDate_start(date.format("YYYY-MM-DD"))
+              );
+              dispatch(
                 actionsFilterRoutes.setDate_start(date.format("YYYY-MM-DD"))
               );
             }}
@@ -64,6 +70,9 @@ const SearchTicket: FC<ISearchTicket> = ({ selectTrain }) => {
             allowClear={false}
             format={dateFormat}
             onChange={(date: any) => {
+              dispatch(
+                actCurrentUserInfo.setDate_end(date.format("YYYY-MM-DD"))
+              );
               dispatch(
                 actionsFilterRoutes.setDate_end(date.format("YYYY-MM-DD"))
               );
