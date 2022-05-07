@@ -99,7 +99,9 @@ const SchemeThirdClass: FC<IScheme> = ({
     <div className="Scheme__block">
       <div className="Scheme__img ReservedSeat"></div>
       <div className="Scheme__designations designations ">
-        <div className="designations__wagon-number">22</div>
+        <div className="designations__wagon-number">
+          {parseInt(coach.coach.name.replace(/[^\d]/g, ""))}
+        </div>
         <div className="designations__row">
           {createWagon(coach, selectedSeat, setSelectedSeat).map(
             (item) => item

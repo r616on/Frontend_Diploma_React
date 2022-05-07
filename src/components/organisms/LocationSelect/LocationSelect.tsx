@@ -38,7 +38,7 @@ const LocationSelect: FC = () => {
   };
   const vagonName = items
     .filter((item) => item.coach.class_type === selectedClassType)
-    .map((item) => item.coach.name);
+    .map((item) => item.coach.name.replace(/[^\d]/g, ""));
   return (
     <div className="LocationSelect">
       <div className="LocationSelect__title">Выбор мест </div>

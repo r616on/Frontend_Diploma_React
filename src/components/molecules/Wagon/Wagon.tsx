@@ -22,6 +22,7 @@ const Wagon: FC<IWagon> = ({
   selectedSeat,
   setSelectedSeat,
 }) => {
+  const name = parseInt(coach.coach.name.replace(/[^\d]/g, ""));
   return (
     <section
       className={classNames("Wagon", {
@@ -30,16 +31,14 @@ const Wagon: FC<IWagon> = ({
     >
       <div className="Wagon__top">
         <div className="Wagon__number">
-          Вагоны: <span className="active">{coach.coach.name} </span>
-          <span>
-            {vagonName.filter((item) => item !== coach.coach.name).join(", ")}
-          </span>
+          Вагоны: <span className="active">{name} </span>
+          <span>{vagonName.filter((item) => +item !== name).join(" ")}</span>
         </div>
         Нумерация вагонов начинается с головы поезда
       </div>
       <div className="Wagon__info Wagon-info">
         <div className="Wagon-info__num">
-          {coach.coach.name}
+          {name}
           <span>вагон</span>
         </div>
         <div className="Wagon-info__table table">
@@ -50,17 +49,21 @@ const Wagon: FC<IWagon> = ({
             <div className="table__item-price">Стоимость</div>
           </div>
           <div className="table__item">
-            <div className="table__item-text">
-              Верхние
-              <span></span>
-            </div>
-            <div className="table__item-price icon-rub">
-              {numberWithSpaces(coach.coach.top_price)}
-            </div>
+            {selectedClassType === "thrid" && (
+              <>
+                <div className="table__item-text">
+                  Верхние
+                  <span></span>
+                </div>
+                <div className="table__item-price icon-rub">
+                  {numberWithSpaces(coach.coach.top_price)}
+                </div>
+              </>
+            )}
           </div>
           <div className="table__item">
             <div className="table__item-text">
-              Нижние
+              {selectedClassType === "thrid" ? "Нижние" : ""}
               <span></span>
             </div>
             <div className="table__item-price icon-rub">
