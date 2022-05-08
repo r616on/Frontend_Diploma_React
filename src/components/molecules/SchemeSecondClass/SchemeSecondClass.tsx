@@ -93,4 +93,4 @@ const SchemeSecondClass: FC<ISchemeSecondClass> = ({
   );
 };
 
-export default SchemeSecondClass;
+export default React.memo(SchemeSecondClass);

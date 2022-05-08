@@ -1,3 +1,4 @@
+import Rub from "./Rub";
 import AirConditioning from "./service/AirConditioning";
 import Coffee from "./service/Coffee";
 import Linens from "./service/Linens";
@@ -20,10 +21,14 @@ const service = {
   Linens,
   AirConditioning,
 };
+const other = {
+  Rub,
+};
 
 const Icon = {
   wagonType,
   service,
+  other,
 };
 export type Icontype = typeof Icon;
 export default Icon;

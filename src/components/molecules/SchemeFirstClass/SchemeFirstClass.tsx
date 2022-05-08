@@ -80,4 +80,4 @@ const SchemeFirstClass: FC<IScheme> = ({
   );
 };
 
-export default SchemeFirstClass;
+export default React.memo(SchemeFirstClass);

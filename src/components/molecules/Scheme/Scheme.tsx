@@ -63,4 +63,4 @@ const Scheme: FC<IScheme> = ({
   );
 };
 
-export default Scheme;
+export default React.memo(Scheme);

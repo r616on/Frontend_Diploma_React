@@ -13,7 +13,7 @@ interface IinitialState {
   to_city_id: string;
   date_start: string;
   date_end: string;
-  seats: Array<itemSeatsType>;
+  seats: Array<{ id: string; number: number; price: number }> | null;
 }
 const initialState: IinitialState = {
   step: 1,
@@ -84,107 +84,20 @@ const initialState: IinitialState = {
   to_city_id: "",
   date_start: "",
   date_end: "",
-  seats: [
-    {
-      coach: {
-        _id: "6212d3c65fc56b48553d4878",
-        name: "РТИ-90",
-        class_type: "second",
-        have_wifi: true,
-        have_air_conditioning: true,
-        price: 0,
-        top_price: 1521,
-        bottom_price: 2613,
-        side_price: 0,
-        linens_price: 89,
-        wifi_price: 251,
-        is_linens_included: true,
-        available_seats: 18,
-        train: "6212d3ce5fc56b48553d4e26",
-      },
-      seats: [
-        {
-          index: 1,
-          available: true,
-        },
-        {
-          index: 2,
-          available: false,
-        },
-        {
-          index: 3,
-          available: true,
-        },
-        {
-          index: 4,
-          available: false,
-        },
-        {
-          index: 5,
-          available: true,
-        },
-        {
-          index: 6,
-          available: false,
-        },
-        {
-          index: 7,
-          available: true,
-        },
-        {
-          index: 8,
-          available: true,
-        },
-        {
-          index: 9,
-          available: true,
-        },
-        {
-          index: 10,
-          available: true,
-        },
-        {
-          index: 11,
-          available: true,
-        },
-        {
-          index: 12,
-          available: true,
-        },
-        {
-          index: 13,
-          available: true,
-        },
-        {
-          index: 14,
-          available: true,
-        },
-        {
-          index: 15,
-          available: true,
-        },
-        {
-          index: 16,
-          available: false,
-        },
-        {
-          index: 17,
-          available: true,
-        },
-        {
-          index: 18,
-          available: true,
-        },
-      ],
-    },
-  ],
+  seats: null,
 };
 
 const CurrentUserInfo = createSlice({
   name: "CurrentUserInfo",
   initialState: initialState,
   reducers: {
-    setSeats(state, action: { type: string; payload: Array<itemSeatsType> }) {
+    setSeats(
+      state,
+      action: {
+        type: string;
+        payload: Array<{ id: string; number: number; price: number }>;
+      }
+    ) {
       state.seats = action.payload;
     },
     setDate_start(state, action: { payload: string }) {

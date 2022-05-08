@@ -17,6 +17,28 @@
   border: 1px solid #c4c4c4;
   box-sizing: border-box;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  .LocationSelect__bottom {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding-bottom: 28px;
+    padding-right: 38px;
+    .LocationSelect__bottom-price {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      font-family: $font;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 28px;
+
+      color: $primary;
+      .number {
+        margin-right: 5px;
+      }
+    }
+  }
 }
 .LocationSelect__top {
 }
@@ -351,4 +373,19 @@
   margin-bottom: 26px;
 }
 .LocationSelect__Wagon {
+  margin-bottom: 82px;
+  &:last-child {
+    margin-bottom: 20px;
+  }
+}
+.LocationSelect__Wagon-row {
+}
+.LocationSelect-controls {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 124px;
+  .LocationSelect-Next {
+    margin-top: 93px;
+  }
 }

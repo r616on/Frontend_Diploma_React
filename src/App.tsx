@@ -3,8 +3,8 @@ import "./App.css";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store";
-//import PassengersPages from "./components/pages/PassengersPages/PassengersPages";
-// import Index from "./components/pages/Index/Index";
+import FillingDocuments from "./components/pages/FillingDocuments/FillingDocuments";
+
 import StepFirst from "./components/pages/StepFirst/StepFirst";
 import LocationSelectPage from "./components/pages/LocationSelectPage/LocationSelectPage";
 import Index from "./components/pages/Index/Index";
@@ -23,6 +23,7 @@ const App: FC = () => {
             <Route path="/" element={<Index />} />
             <Route path="/first" element={<StepFirst />} />
             <Route path="/two" element={<LocationSelectPage />} />
+            <Route path="/fillingDocuments" element={<FillingDocuments />} />
             {/* <Route path="/404" element={<NotFound />} />
               <Route path="*" element={<Navigate replace to="/404" />} /> */}
           </Routes>

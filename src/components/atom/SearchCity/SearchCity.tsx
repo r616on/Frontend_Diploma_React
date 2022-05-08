@@ -4,6 +4,7 @@ import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
 import { AppStoreType } from "../../../store/interfaces";
 import { actionsFilterRoutes } from "../../organisms/Routes/FilterRoutes/effects/slice";
 import { actionsCities } from "./effects/slice";
+import { Spin } from "antd";
 import "./style.scss";
 
 interface ISearchItem {
@@ -12,7 +13,7 @@ interface ISearchItem {
 }
 const SearchCity: FC<ISearchItem> = ({ cityFrom, cityTo }) => {
   const [search, setSerach] = useState("");
-  const { items, searchTime, to, from } = useSelector(
+  const { items, searchTime, to, from, requestStatus } = useSelector(
     (state: AppStoreType) => state.Cities
   );
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ const SearchCity: FC<ISearchItem> = ({ cityFrom, cityTo }) => {
       dispatch(actionsCities.changeSearchField(value));
     }
   };
-
+  const individual: boolean = searchTime === search;
   // useEffect(() => {
   //   if (items.length === 1) {
   //     dispatch(actionsCities.changeSearchField(items[0].name));
@@ -59,8 +60,10 @@ const SearchCity: FC<ISearchItem> = ({ cityFrom, cityTo }) => {
         className="input"
         value={cityFrom ? from : to}
         onChange={handleSearch}
+        placeholder={cityFrom ? "Откуда" : "Куда"}
       />
-      {search === searchTime && items && items.length > 1 && (
+      {requestStatus.loading && individual && <Spin className="Spin" />}
+      {search && individual && items && items.length > 1 && (
         <ul className="row-City">
           {items.map((item: any) => {
             return (

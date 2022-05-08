@@ -112,4 +112,4 @@ const SchemeThirdClass: FC<IScheme> = ({
   );
 };
 
-export default SchemeThirdClass;
+export default React.memo(SchemeThirdClass);

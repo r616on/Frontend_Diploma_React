@@ -6,10 +6,10 @@ import RideSettingsWidget from "../../organisms/RideSettingsWidget/RideSettingsW
 import LastList from "../../organisms/LastList/LastList";
 import PassengersList from "../../organisms/PassengersList/PassengersList";
 
-function PassengersPages() {
+function FillingDocuments() {
   return (
-    <PageTemplate selectTrain>
-      <StatusSteps step={1} />
+    <PageTemplate>
+      <StatusSteps />
       <div className="main TrainSelect">
         <div className="row container">
           <div className="col TrainSelect__Left">
@@ -25,4 +25,4 @@ function PassengersPages() {
   );
 }
 
-export default PassengersPages;
+export default React.memo(FillingDocuments);

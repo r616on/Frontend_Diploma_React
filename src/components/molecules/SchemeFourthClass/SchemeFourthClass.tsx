@@ -146,4 +146,4 @@ const SchemeFourthClass: FC<ISchemeFourthClass> = ({
   );
 };
 
-export default SchemeFourthClass;
+export default React.memo(SchemeFourthClass);
