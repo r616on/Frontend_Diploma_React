@@ -13,14 +13,20 @@ import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
 import numberWithSpaces from "../../../utils/numberWithSpaces";
 import Button from "../../atom/Button/Button";
 import { useNavigate } from "react-router-dom";
+import { InputNumber } from "antd";
 
 const LocationSelect: FC = () => {
   const navigate = useNavigate();
   const { Rub } = Icon.other;
   const { First, Fourth, Second, Third } = Icon.wagonType;
   const dispatch = useDispatch();
-  const [selectedClassType, setclassType] = useState("");
-  const [selectedSeat, setSelectedSeat] = useState([]);
+  const [selectedClassType, setSelectedClassType] = useState("");
+  const [selectedAdultSeat, setSelectedAdultSeat] = useState([]);
+  const [selectedChildSeat, setSelectedChildSeat] = useState([]);
+  const [selectedTypePasenger, setSelectedTypePasenger] = useState("adult");
+  const [adultCount, setAdultCount] = useState(1);
+  const [childCount, setChildCount] = useState(0);
+
   const routeCurrent: IitemRoutes = useSelector(
     (state: AppStoreType) => state.CurrentUserData.route
   );
@@ -35,22 +41,39 @@ const LocationSelect: FC = () => {
   const vagonName = items
     .filter((item) => item.coach.class_type === selectedClassType)
     .map((item) => item.coach.name.replace(/[^\d]/g, ""));
-  const price = selectedSeat.reduce(
-    (sum, item: { id: string; number: number; price: number }) =>
-      sum + +item.price,
-    0
-  );
+  const price =
+    selectedAdultSeat.reduce(
+      (sum, item: { id: string; number: number; price: number }) =>
+        sum + +item.price,
+      0
+    ) +
+    selectedChildSeat.reduce(
+      (sum, item: { id: string; number: number; price: number }) =>
+        sum + +item.price,
+      0
+    );
   const handelClassType = (str: string) => {
     const arrClass = items.filter((item) => item.coach.class_type === str);
     if (arrClass.length > 0) {
-      setclassType(str);
+      setSelectedClassType(str);
     }
   };
   const hendlerNext = () => {
-    if (selectedSeat.length > 0) {
-      dispatch(actCurrentUserInfo.setSeats(selectedSeat));
+    if (selectedAdultSeat.length > 0) {
+      dispatch(actCurrentUserInfo.setSeatsAdult(selectedAdultSeat));
+      dispatch(actCurrentUserInfo.setSeatsChild(selectedChildSeat));
       navigate("/fillingDocuments");
     }
+  };
+  const hendlerCount = (value: any, type: string) => {
+    if (type === "adult") {
+      setAdultCount(value);
+    } else if (type === "child") {
+      setChildCount(value);
+    }
+  };
+  const handlerTypePasenger = (typePasanger: string) => {
+    setSelectedTypePasenger(typePasanger);
   };
   return (
     <>
@@ -117,20 +140,60 @@ const LocationSelect: FC = () => {
               Количество билетов
             </div>
             <div className="LocationSelect-number-of-tickets__row">
-              <div className="LocationSelect-number-of-tickets__item item adult">
+              <div
+                className={classNames(
+                  "LocationSelect-number-of-tickets__item item",
+                  {
+                    active: selectedTypePasenger === "adult",
+                  }
+                )}
+                onClick={() => handlerTypePasenger("adult")}
+              >
                 <div className="item__count">
-                  Взрослых - {selectedSeat.length}
+                  Взрослых <span>-</span>
+                  <InputNumber
+                    min={1}
+                    max={5}
+                    defaultValue={1}
+                    onChange={(value) => hendlerCount(value, "adult")}
+                    className="item__count-counter"
+                  />
                 </div>
-                <div className="item__description">
-                  Можно добавить еще пассажиров
-                </div>
+                {adultCount - selectedAdultSeat.length > 0 && (
+                  <div className="item__description">
+                    Можно добавить еще
+                    {` : ${adultCount - selectedAdultSeat.length} `}
+                    пассажиров
+                  </div>
+                )}
               </div>
-              <div className="LocationSelect-number-of-tickets__item item children">
-                <div className="item__count"> Детских - 0</div>
-                <div className="item__description">
-                  Можно добавить еще детей до 10 лет.Свое место в вагоне, как у
-                  взрослых, но дешевле в среднем на 50-65%
+              <div
+                className={classNames(
+                  "LocationSelect-number-of-tickets__item item",
+                  {
+                    active: selectedTypePasenger === "child",
+                  }
+                )}
+                onClick={() => handlerTypePasenger("child")}
+              >
+                <div className="item__count">
+                  Детских <span>-</span>
+                  <InputNumber
+                    min={0}
+                    max={4}
+                    defaultValue={0}
+                    onChange={(value) => hendlerCount(value, "child")}
+                    className="item__count-counter"
+                  />
                 </div>
+                {childCount - selectedChildSeat.length > 0 && (
+                  <div className="item__description">
+                    Можно добавить еще
+                    {` ${childCount - selectedChildSeat.length} `}
+                    детей до 10 лет.Свое место в вагоне, как у взрослых, но
+                    дешевле в среднем на 50-65%
+                  </div>
+                )}
               </div>
               <div className="LocationSelect-number-of-tickets__item item">
                 <div className="item__count"> Детских «без места» - 0</div>
@@ -203,8 +266,13 @@ const LocationSelect: FC = () => {
                       key={item.coach._id}
                       className="LocationSelect__Wagon"
                       coach={item}
-                      selectedSeat={selectedSeat}
-                      setSelectedSeat={setSelectedSeat}
+                      selectedAdultSeat={selectedAdultSeat}
+                      setSelectedAdultSeat={setSelectedAdultSeat}
+                      selectedChildSeat={selectedChildSeat}
+                      setSelectedChildSeat={setSelectedChildSeat}
+                      selectedTypePasenger={selectedTypePasenger}
+                      adultCount={adultCount}
+                      childCount={childCount}
                     />
                   );
                 })}

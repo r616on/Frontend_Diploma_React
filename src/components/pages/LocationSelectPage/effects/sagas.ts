@@ -21,7 +21,6 @@ export function* handelSaga(): Generator {
     yield put(actionsSeats.setRequestStatus(requestStatuses.loading));
     const data: any = yield call<GetIdSeatsType>(AppAPI.getIdSeats, respParams);
     yield put(actionsSeats.setItems(data));
-    yield put(actCurrentUserInfo.setSeats(data));
     yield put(actionsSeats.setRequestStatus(requestStatuses.ok));
   } catch {
     yield put(actionsSeats.setRequestStatus(requestStatuses.setError));

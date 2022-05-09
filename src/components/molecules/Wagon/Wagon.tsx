@@ -11,16 +11,26 @@ interface IWagon {
   vagonName: Array<string>;
   selectedClassType: string;
   coach: itemSeatsType;
-  selectedSeat: Array<{ id: string; number: number; price: number }>;
-  setSelectedSeat: Function;
+  selectedAdultSeat: Array<{ id: string; number: number; price: number }>;
+  setSelectedAdultSeat: Function;
+  selectedChildSeat: Array<{ id: string; number: number; price: number }>;
+  setSelectedChildSeat: Function;
+  adultCount: number;
+  childCount: number;
+  selectedTypePasenger: string;
 }
 const Wagon: FC<IWagon> = ({
   className,
   selectedClassType,
   vagonName,
   coach,
-  selectedSeat,
-  setSelectedSeat,
+  selectedAdultSeat,
+  setSelectedAdultSeat,
+  selectedChildSeat,
+  setSelectedChildSeat,
+  adultCount,
+  childCount,
+  selectedTypePasenger,
 }) => {
   const name = parseInt(coach.coach.name.replace(/[^\d]/g, ""));
   return (
@@ -77,8 +87,13 @@ const Wagon: FC<IWagon> = ({
         selectedClassType={selectedClassType}
         className="Wagon__scheme"
         coach={coach}
-        selectedSeat={selectedSeat}
-        setSelectedSeat={setSelectedSeat}
+        selectedAdultSeat={selectedAdultSeat}
+        setSelectedAdultSeat={setSelectedAdultSeat}
+        selectedChildSeat={selectedChildSeat}
+        setSelectedChildSeat={setSelectedChildSeat}
+        selectedTypePasenger={selectedTypePasenger}
+        adultCount={adultCount}
+        childCount={childCount}
       />
     </section>
   );

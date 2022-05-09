@@ -8,41 +8,85 @@ interface ISeat {
   style?: any;
   number: number;
   coach: itemSeatsType;
-  selectedSeat: Array<{ id: string; number: number; price: number }>;
-  setSelectedSeat: Function;
+  selectedAdultSeat: Array<{ id: string; number: number; price: number }>;
+  setSelectedAdultSeat: Function;
+  selectedChildSeat: Array<{ id: string; number: number; price: number }>;
+  setSelectedChildSeat: Function;
+  adultCount: number;
+  childCount: number;
+  selectedTypePasenger: string;
 }
 const Seat: FC<ISeat> = ({
   className,
   style,
   number,
   coach,
-  selectedSeat,
-  setSelectedSeat,
+  selectedAdultSeat,
+  setSelectedAdultSeat,
+  selectedChildSeat,
+  setSelectedChildSeat,
+  adultCount,
+  childCount,
+  selectedTypePasenger,
 }) => {
   const available = coach.seats.find(
     (item) => item.index === number && item.available
   );
+  // (selectedAdultSeat.length < adultCount ||
+  //   selectedChildSeat.length < childCount);
+
   const handelClick = (number: number, id: string, price: number) => {
-    const index = selectedSeat.findIndex(
-      (item) => item.id === id && item.number === number
-    );
-    if (available && index < 0) {
-      setSelectedSeat((prev: any) => {
-        const arr = [...prev];
-        arr.push({ id, number, price });
-        return arr;
-      });
-    } else if (available && index > -1) {
-      setSelectedSeat((prev: any) => {
-        const arr = [...prev];
-        arr.splice(index, 1);
-        return arr;
-      });
+    if (selectedTypePasenger === "adult") {
+      const index = selectedAdultSeat.findIndex(
+        (item) => item.id === id && item.number === number
+      );
+      if (available && index < 0 && selectedAdultSeat.length < adultCount) {
+        setSelectedAdultSeat((prev: any) => {
+          const arr = [...prev];
+          arr.push({ id, number, price });
+          return arr;
+        });
+      } else if (available && index > -1) {
+        setSelectedAdultSeat((prev: any) => {
+          const arr = [...prev];
+          arr.splice(index, 1);
+          return arr;
+        });
+      }
+    } else if (selectedTypePasenger === "child") {
+      const index = selectedChildSeat.findIndex(
+        (item) => item.id === id && item.number === number
+      );
+      if (available && index < 0 && selectedChildSeat.length < childCount) {
+        setSelectedChildSeat((prev: any) => {
+          const arr = [...prev];
+          arr.push({
+            id,
+            number,
+            price: Math.round(price / 2),
+          });
+          return arr;
+        });
+      } else if (available && index > -1) {
+        setSelectedChildSeat((prev: any) => {
+          const arr = [...prev];
+          arr.splice(index, 1);
+          return arr;
+        });
+      }
     }
   };
-  const select = selectedSeat.find(
-    (item) => item.id === coach.coach._id && item.number === number
-  );
+  let select: any;
+  if (selectedTypePasenger === "adult") {
+    select = selectedAdultSeat.find(
+      (item) => item.id === coach.coach._id && item.number === number
+    );
+  } else {
+    select = selectedChildSeat.find(
+      (item) => item.id === coach.coach._id && item.number === number
+    );
+  }
+
   return (
     <div
       className={classNames("SeatItem", {

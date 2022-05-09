@@ -4,11 +4,17 @@ import { v4 as uuidv4 } from "uuid";
 import "./style.scss";
 import Seat from "../../atom/Seat/Seat";
 import { itemSeatsType } from "../../../api/routes/id/seats/interfaces";
+import { IScheme } from "../Scheme/interface";
 const secondClassItem = (
   i: number,
   coach: itemSeatsType,
-  selectedSeat: Array<{ id: string; number: number; price: number }>,
-  setSelectedSeat: Function
+  selectedAdultSeat: Array<{ id: string; number: number; price: number }>,
+  setSelectedAdultSeat: Function,
+  selectedChildSeat: Array<{ id: string; number: number; price: number }>,
+  setSelectedChildSeat: Function,
+  adultCount: number,
+  childCount: number,
+  selectedTypePasenger: string
 ) => {
   return (
     <div key={uuidv4()} className="designations__coupe-row coupe">
@@ -17,15 +23,25 @@ const secondClassItem = (
           className="designations__seat"
           number={i}
           coach={coach}
-          selectedSeat={selectedSeat}
-          setSelectedSeat={setSelectedSeat}
+          selectedAdultSeat={selectedAdultSeat}
+          setSelectedAdultSeat={setSelectedAdultSeat}
+          selectedChildSeat={selectedChildSeat}
+          setSelectedChildSeat={setSelectedChildSeat}
+          selectedTypePasenger={selectedTypePasenger}
+          adultCount={adultCount}
+          childCount={childCount}
         />
         <Seat
           className="designations__seat top"
           number={i + 1}
           coach={coach}
-          selectedSeat={selectedSeat}
-          setSelectedSeat={setSelectedSeat}
+          selectedAdultSeat={selectedAdultSeat}
+          setSelectedAdultSeat={setSelectedAdultSeat}
+          selectedChildSeat={selectedChildSeat}
+          setSelectedChildSeat={setSelectedChildSeat}
+          selectedTypePasenger={selectedTypePasenger}
+          adultCount={adultCount}
+          childCount={childCount}
         />
       </div>
       <div className="designations__coupe_side">
@@ -33,15 +49,25 @@ const secondClassItem = (
           className="designations__seat"
           number={i + 2}
           coach={coach}
-          selectedSeat={selectedSeat}
-          setSelectedSeat={setSelectedSeat}
+          selectedAdultSeat={selectedAdultSeat}
+          setSelectedAdultSeat={setSelectedAdultSeat}
+          selectedChildSeat={selectedChildSeat}
+          setSelectedChildSeat={setSelectedChildSeat}
+          selectedTypePasenger={selectedTypePasenger}
+          adultCount={adultCount}
+          childCount={childCount}
         />
         <Seat
           className="designations__seat top"
           number={i + 3}
           coach={coach}
-          selectedSeat={selectedSeat}
-          setSelectedSeat={setSelectedSeat}
+          selectedAdultSeat={selectedAdultSeat}
+          setSelectedAdultSeat={setSelectedAdultSeat}
+          selectedChildSeat={selectedChildSeat}
+          setSelectedChildSeat={setSelectedChildSeat}
+          selectedTypePasenger={selectedTypePasenger}
+          adultCount={adultCount}
+          childCount={childCount}
         />
       </div>
     </div>
@@ -50,31 +76,131 @@ const secondClassItem = (
 
 const secondClassWagon = (
   coach: itemSeatsType,
-  selectedSeat: Array<{ id: string; number: number; price: number }>,
-  setSelectedSeat: Function
+  selectedAdultSeat: Array<{ id: string; number: number; price: number }>,
+  setSelectedAdultSeat: Function,
+  selectedChildSeat: Array<{ id: string; number: number; price: number }>,
+  setSelectedChildSeat: Function,
+  adultCount: number,
+  childCount: number,
+  selectedTypePasenger: string
 ) => {
   const arr = [];
-  arr.push(secondClassItem(1, coach, selectedSeat, setSelectedSeat));
-  arr.push(secondClassItem(5, coach, selectedSeat, setSelectedSeat));
-  arr.push(secondClassItem(9, coach, selectedSeat, setSelectedSeat));
-  arr.push(secondClassItem(13, coach, selectedSeat, setSelectedSeat));
-  arr.push(secondClassItem(17, coach, selectedSeat, setSelectedSeat));
-  arr.push(secondClassItem(21, coach, selectedSeat, setSelectedSeat));
-  arr.push(secondClassItem(25, coach, selectedSeat, setSelectedSeat));
-  arr.push(secondClassItem(29, coach, selectedSeat, setSelectedSeat));
+  arr.push(
+    secondClassItem(
+      1,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger
+    )
+  );
+  arr.push(
+    secondClassItem(
+      5,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger
+    )
+  );
+  arr.push(
+    secondClassItem(
+      9,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger
+    )
+  );
+  arr.push(
+    secondClassItem(
+      13,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger
+    )
+  );
+  arr.push(
+    secondClassItem(
+      17,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger
+    )
+  );
+  arr.push(
+    secondClassItem(
+      21,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger
+    )
+  );
+  arr.push(
+    secondClassItem(
+      25,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger
+    )
+  );
+  arr.push(
+    secondClassItem(
+      29,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger
+    )
+  );
   return arr;
 };
 
-interface ISchemeSecondClass {
-  className?: any;
-  coach: itemSeatsType;
-  selectedSeat: Array<{ id: string; number: number; price: number }>;
-  setSelectedSeat: Function;
-}
-const SchemeSecondClass: FC<ISchemeSecondClass> = ({
+const SchemeSecondClass: FC<IScheme> = ({
   coach,
-  selectedSeat,
-  setSelectedSeat,
+  selectedAdultSeat,
+  setSelectedAdultSeat,
+  selectedChildSeat,
+  setSelectedChildSeat,
+  adultCount,
+  childCount,
+  selectedTypePasenger,
 }) => {
   return (
     <div className="Scheme__block">
@@ -84,9 +210,16 @@ const SchemeSecondClass: FC<ISchemeSecondClass> = ({
           {parseInt(coach.coach.name.replace(/[^\d]/g, ""))}
         </div>
         <div className="designations__row">
-          {secondClassWagon(coach, selectedSeat, setSelectedSeat).map(
-            (item) => item
-          )}
+          {secondClassWagon(
+            coach,
+            selectedAdultSeat,
+            setSelectedAdultSeat,
+            selectedChildSeat,
+            setSelectedChildSeat,
+            adultCount,
+            childCount,
+            selectedTypePasenger
+          ).map((item) => item)}
         </div>
       </div>
     </div>

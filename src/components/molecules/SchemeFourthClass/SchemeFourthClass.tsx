@@ -2,14 +2,20 @@ import React, { FC } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { itemSeatsType } from "../../../api/routes/id/seats/interfaces";
 import Seat from "../../atom/Seat/Seat";
+import { IScheme } from "../Scheme/interface";
 
 import "./style.scss";
 
 const fourthClassItem = (
   i: number,
   coach: itemSeatsType,
-  selectedSeat: Array<{ id: string; number: number; price: number }>,
-  setSelectedSeat: Function,
+  selectedAdultSeat: Array<{ id: string; number: number; price: number }>,
+  setSelectedAdultSeat: Function,
+  selectedChildSeat: Array<{ id: string; number: number; price: number }>,
+  setSelectedChildSeat: Function,
+  adultCount: number,
+  childCount: number,
+  selectedTypePasenger: string,
   first?: boolean,
   last?: boolean
 ) => {
@@ -21,15 +27,25 @@ const fourthClassItem = (
             className="designations__seat"
             number={i}
             coach={coach}
-            selectedSeat={selectedSeat}
-            setSelectedSeat={setSelectedSeat}
+            selectedAdultSeat={selectedAdultSeat}
+            setSelectedAdultSeat={setSelectedAdultSeat}
+            selectedChildSeat={selectedChildSeat}
+            setSelectedChildSeat={setSelectedChildSeat}
+            selectedTypePasenger={selectedTypePasenger}
+            adultCount={adultCount}
+            childCount={childCount}
           />
           <Seat
             className="designations__seat"
             number={i + 1}
             coach={coach}
-            selectedSeat={selectedSeat}
-            setSelectedSeat={setSelectedSeat}
+            selectedAdultSeat={selectedAdultSeat}
+            setSelectedAdultSeat={setSelectedAdultSeat}
+            selectedChildSeat={selectedChildSeat}
+            setSelectedChildSeat={setSelectedChildSeat}
+            selectedTypePasenger={selectedTypePasenger}
+            adultCount={adultCount}
+            childCount={childCount}
           />
         </div>
         <div className="designations__coupe_side">
@@ -37,15 +53,25 @@ const fourthClassItem = (
             className="designations__seat"
             number={i + 2}
             coach={coach}
-            selectedSeat={selectedSeat}
-            setSelectedSeat={setSelectedSeat}
+            selectedAdultSeat={selectedAdultSeat}
+            setSelectedAdultSeat={setSelectedAdultSeat}
+            selectedChildSeat={selectedChildSeat}
+            setSelectedChildSeat={setSelectedChildSeat}
+            selectedTypePasenger={selectedTypePasenger}
+            adultCount={adultCount}
+            childCount={childCount}
           />
           <Seat
             className="designations__seat"
             number={i + 3}
             coach={coach}
-            selectedSeat={selectedSeat}
-            setSelectedSeat={setSelectedSeat}
+            selectedAdultSeat={selectedAdultSeat}
+            setSelectedAdultSeat={setSelectedAdultSeat}
+            selectedChildSeat={selectedChildSeat}
+            setSelectedChildSeat={setSelectedChildSeat}
+            selectedTypePasenger={selectedTypePasenger}
+            adultCount={adultCount}
+            childCount={childCount}
           />
         </div>
       </div>
@@ -60,15 +86,25 @@ const fourthClassItem = (
             style={first ? { display: "none" } : null}
             number={i + 32}
             coach={coach}
-            selectedSeat={selectedSeat}
-            setSelectedSeat={setSelectedSeat}
+            selectedAdultSeat={selectedAdultSeat}
+            setSelectedAdultSeat={setSelectedAdultSeat}
+            selectedChildSeat={selectedChildSeat}
+            setSelectedChildSeat={setSelectedChildSeat}
+            selectedTypePasenger={selectedTypePasenger}
+            adultCount={adultCount}
+            childCount={childCount}
           />
           <Seat
             className="designations__seat"
             number={i + 33}
             coach={coach}
-            selectedSeat={selectedSeat}
-            setSelectedSeat={setSelectedSeat}
+            selectedAdultSeat={selectedAdultSeat}
+            setSelectedAdultSeat={setSelectedAdultSeat}
+            selectedChildSeat={selectedChildSeat}
+            setSelectedChildSeat={setSelectedChildSeat}
+            selectedTypePasenger={selectedTypePasenger}
+            adultCount={adultCount}
+            childCount={childCount}
           />
         </div>
         <div
@@ -81,16 +117,26 @@ const fourthClassItem = (
             style={last ? { marginBottom: "0" } : null}
             number={i + 34}
             coach={coach}
-            selectedSeat={selectedSeat}
-            setSelectedSeat={setSelectedSeat}
+            selectedAdultSeat={selectedAdultSeat}
+            setSelectedAdultSeat={setSelectedAdultSeat}
+            selectedChildSeat={selectedChildSeat}
+            setSelectedChildSeat={setSelectedChildSeat}
+            selectedTypePasenger={selectedTypePasenger}
+            adultCount={adultCount}
+            childCount={childCount}
           />
           <Seat
             className="designations__seat"
             style={last ? { display: "none" } : null}
             number={i + 35}
             coach={coach}
-            selectedSeat={selectedSeat}
-            setSelectedSeat={setSelectedSeat}
+            selectedAdultSeat={selectedAdultSeat}
+            setSelectedAdultSeat={setSelectedAdultSeat}
+            selectedChildSeat={selectedChildSeat}
+            setSelectedChildSeat={setSelectedChildSeat}
+            selectedTypePasenger={selectedTypePasenger}
+            adultCount={adultCount}
+            childCount={childCount}
           />
         </div>
       </div>
@@ -99,35 +145,135 @@ const fourthClassItem = (
 };
 const fourthClassWagon = (
   coach: itemSeatsType,
-  selectedSeat: Array<{ id: string; number: number; price: number }>,
-  setSelectedSeat: Function
+  selectedAdultSeat: Array<{ id: string; number: number; price: number }>,
+  setSelectedAdultSeat: Function,
+  selectedChildSeat: Array<{ id: string; number: number; price: number }>,
+  setSelectedChildSeat: Function,
+  adultCount: number,
+  childCount: number,
+  selectedTypePasenger: string
 ) => {
   const arr = [];
   arr.push(
-    fourthClassItem(1, coach, selectedSeat, setSelectedSeat, true, false)
+    fourthClassItem(
+      1,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger,
+      true,
+      false
+    )
   );
-  arr.push(fourthClassItem(5, coach, selectedSeat, setSelectedSeat));
-  arr.push(fourthClassItem(9, coach, selectedSeat, setSelectedSeat));
-  arr.push(fourthClassItem(13, coach, selectedSeat, setSelectedSeat));
-  arr.push(fourthClassItem(17, coach, selectedSeat, setSelectedSeat));
-  arr.push(fourthClassItem(21, coach, selectedSeat, setSelectedSeat));
-  arr.push(fourthClassItem(25, coach, selectedSeat, setSelectedSeat));
   arr.push(
-    fourthClassItem(29, coach, selectedSeat, setSelectedSeat, false, true)
+    fourthClassItem(
+      5,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger
+    )
+  );
+  arr.push(
+    fourthClassItem(
+      9,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger
+    )
+  );
+  arr.push(
+    fourthClassItem(
+      13,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger
+    )
+  );
+  arr.push(
+    fourthClassItem(
+      17,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger
+    )
+  );
+  arr.push(
+    fourthClassItem(
+      21,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger
+    )
+  );
+  arr.push(
+    fourthClassItem(
+      25,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger
+    )
+  );
+  arr.push(
+    fourthClassItem(
+      29,
+      coach,
+      selectedAdultSeat,
+      setSelectedAdultSeat,
+      selectedChildSeat,
+      setSelectedChildSeat,
+      adultCount,
+      childCount,
+      selectedTypePasenger,
+      false,
+      true
+    )
   );
   return arr;
 };
 
-interface ISchemeFourthClass {
-  className?: any;
-  coach: itemSeatsType;
-  selectedSeat: Array<{ id: string; number: number; price: number }>;
-  setSelectedSeat: Function;
-}
-const SchemeFourthClass: FC<ISchemeFourthClass> = ({
+const SchemeFourthClass: FC<IScheme> = ({
   coach,
-  selectedSeat,
-  setSelectedSeat,
+  selectedAdultSeat,
+  setSelectedAdultSeat,
+  selectedChildSeat,
+  setSelectedChildSeat,
+  adultCount,
+  childCount,
+  selectedTypePasenger,
 }) => {
   return (
     <div className="Scheme__block">
@@ -137,9 +283,16 @@ const SchemeFourthClass: FC<ISchemeFourthClass> = ({
           {parseInt(coach.coach.name.replace(/[^\d]/g, ""))}
         </div>
         <div className="designations__row">
-          {fourthClassWagon(coach, selectedSeat, setSelectedSeat).map(
-            (item) => item
-          )}
+          {fourthClassWagon(
+            coach,
+            selectedAdultSeat,
+            setSelectedAdultSeat,
+            selectedChildSeat,
+            setSelectedChildSeat,
+            adultCount,
+            childCount,
+            selectedTypePasenger
+          ).map((item) => item)}
         </div>
       </div>
     </div>

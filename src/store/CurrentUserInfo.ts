@@ -13,7 +13,8 @@ interface IinitialState {
   to_city_id: string;
   date_start: string;
   date_end: string;
-  seats: Array<{ id: string; number: number; price: number }> | null;
+  seatsAdult: Array<{ id: string; number: number; price: number }> | null;
+  seatsChild: Array<{ id: string; number: number; price: number }> | null;
 }
 const initialState: IinitialState = {
   step: 1,
@@ -84,21 +85,31 @@ const initialState: IinitialState = {
   to_city_id: "",
   date_start: "",
   date_end: "",
-  seats: null,
+  seatsAdult: null,
+  seatsChild: null,
 };
 
 const CurrentUserInfo = createSlice({
   name: "CurrentUserInfo",
   initialState: initialState,
   reducers: {
-    setSeats(
+    setSeatsChild(
       state,
       action: {
         type: string;
         payload: Array<{ id: string; number: number; price: number }>;
       }
     ) {
-      state.seats = action.payload;
+      state.seatsChild = action.payload;
+    },
+    setSeatsAdult(
+      state,
+      action: {
+        type: string;
+        payload: Array<{ id: string; number: number; price: number }>;
+      }
+    ) {
+      state.seatsAdult = action.payload;
     },
     setDate_start(state, action: { payload: string }) {
       state.date_start = action.payload;

@@ -12,15 +12,25 @@ interface IScheme {
   className?: any;
   selectedClassType: string;
   coach: itemSeatsType;
-  selectedSeat: Array<{ id: string; number: number; price: number }>;
-  setSelectedSeat: Function;
+  selectedAdultSeat: Array<{ id: string; number: number; price: number }>;
+  setSelectedAdultSeat: Function;
+  selectedChildSeat: Array<{ id: string; number: number; price: number }>;
+  setSelectedChildSeat: Function;
+  adultCount: number;
+  childCount: number;
+  selectedTypePasenger: string;
 }
 const Scheme: FC<IScheme> = ({
   className,
-  coach,
-  selectedSeat,
-  setSelectedSeat,
   selectedClassType,
+  coach,
+  selectedAdultSeat,
+  setSelectedAdultSeat,
+  selectedChildSeat,
+  setSelectedChildSeat,
+  adultCount,
+  childCount,
+  selectedTypePasenger,
 }) => {
   return (
     <section
@@ -34,29 +44,49 @@ const Scheme: FC<IScheme> = ({
       {selectedClassType === "first" && (
         <SchemeFirstClass
           coach={coach}
-          selectedSeat={selectedSeat}
-          setSelectedSeat={setSelectedSeat}
+          selectedAdultSeat={selectedAdultSeat}
+          setSelectedAdultSeat={setSelectedAdultSeat}
+          selectedChildSeat={selectedChildSeat}
+          setSelectedChildSeat={setSelectedChildSeat}
+          selectedTypePasenger={selectedTypePasenger}
+          adultCount={adultCount}
+          childCount={childCount}
         />
       )}
       {selectedClassType === "second" && (
         <SchemeSecondClass
           coach={coach}
-          selectedSeat={selectedSeat}
-          setSelectedSeat={setSelectedSeat}
+          selectedAdultSeat={selectedAdultSeat}
+          setSelectedAdultSeat={setSelectedAdultSeat}
+          selectedChildSeat={selectedChildSeat}
+          setSelectedChildSeat={setSelectedChildSeat}
+          selectedTypePasenger={selectedTypePasenger}
+          adultCount={adultCount}
+          childCount={childCount}
         />
       )}
       {selectedClassType === "third" && (
         <SchemeThirdClass
           coach={coach}
-          selectedSeat={selectedSeat}
-          setSelectedSeat={setSelectedSeat}
+          selectedAdultSeat={selectedAdultSeat}
+          setSelectedAdultSeat={setSelectedAdultSeat}
+          selectedChildSeat={selectedChildSeat}
+          setSelectedChildSeat={setSelectedChildSeat}
+          selectedTypePasenger={selectedTypePasenger}
+          adultCount={adultCount}
+          childCount={childCount}
         />
       )}
       {selectedClassType === "fourth" && (
         <SchemeFourthClass
           coach={coach}
-          selectedSeat={selectedSeat}
-          setSelectedSeat={setSelectedSeat}
+          selectedAdultSeat={selectedAdultSeat}
+          setSelectedAdultSeat={setSelectedAdultSeat}
+          selectedChildSeat={selectedChildSeat}
+          setSelectedChildSeat={setSelectedChildSeat}
+          selectedTypePasenger={selectedTypePasenger}
+          adultCount={adultCount}
+          childCount={childCount}
         />
       )}
     </section>
