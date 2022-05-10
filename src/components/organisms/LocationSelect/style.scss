@@ -20,7 +20,7 @@
   .LocationSelect__bottom {
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     padding-bottom: 28px;
     padding-right: 38px;
     .LocationSelect__bottom-price {
@@ -386,7 +386,7 @@
 .LocationSelect-controls {
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-bottom: 124px;
   .LocationSelect-Next {
     margin-top: 93px;
