@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import classNames from "classnames";
-import { Iseats, itemSeatsType } from "../../../api/routes/id/seats/interfaces";
+import { itemSeatsType } from "../../../api/routes/id/seats/interfaces";
 import "./style.scss";
 
 interface ISeat {

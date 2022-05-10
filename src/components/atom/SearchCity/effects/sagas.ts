@@ -1,8 +1,6 @@
 import {
   put,
   call,
-  takeEvery,
-  delay,
   select,
   debounce,
   spawn,

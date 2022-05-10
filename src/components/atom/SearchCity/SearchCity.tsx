@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
 import { AppStoreType } from "../../../store/interfaces";

@@ -1,22 +1,32 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 // import { Link } from "react-router-dom";
-import classNames from "classnames";
 import IconBtn from "../../atom/IconBtn/IconBtn";
 import InputMask from "react-input-mask";
 import "./style.scss";
 import { Select, Row, Col, Form, Input, Radio, Checkbox } from "antd";
 import Button from "../../atom/Button/Button";
+import classNames from "classnames";
+interface IPassengerCard {
+  className?: any;
+}
 
-function PassengerCard({ className }) {
+const PassengerCard: FC<IPassengerCard> = ({ className }) => {
   const { Option } = Select;
   const [typeDoc, setTypeDoc] = useState("passport");
-  const handleChange = (value) => {
+  const handleChange = (value: any) => {
     setTypeDoc(value);
   };
+  const [surname, setSurname] = useState("");
+  const [name, setName] = useState("");
   return (
-    <div className={classNames("PassengerCard", { [classNames]: classNames })}>
+    <div className={classNames("PassengerCard", { [className]: className })}>
       <div className="PassengerCard__top">
-        <IconBtn circular active className="PassengerCard__top-iconBtn" />
+        <IconBtn
+          circular
+          active
+          className="PassengerCard__top-iconBtn"
+          handelClick={() => {}}
+        />
         <div className="PassengerCard__top-text">Пасажир 1</div>
         <div className="PassengerCard__top-iconExit icon-pluse"></div>
       </div>
@@ -40,12 +50,26 @@ function PassengerCard({ className }) {
         <Row justify="space-between">
           <Col>
             <Form.Item label="Фамилия" className="label">
-              <Input className="input name" />
+              <Input
+                className="input name"
+                name="surname"
+                value={surname}
+                onChange={(e) => {
+                  setSurname(e.target.value);
+                }}
+              />
             </Form.Item>
           </Col>
           <Col>
             <Form.Item label="Имя" className="label">
-              <Input className="input name" />
+              <Input
+                className="input name"
+                name="name"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+              />
             </Form.Item>
           </Col>
           <Col>
@@ -79,8 +103,18 @@ function PassengerCard({ className }) {
           </Col>
           <Col>
             <Form.Item label="Дата рождения" className="label">
-              <InputMask mask="99/99/99" maskChar="" placeholder="ДД/ММ/ГГ">
-                {(inputProps) => (
+              <InputMask
+                mask="39/11/99"
+                placeholder="ДД/ММ/ГГ"
+                // @ts-ignore: Unreachable code error
+                formatChars={{
+                  3: "[1-3]",
+                  1: "[0-1]",
+                  a: "[A-Za-z]",
+                  "*": "[A-Za-z0-9]",
+                }}
+              >
+                {(inputProps: any) => (
                   <input className="input-date" {...inputProps} />
                 )}
               </InputMask>
@@ -122,8 +156,8 @@ function PassengerCard({ className }) {
             <>
               <Col>
                 <Form.Item label="Серия" style={{ marginBottom: "0px" }}>
-                  <InputMask mask="9 9 9 9" maskChar="_" placeholder="_ _ _ _">
-                    {(inputProps) => (
+                  <InputMask mask="9 9 9 9" placeholder="_ _ _ _">
+                    {(inputProps: any) => (
                       <input className="input passport" {...inputProps} />
                     )}
                   </InputMask>
@@ -131,12 +165,8 @@ function PassengerCard({ className }) {
               </Col>
               <Col>
                 <Form.Item label="Номер" style={{ marginBottom: "0px" }}>
-                  <InputMask
-                    mask="9 9 9 9 9 9"
-                    maskChar="_"
-                    placeholder="_ _ _ _ _ _"
-                  >
-                    {(inputProps) => (
+                  <InputMask mask="9 9 9 9 9 9" placeholder="_ _ _ _ _ _">
+                    {(inputProps: any) => (
                       <input className="input passport" {...inputProps} />
                     )}
                   </InputMask>
@@ -147,11 +177,10 @@ function PassengerCard({ className }) {
             <Col>
               <Form.Item label="Номер" style={{ marginBottom: "0px" }}>
                 <InputMask
-                  mask="9 9 9 9 9 9 9 9 9 9 9 9"
-                  maskChar="_"
+                  mask="a a a a - a a - 9 9 9 9 9 9"
                   placeholder="12 символов"
                 >
-                  {(inputProps) => (
+                  {(inputProps: any) => (
                     <input className="input birthCertificate" {...inputProps} />
                   )}
                 </InputMask>
@@ -160,11 +189,13 @@ function PassengerCard({ className }) {
           )}
         </Row>
         <Row justify="end" style={{ paddingTop: "40px" }}>
-          <Button type={"typeEmpty"}>Следующий пасажир</Button>
+          <Button type={"typeEmpty"} handler={() => {}}>
+            Следующий пасажир
+          </Button>
         </Row>
       </Form>
     </div>
   );
-}
+};
 
 export default PassengerCard;

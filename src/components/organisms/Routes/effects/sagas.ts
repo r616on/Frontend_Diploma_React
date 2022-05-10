@@ -1,4 +1,4 @@
-import { put, call, select, takeLatest, delay } from "redux-saga/effects";
+import { put, call, select, takeLatest } from "redux-saga/effects";
 import { AppAPI } from "../../../../api";
 import { GetRoutesType } from "../../../../api/interfaces";
 import { AppStoreType } from "../../../../store/interfaces";

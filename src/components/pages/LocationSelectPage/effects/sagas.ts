@@ -1,8 +1,7 @@
-import { put, call, select, takeLatest, delay } from "redux-saga/effects";
+import { put, call, select, takeLatest } from "redux-saga/effects";
 import { AppAPI } from "../../../../api";
-import { GetIdSeatsType, GetRoutesType } from "../../../../api/interfaces";
-import { IparamIdSeats } from "../../../../api/routes/id/seats/interfaces";
-import { actCurrentUserInfo } from "../../../../store/CurrentUserInfo";
+import { GetIdSeatsType } from "../../../../api/interfaces";
+
 import { AppStoreType } from "../../../../store/interfaces";
 import requestStatuses from "../../../../utils/requestStatuses";
 import { actionsSeats } from "./slice";

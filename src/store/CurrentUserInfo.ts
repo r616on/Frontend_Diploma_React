@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { itemSeatsType } from "../api/routes/id/seats/interfaces";
 import { IitemRoutes } from "../components/organisms/Routes/interfaces";
 
 interface IsetStatusStep {

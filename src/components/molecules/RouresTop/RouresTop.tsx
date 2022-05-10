@@ -3,7 +3,6 @@ import classNames from "classnames";
 import "./style.scss";
 import { Select } from "antd";
 import { useDispatch } from "react-redux";
-import { actionsRoutes } from "../../organisms/Routes/effects/slice";
 import { actionsFilterRoutes } from "../../organisms/Routes/FilterRoutes/effects/slice";
 
 interface IrouresTop {

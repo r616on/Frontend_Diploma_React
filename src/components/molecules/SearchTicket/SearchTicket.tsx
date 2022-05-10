@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler, useState } from "react";
+import React, { FC, MouseEventHandler } from "react";
 import { useNavigate } from "react-router-dom";
 import classNames from "classnames";
 import "./style.scss";
