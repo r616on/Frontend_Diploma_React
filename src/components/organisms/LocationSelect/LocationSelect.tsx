@@ -62,6 +62,7 @@ const LocationSelect: FC = () => {
     if (selectedAdultSeat.length > 0) {
       dispatch(actCurrentUserInfo.setSeatsAdult(selectedAdultSeat));
       dispatch(actCurrentUserInfo.setSeatsChild(selectedChildSeat));
+      dispatch(actCurrentUserInfo.setPrice(price));
       navigate("/fillingDocuments");
     }
   };

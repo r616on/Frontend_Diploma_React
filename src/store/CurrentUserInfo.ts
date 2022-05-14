@@ -5,17 +5,6 @@ interface IsetStatusStep {
   type: any;
   payload: number;
 }
-interface IinitialState {
-  step: number;
-  route: IitemRoutes;
-  from_city_id: string;
-  to_city_id: string;
-  date_start: string;
-  date_end: string;
-  seatsAdult: Array<{ id: string; number: number; price: number }> | null;
-  seatsChild: Array<{ id: string; number: number; price: number }> | null;
-  passengerFullInfo: Array<IpassengerFullInfoItem>;
-}
 
 export interface IpassengerFullInfoItem {
   id: string;
@@ -31,6 +20,19 @@ export interface IpassengerFullInfoItem {
   passportNumber?: string;
   birthCertificate?: string;
 }
+interface IinitialState {
+  step: number;
+  route: IitemRoutes;
+  from_city_id: string;
+  to_city_id: string;
+  date_start: string;
+  date_end: string;
+  seatsAdult: Array<{ id: string; number: number; price: number }> | null;
+  seatsChild: Array<{ id: string; number: number; price: number }> | null;
+  passengerFullInfo: Array<IpassengerFullInfoItem>;
+  price: number;
+}
+
 const initialState: IinitialState = {
   step: 1,
   route: {
@@ -114,12 +116,16 @@ const initialState: IinitialState = {
   ],
   seatsChild: null,
   passengerFullInfo: [],
+  price: 900,
 };
 
 const CurrentUserInfo = createSlice({
   name: "CurrentUserInfo",
   initialState: initialState,
   reducers: {
+    setPrice(state, action: { payload: number }) {
+      state.price = action.payload;
+    },
     setPassengerFullInfo(state, action: { payload: IpassengerFullInfoItem }) {
       const id = action.payload.id;
       const index = state.passengerFullInfo.findIndex((item) => item.id === id);

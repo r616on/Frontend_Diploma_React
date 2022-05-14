@@ -1,0 +1,51 @@
+.passengersPage__sidebar {
+  width: 361px;
+  background: #3e3c41;
+  color: #fff;
+  margin-right: 85px;
+  margin-bottom: 40px;
+}
+
+.passengersPage__sidebarTitle {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  text-transform: uppercase;
+  color: #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  height: 108px;
+  text-align: center;
+  padding-top: 35px;
+}
+
+.passengersPage__sidebarMiddle {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.passengersPage__sidebarResult {
+  min-height: 110px;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 35px;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.passengersPage__sidebarResult span {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  color: #ffa800;
+  padding-left: 55px;
+}
+
+.passengersPage__sidebarResult img {
+  margin-top: -15px;
+}

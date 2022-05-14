@@ -146,28 +146,28 @@ export interface IitemRoutes {
     have_wifi?: boolean;
     have_air_conditioning?: boolean;
     is_express?: boolean;
-    train?: {
-      _id?: string;
-      name?: string;
+    train: {
+      _id: string;
+      name: string;
     };
-    from?: {
-      railway_station_name?: string;
-      city?: {
-        _id?: string;
-        name?: string;
+    from: {
+      railway_station_name: string;
+      city: {
+        _id: string;
+        name: string;
       };
-      datetime?: number;
+      datetime: number;
     };
-    to?: {
-      railway_station_name?: string;
-      city?: {
-        _id?: string;
-        name?: string;
+    to: {
+      railway_station_name: string;
+      city: {
+        _id: string;
+        name: string;
       };
-      datetime?: number;
+      datetime: number;
     };
     min_price?: number;
-    duration?: number;
+    duration: number;
     price_info?: {
       first?: {
         price?: number;

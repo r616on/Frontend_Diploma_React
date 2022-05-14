@@ -13,7 +13,6 @@ const Routes: FC = () => {
   const dispatch = useDispatch();
   const items = useSelector((state: AppStoreType) => state.Routes.items);
   // const ofset = useSelector((state: AppStoreType) => state.FilterRoutes.offset);
-  console.log(items);
   const { total_count } = useSelector((state: AppStoreType) => state.Routes);
   const {
     limit,
