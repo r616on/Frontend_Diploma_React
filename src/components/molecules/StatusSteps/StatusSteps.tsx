@@ -7,7 +7,7 @@ import { AppStoreType } from "../../../store/interfaces";
 
 interface Iprops {}
 const StatusSteps: FC<Iprops> = () => {
-  const step = useSelector((state: AppStoreType) => state.CurrentUserData.step);
+  const step = useSelector((state: AppStoreType) => state.CurrentUserInfo.step);
   return (
     <div className="status-steps">
       <div className="status-steps__background ">

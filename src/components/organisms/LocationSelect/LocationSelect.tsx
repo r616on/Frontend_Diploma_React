@@ -28,7 +28,7 @@ const LocationSelect: FC = () => {
   const [childCount, setChildCount] = useState(0);
 
   const routeCurrent: IitemRoutes = useSelector(
-    (state: AppStoreType) => state.CurrentUserData.route
+    (state: AppStoreType) => state.CurrentUserInfo.route
   );
   const items: Array<itemSeatsType> = useSelector(
     (state: AppStoreType) => state.Seats.items

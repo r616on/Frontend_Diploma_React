@@ -6,15 +6,33 @@ import "./style.scss";
 import { Select, Row, Col, Form, Input, Radio, Checkbox, Collapse } from "antd";
 import Button from "../../atom/Button/Button";
 import classNames from "classnames";
+import { useDispatch } from "react-redux";
+import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
+import { NONAME } from "dns";
+import Icon from "../../icon";
 interface IPassengerCard {
   className?: any;
+  age: string;
+  isClosed: boolean;
+  id: string;
+  price: number;
+  numberSeats: number;
+  numberPasenger: number;
 }
 
-const PassengerCard: FC<IPassengerCard> = ({ className }) => {
+const PassengerCard: FC<IPassengerCard> = ({
+  className,
+  age,
+  isClosed,
+  price,
+  numberSeats,
+  id,
+  numberPasenger,
+}) => {
+  const { TrueIcon, ErrorIcon } = Icon.validate;
+  const dispatch = useDispatch();
   const { Option } = Select;
   const [typeDoc, setTypeDoc] = useState("passport");
-
-  const [age, setAge] = useState("adult");
   const [surname, setSurname] = useState("");
   const [name, setName] = useState("");
   const [sex, setSex] = useState("Mail");
@@ -25,11 +43,41 @@ const PassengerCard: FC<IPassengerCard> = ({ className }) => {
   const [birthCertificate, setBirthCertificate] = useState("");
   const { Panel } = Collapse;
   const [collapseActive, setCollapseActive] = useState(["active"]);
+  const [validate, setValidate] = useState("");
 
+  const hendlerNextPassenger = () => {
+    if (
+      surname &&
+      name &&
+      birthday &&
+      ((typeDoc === "passport" && passportSeries && passportNumber) ||
+        (typeDoc === "birthCertificate" && birthCertificate))
+    ) {
+      setValidate("true");
+      dispatch(
+        actCurrentUserInfo.setPassengerFullInfo({
+          id,
+          age,
+          surname,
+          name,
+          birthday,
+          document: typeDoc,
+          passportSeries,
+          passportNumber,
+          birthCertificate,
+          restriction,
+          numberSeats,
+          price,
+        })
+      );
+    } else {
+      setValidate("false");
+    }
+  };
   return (
     <div className={classNames("PassengerCard", { [className]: className })}>
       <Collapse
-        defaultActiveKey={["active"]}
+        defaultActiveKey={[isClosed ? "" : "active"]}
         onChange={(key: any) => setCollapseActive(key)}
       >
         <Panel
@@ -41,7 +89,9 @@ const PassengerCard: FC<IPassengerCard> = ({ className }) => {
                 className="PassengerCard__top-iconBtn"
                 handelClick={() => {}}
               />
-              <div className="PassengerCard__top-text">Пасажир 1</div>
+              <div className="PassengerCard__top-text">
+                Пасажир: {numberPasenger}
+              </div>
               <div className="PassengerCard__top-iconExit icon-pluse"></div>
             </div>
           }
@@ -59,9 +109,10 @@ const PassengerCard: FC<IPassengerCard> = ({ className }) => {
                   className="PassengerCard-form__select age"
                   dropdownClassName="PassengerCard-form__select-dropdown age"
                   value={age}
-                  onChange={(e) => {
-                    return setAge(e);
-                  }}
+                  // onChange={(e) => {
+                  //   return setAge(e);
+                  // }}
+                  disabled={true}
                 >
                   <Option value="adult">Взрослый</Option>
                   <Option value="child">Детский</Option>
@@ -163,7 +214,6 @@ const PassengerCard: FC<IPassengerCard> = ({ className }) => {
                 marginTop: "31px",
                 paddingTop: "37px",
                 borderTop: "1px dashed #928F94",
-                borderBottom: "1px dashed #928F94",
               }}
             >
               <Col>
@@ -242,12 +292,26 @@ const PassengerCard: FC<IPassengerCard> = ({ className }) => {
                 </Col>
               )}
             </Row>
-            <Row justify="end" style={{ paddingTop: "40px" }}>
-              <Button type={"typeEmpty"} handler={() => {}}>
-                Следующий пасажир
-              </Button>
-            </Row>
           </Form>
+          <Row
+            className={classNames("PassengerCard-form__bottom", {
+              validTrue: validate === "true",
+              validFalse: validate === "false",
+            })}
+          >
+            <div className="PassengerCard-form__valid-status">
+              {validate === "true" && <TrueIcon />}
+              {validate === "false" && <ErrorIcon />}
+              <div className="valid-status__text">
+                {validate === "true"
+                  ? "Готово"
+                  : "Ошибка. Проверьте правильность заполнения полей"}
+              </div>
+            </div>
+            <Button type={"typeEmpty"} handler={hendlerNextPassenger}>
+              Следующий пасажир
+            </Button>
+          </Row>
         </Panel>
       </Collapse>
     </div>

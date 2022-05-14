@@ -2,6 +2,7 @@
 .PassengerCard {
   display: flex;
   flex-direction: column;
+  margin-bottom: 40px;
   .ant-collapse
     > .ant-collapse-item
     > .ant-collapse-header
@@ -136,11 +137,35 @@
 }
 .PassengerCard-form {
   background: #ffffff;
-  border: 1px solid #c4c4c4;
+  border-top: 1px dashed #928f94;
   padding-top: 38px;
   padding-left: 36px;
   padding-right: 31px;
-  padding-bottom: 28px;
+}
+.PassengerCard-form__bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  border-top: 1px dashed #928f94;
+  &.validTrue {
+    background-color: #b2f6a1;
+  }
+  &.validFalse {
+    background-color: #ffb59e;
+  }
+}
+.PassengerCard-form__valid-status {
+  display: flex;
+  align-items: center;
+  .valid-status__text {
+    margin-left: 15px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #ffffff;
+  }
 }
 .PassengerCard-form__select {
   height: 50px;

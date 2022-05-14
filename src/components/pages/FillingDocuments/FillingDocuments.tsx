@@ -14,7 +14,6 @@ function FillingDocuments() {
         <div className="row container">
           <div className="col TrainSelect__Left">
             <RideSettingsWidget />
-            <LastList className="TrainSelect__LastTicketWidget" />
           </div>
           <div className="col TrainSelect__main TrainSelect-main">
             <PassengersList className={"TrainSelect-main__PassengersList"} />

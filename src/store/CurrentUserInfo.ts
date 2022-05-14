@@ -14,6 +14,22 @@ interface IinitialState {
   date_end: string;
   seatsAdult: Array<{ id: string; number: number; price: number }> | null;
   seatsChild: Array<{ id: string; number: number; price: number }> | null;
+  passengerFullInfo: Array<IpassengerFullInfoItem>;
+}
+
+export interface IpassengerFullInfoItem {
+  id: string;
+  age: string;
+  numberSeats: number;
+  price: number;
+  surname: string;
+  name: string;
+  birthday: string;
+  document: string;
+  restriction: boolean;
+  passportSeries?: string;
+  passportNumber?: string;
+  birthCertificate?: string;
 }
 const initialState: IinitialState = {
   step: 1,
@@ -84,14 +100,35 @@ const initialState: IinitialState = {
   to_city_id: "",
   date_start: "",
   date_end: "",
-  seatsAdult: null,
+  seatsAdult: [
+    {
+      id: "6212d3c55fc56b48553d46df",
+      number: 4,
+      price: 2388,
+    },
+    {
+      id: "6212d3c55fc56b48553d46df",
+      number: 3,
+      price: 2388,
+    },
+  ],
   seatsChild: null,
+  passengerFullInfo: [],
 };
 
 const CurrentUserInfo = createSlice({
   name: "CurrentUserInfo",
   initialState: initialState,
   reducers: {
+    setPassengerFullInfo(state, action: { payload: IpassengerFullInfoItem }) {
+      const id = action.payload.id;
+      const index = state.passengerFullInfo.findIndex((item) => item.id === id);
+      if (index === -1) {
+        state.passengerFullInfo.push(action.payload);
+      } else {
+        state.passengerFullInfo[index] = action.payload;
+      }
+    },
     setSeatsChild(
       state,
       action: {
