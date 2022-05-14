@@ -115,7 +115,22 @@ const initialState: IinitialState = {
     },
   ],
   seatsChild: null,
-  passengerFullInfo: [],
+  passengerFullInfo: [
+    {
+      id: "6212d3c55fc56b48553d46df",
+      age: "adult",
+      surname: "Иванов",
+      name: "Иван",
+      birthday: "03/06/90",
+      document: "passport",
+      passportSeries: "1 2 3 4",
+      passportNumber: "2 2 2 2 2 2",
+      birthCertificate: "",
+      restriction: false,
+      numberSeats: 4,
+      price: 2388,
+    },
+  ],
   price: 900,
 };
 

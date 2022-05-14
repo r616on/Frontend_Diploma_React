@@ -6,9 +6,10 @@ import "./style.scss";
 import { Select, Row, Col, Form, Input, Radio, Checkbox, Collapse } from "antd";
 import Button from "../../atom/Button/Button";
 import classNames from "classnames";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
 import Icon from "../../icon";
+import { AppStoreType } from "../../../store/interfaces";
 interface IPassengerCard {
   className?: any;
   age: string;
@@ -28,6 +29,10 @@ const PassengerCard: FC<IPassengerCard> = ({
   id,
   numberPasenger,
 }) => {
+  const { passengerFullInfo } = useSelector(
+    (state: AppStoreType) => state.CurrentUserInfo
+  );
+
   const { TrueIcon, ErrorIcon } = Icon.validate;
   const dispatch = useDispatch();
   const { Option } = Select;
@@ -52,6 +57,7 @@ const PassengerCard: FC<IPassengerCard> = ({
       ((typeDoc === "passport" && passportSeries && passportNumber) ||
         (typeDoc === "birthCertificate" && birthCertificate))
     ) {
+      console.log(passengerFullInfo);
       setValidate("true");
       dispatch(
         actCurrentUserInfo.setPassengerFullInfo({

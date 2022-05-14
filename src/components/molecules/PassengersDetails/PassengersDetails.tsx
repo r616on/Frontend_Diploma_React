@@ -4,12 +4,13 @@ import { Collapse } from "antd";
 import React from "react";
 import icon from "../../icon";
 import { AppStoreType } from "../../../store/interfaces";
+import numberWithSpaces from "../../../utils/numberWithSpaces";
 
 const { Panel } = Collapse;
 
 const PassengersDetails = () => {
   const { MinusIcon, PlusIcon, PasengerAv } = icon.passengersDetails;
-
+  const { Rub } = icon.other;
   const adultPassengers = useSelector(
     (state: AppStoreType) => state.CurrentUserInfo.seatsAdult
   );
@@ -42,6 +43,18 @@ const PassengersDetails = () => {
                   <span>{adultPassengers?.length}</span>{" "}
                   {adultPassengers?.length === 1 ? "Взрослый" : "Взрослых"}
                 </div>
+                <div className="passengDetails__price">
+                  {numberWithSpaces(
+                    adultPassengers.reduce(
+                      (
+                        sum,
+                        item: { id: string; number: number; price: number }
+                      ) => sum + +item.price,
+                      0
+                    )
+                  )}{" "}
+                  <Rub width={14} height={17} />
+                </div>
               </div>
             )}
             {childPassengers && (
@@ -49,6 +62,16 @@ const PassengersDetails = () => {
                 <div className="passengDetails__age">
                   <span>{childPassengers?.length}</span>{" "}
                   {childPassengers?.length === 1 ? "Детский" : "Детских"}
+                  {numberWithSpaces(
+                    childPassengers.reduce(
+                      (
+                        sum,
+                        item: { id: string; number: number; price: number }
+                      ) => sum + +item.price,
+                      0
+                    )
+                  )}{" "}
+                  <Rub width={14} height={17} />
                 </div>
               </div>
             )}
