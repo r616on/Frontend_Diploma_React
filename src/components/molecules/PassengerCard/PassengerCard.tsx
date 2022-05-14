@@ -8,7 +8,6 @@ import Button from "../../atom/Button/Button";
 import classNames from "classnames";
 import { useDispatch } from "react-redux";
 import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
-import { NONAME } from "dns";
 import Icon from "../../icon";
 interface IPassengerCard {
   className?: any;
