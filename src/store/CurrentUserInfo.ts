@@ -31,6 +31,15 @@ interface IinitialState {
   seatsChild: Array<{ id: string; number: number; price: number }> | null;
   passengerFullInfo: Array<IpassengerFullInfoItem>;
   price: number;
+  personalData: {
+    surname: string;
+    name: string;
+    patr: string;
+    phone: string;
+    email: string;
+    payOnline: boolean;
+    payCash: boolean;
+  };
 }
 
 const initialState: IinitialState = {
@@ -132,12 +141,42 @@ const initialState: IinitialState = {
     },
   ],
   price: 900,
+  personalData: {
+    surname: "Иванов",
+    name: "Иван",
+    patr: "Иванович",
+    phone: "89208002323",
+    email: "email@gmail.com",
+    payOnline: false,
+    payCash: false,
+  },
 };
 
 const CurrentUserInfo = createSlice({
   name: "CurrentUserInfo",
   initialState: initialState,
   reducers: {
+    stateSetPayCash(state, action: { payload: boolean }) {
+      state.personalData.payCash = action.payload;
+    },
+    stateSetPayOnline(state, action: { payload: boolean }) {
+      state.personalData.payOnline = action.payload;
+    },
+    setPersonalEmail(state, action: { payload: string }) {
+      state.personalData.email = action.payload;
+    },
+    setPersonalPhone(state, action: { payload: string }) {
+      state.personalData.phone = action.payload;
+    },
+    setPersonalPatr(state, action: { payload: string }) {
+      state.personalData.patr = action.payload;
+    },
+    setPersonalName(state, action: { payload: string }) {
+      state.personalData.name = action.payload;
+    },
+    setPersonalSurname(state, action: { payload: string }) {
+      state.personalData.surname = action.payload;
+    },
     setPrice(state, action: { payload: number }) {
       state.price = action.payload;
     },
