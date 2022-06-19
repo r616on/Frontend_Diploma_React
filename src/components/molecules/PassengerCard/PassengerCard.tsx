@@ -6,18 +6,29 @@ import "./style.scss";
 import { Select, Row, Col, Form, Input, Radio, Checkbox, Collapse } from "antd";
 import Button from "../../atom/Button/Button";
 import classNames from "classnames";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
 import Icon from "../../icon";
-import { AppStoreType } from "../../../store/interfaces";
+
 interface IPassengerCard {
   className?: any;
   age: string;
   isClosed: boolean;
   id: string;
+  uidd: string;
   price: number;
   numberSeats: number;
   numberPasenger: number;
+  inName?: string;
+  inSurname?: string;
+  inSex?: string;
+  inBirthday?: string;
+  inRestriction?: boolean;
+  inTypeDoc?: string;
+  inPart?: string;
+  inPassportSeries?: string;
+  inPassportNumber?: string;
+  inBirthCertificate?: string;
 }
 
 const PassengerCard: FC<IPassengerCard> = ({
@@ -27,25 +38,41 @@ const PassengerCard: FC<IPassengerCard> = ({
   price,
   numberSeats,
   id,
+  uidd,
   numberPasenger,
+  inName,
+  inSurname,
+  inSex,
+  inBirthday,
+  inRestriction,
+  inTypeDoc,
+  inPart,
+  inPassportSeries,
+  inPassportNumber,
+  inBirthCertificate,
 }) => {
-  const { passengerFullInfo } = useSelector(
-    (state: AppStoreType) => state.CurrentUserInfo
-  );
-
   const { TrueIcon, ErrorIcon } = Icon.validate;
   const dispatch = useDispatch();
   const { Option } = Select;
-  const [typeDoc, setTypeDoc] = useState("passport");
-  const [surname, setSurname] = useState("");
-  const [name, setName] = useState("");
-  const [sex, setSex] = useState("Mail");
-  const [birthday, setBirthday] = useState("");
-  const [restriction, setRestriction] = useState(false);
-  const [passportSeries, setPassportSeries] = useState("");
-  const [passportNumber, setPassportNumber] = useState("");
-  const [birthCertificate, setBirthCertificate] = useState("");
   const { Panel } = Collapse;
+  const [typeDoc, setTypeDoc] = useState(inTypeDoc ? inTypeDoc : "passport");
+  const [surname, setSurname] = useState(inSurname ? inSurname : "");
+  const [name, setName] = useState(inName ? inName : "");
+  const [part, setPart] = useState(inPart ? inPart : "");
+  const [sex, setSex] = useState(inSex ? inSex : "Mail");
+  const [birthday, setBirthday] = useState(inBirthday ? inBirthday : "");
+  const [restriction, setRestriction] = useState(
+    inRestriction ? inRestriction : false
+  );
+  const [passportSeries, setPassportSeries] = useState(
+    inPassportSeries ? inPassportSeries : ""
+  );
+  const [passportNumber, setPassportNumber] = useState(
+    inPassportNumber ? inPassportNumber : ""
+  );
+  const [birthCertificate, setBirthCertificate] = useState(
+    inBirthCertificate ? inBirthCertificate : ""
+  );
   const [collapseActive, setCollapseActive] = useState(["active"]);
   const [validate, setValidate] = useState("");
 
@@ -57,14 +84,16 @@ const PassengerCard: FC<IPassengerCard> = ({
       ((typeDoc === "passport" && passportSeries && passportNumber) ||
         (typeDoc === "birthCertificate" && birthCertificate))
     ) {
-      console.log(passengerFullInfo);
       setValidate("true");
       dispatch(
         actCurrentUserInfo.setPassengerFullInfo({
           id,
+          uidd,
           age,
           surname,
           name,
+          part,
+          sex,
           birthday,
           document: typeDoc,
           passportSeries,
@@ -79,6 +108,7 @@ const PassengerCard: FC<IPassengerCard> = ({
       setValidate("false");
     }
   };
+
   return (
     <div className={classNames("PassengerCard", { [className]: className })}>
       <Collapse
@@ -151,7 +181,14 @@ const PassengerCard: FC<IPassengerCard> = ({
               </Col>
               <Col>
                 <Form.Item label="Отчество" className="label">
-                  <Input className="input name" />
+                  <Input
+                    className="input name"
+                    name="part"
+                    value={part}
+                    onChange={(e) => {
+                      setPart(e.target.value);
+                    }}
+                  />
                 </Form.Item>
               </Col>
             </Row>

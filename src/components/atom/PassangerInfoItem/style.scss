@@ -1,0 +1,42 @@
+.PassangerInfoItem {
+  font-family: "Roboto";
+  font-style: normal;
+  color: #292929;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 12px;
+
+  .PassangerInfoItem__row {
+    width: 100%;
+    display: flex;
+    .PassangerInfoItem__Ava {
+      width: 94px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .PassangerInfoItem__Ava-text {
+      margin-top: 17px;
+      font-size: 18px;
+      line-height: 21px;
+      text-align: center;
+      color: #292929;
+    }
+    .PassangerInfoItem__Info {
+      margin-left: 45px;
+    }
+    .PassangerInfoItem__Info-Title {
+      font-size: 18px;
+      line-height: 21px;
+      margin-bottom: 11px;
+    }
+    .PassangerInfoItem__Info-List {
+      font-size: 18px;
+      line-height: 21px;
+      color: #928f94;
+    }
+    .PassangerInfoItem__Info-List-Item {
+      margin-top: 8px;
+    }
+  }
+}

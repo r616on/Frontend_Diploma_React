@@ -8,11 +8,14 @@ interface IsetStatusStep {
 
 export interface IpassengerFullInfoItem {
   id: string;
+  uidd: string;
   age: string;
   numberSeats: number;
   price: number;
   surname: string;
   name: string;
+  part: string;
+  sex: string;
   birthday: string;
   document: string;
   restriction: boolean;
@@ -27,8 +30,18 @@ interface IinitialState {
   to_city_id: string;
   date_start: string;
   date_end: string;
-  seatsAdult: Array<{ id: string; number: number; price: number }> | null;
-  seatsChild: Array<{ id: string; number: number; price: number }> | null;
+  seatsAdult: Array<{
+    id: string;
+    number: number;
+    price: number;
+    uidd: string;
+  }>;
+  seatsChild: Array<{
+    id: string;
+    number: number;
+    price: number;
+    uidd: string;
+  }>;
   passengerFullInfo: Array<IpassengerFullInfoItem>;
   price: number;
   personalData: {
@@ -37,11 +50,28 @@ interface IinitialState {
     patr: string;
     phone: string;
     email: string;
-    payOnline: boolean;
-    payCash: boolean;
+    payType: string;
   };
 }
-
+// const passengerFullInfo= [
+//    {
+//      id: "6212d3c55fc56b48553d46df",
+//      uidd: "5b67b18b-72d4-4333-a48e-edba76cee104",
+//      age: "adult",
+//      surname: "Иванов",
+//      name: "Иван",
+//      part: "Иванович",
+//      sex: "Mail",
+//      birthday: "03/06/90",
+//      document: "passport",
+//      passportSeries: "1 2 3 4",
+//      passportNumber: "2 2 2 2 2 2",
+//      birthCertificate: "",
+//      restriction: false,
+//      numberSeats: 4,
+//      price: 2388,
+//    },
+//  ];
 const initialState: IinitialState = {
   step: 1,
   route: {
@@ -116,30 +146,11 @@ const initialState: IinitialState = {
       id: "6212d3c55fc56b48553d46df",
       number: 4,
       price: 2388,
-    },
-    {
-      id: "6212d3c55fc56b48553d46df",
-      number: 3,
-      price: 2388,
+      uidd: "5b67b18b-72d4-4333-a48e-edba76cee104",
     },
   ],
-  seatsChild: null,
-  passengerFullInfo: [
-    {
-      id: "6212d3c55fc56b48553d46df",
-      age: "adult",
-      surname: "Иванов",
-      name: "Иван",
-      birthday: "03/06/90",
-      document: "passport",
-      passportSeries: "1 2 3 4",
-      passportNumber: "2 2 2 2 2 2",
-      birthCertificate: "",
-      restriction: false,
-      numberSeats: 4,
-      price: 2388,
-    },
-  ],
+  seatsChild: [],
+  passengerFullInfo: [],
   price: 900,
   personalData: {
     surname: "Иванов",
@@ -147,8 +158,7 @@ const initialState: IinitialState = {
     patr: "Иванович",
     phone: "89208002323",
     email: "email@gmail.com",
-    payOnline: false,
-    payCash: false,
+    payType: "",
   },
 };
 
@@ -156,11 +166,8 @@ const CurrentUserInfo = createSlice({
   name: "CurrentUserInfo",
   initialState: initialState,
   reducers: {
-    stateSetPayCash(state, action: { payload: boolean }) {
-      state.personalData.payCash = action.payload;
-    },
-    stateSetPayOnline(state, action: { payload: boolean }) {
-      state.personalData.payOnline = action.payload;
+    setPayType(state, action: { payload: string }) {
+      state.personalData.payType = action.payload;
     },
     setPersonalEmail(state, action: { payload: string }) {
       state.personalData.email = action.payload;
@@ -181,8 +188,10 @@ const CurrentUserInfo = createSlice({
       state.price = action.payload;
     },
     setPassengerFullInfo(state, action: { payload: IpassengerFullInfoItem }) {
-      const id = action.payload.id;
-      const index = state.passengerFullInfo.findIndex((item) => item.id === id);
+      const uidd = action.payload.uidd;
+      const index = state.passengerFullInfo.findIndex(
+        (item) => item.uidd === uidd
+      );
       if (index === -1) {
         state.passengerFullInfo.push(action.payload);
       } else {
@@ -193,7 +202,12 @@ const CurrentUserInfo = createSlice({
       state,
       action: {
         type: string;
-        payload: Array<{ id: string; number: number; price: number }>;
+        payload: Array<{
+          id: string;
+          number: number;
+          price: number;
+          uidd: string;
+        }>;
       }
     ) {
       state.seatsChild = action.payload;
@@ -202,7 +216,12 @@ const CurrentUserInfo = createSlice({
       state,
       action: {
         type: string;
-        payload: Array<{ id: string; number: number; price: number }>;
+        payload: Array<{
+          id: string;
+          number: number;
+          price: number;
+          uidd: string;
+        }>;
       }
     ) {
       state.seatsAdult = action.payload;

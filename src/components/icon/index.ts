@@ -1,3 +1,4 @@
+import AvatarDef from "./AvatarDef";
 import { default as passengersDetailsMinusIcon } from "./passengersDetails/MinusIcon";
 import PasengerAv from "./passengersDetails/PasengerAv";
 import { default as passengersDetailsPlusIcon } from "./passengersDetails/PlusIcon";
@@ -33,6 +34,7 @@ const service = {
 };
 const other = {
   Rub,
+  AvatarDef,
 };
 const sidebarPasenger = {
   Forward,

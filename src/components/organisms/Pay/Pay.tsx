@@ -1,6 +1,7 @@
 import { Checkbox } from "antd";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
 import { AppStoreType } from "../../../store/interfaces";
 import PersonalData from "../../molecules/PersonalData/PersonalData";
@@ -12,20 +13,14 @@ interface IPay {
 }
 
 const Pay: FC<IPay> = () => {
-  const dispatch = useDispatch();
-  // const history = useHistory();
-
   const personalData = useSelector(
     (state: AppStoreType) => state.CurrentUserInfo.personalData
   );
-
-  const [payOnline, setPayOnline] = useState(personalData.payOnline);
-  const [payCash, setPayCash] = useState(personalData.payCash);
-
-  useEffect(() => {
-    dispatch(actCurrentUserInfo.stateSetPayOnline(payOnline));
-    dispatch(actCurrentUserInfo.stateSetPayCash(payCash));
-  }, [dispatch, payOnline, payCash]);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [payType, setPayType] = useState(
+    personalData.payType ? personalData.payType : ""
+  );
 
   const buyTickets = () => {
     if (
@@ -33,10 +28,13 @@ const Pay: FC<IPay> = () => {
       personalData.name &&
       personalData.patr &&
       personalData.phone &&
-      personalData.email
+      personalData.email &&
+      payType !== ""
     ) {
+      dispatch(actCurrentUserInfo.setPayType(payType));
       // dispatch(appStateSetProgress(3));
-      // history.push("./confirm");
+
+      navigate("/ConfirmPage");
     }
   };
   return (
@@ -49,9 +47,11 @@ const Pay: FC<IPay> = () => {
         <div className="payPage__payInfoHeader">Способ оплаты</div>
         <div className="payPage__payInfoBody">
           <Checkbox
-            className={`payInfoBody__checkbox ${payOnline ? "active" : ""}`}
-            onChange={() => setPayOnline(!payOnline)}
-            checked={payOnline}
+            className={`payInfoBody__checkbox ${
+              payType === "payOnline" ? "active" : ""
+            }`}
+            onChange={() => setPayType("payOnline")}
+            checked={payType === "payOnline"}
           >
             Онлайн
           </Checkbox>
@@ -61,17 +61,22 @@ const Pay: FC<IPay> = () => {
             <div className="payInfoBody__option">Visa QIWI Wallet</div>
           </div>
           <Checkbox
-            className={`payPage__payInfoCheckbox ${payCash ? "active" : ""}`}
-            onChange={() => setPayCash(!payCash)}
-            checked={payCash}
+            className={`payPage__payInfoCheckbox ${
+              payType === "payCash" ? "active" : ""
+            }`}
+            onChange={() => setPayType("payCash")}
+            checked={payType === "payCash"}
           >
             Наличными
           </Checkbox>
         </div>
       </div>
-      <button className="payPage__mainButton" onClick={buyTickets}>
-        Купить билеты
-      </button>
+
+      <div className="payPage-controls">
+        <button className="payPage__mainButton" onClick={buyTickets}>
+          Купить билеты
+        </button>
+      </div>
     </div>
   );
 };

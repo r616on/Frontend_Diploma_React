@@ -7,6 +7,15 @@
     display: flex;
     justify-content: space-between;
   }
+  .TrainSelect-controls {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 100px;
+    margin-top: 100px;
+  }
+  .TrainSelect-main-Next {
+  }
 }
 .TrainSelect__LastTicketWidget {
   margin-top: 90px;

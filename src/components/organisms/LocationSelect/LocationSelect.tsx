@@ -76,6 +76,7 @@ const LocationSelect: FC = () => {
   const handlerTypePasenger = (typePasanger: string) => {
     setSelectedTypePasenger(typePasanger);
   };
+
   return (
     <>
       <div className="LocationSelect">

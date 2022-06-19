@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 import { itemSeatsType } from "../../../api/routes/id/seats/interfaces";
+import { v4 as uuidv4 } from "uuid";
 import "./style.scss";
 
 interface ISeat {
@@ -32,6 +33,8 @@ const Seat: FC<ISeat> = ({
   const available = coach.seats.find(
     (item) => item.index === number && item.available
   );
+  const uidd = uuidv4();
+
   // (selectedAdultSeat.length < adultCount ||
   //   selectedChildSeat.length < childCount);
 
@@ -43,7 +46,7 @@ const Seat: FC<ISeat> = ({
       if (available && index < 0 && selectedAdultSeat.length < adultCount) {
         setSelectedAdultSeat((prev: any) => {
           const arr = [...prev];
-          arr.push({ id, number, price });
+          arr.push({ id, uidd, number, price });
           return arr;
         });
       } else if (available && index > -1) {
@@ -62,6 +65,7 @@ const Seat: FC<ISeat> = ({
           const arr = [...prev];
           arr.push({
             id,
+            uidd,
             number,
             price: Math.round(price / 2),
           });

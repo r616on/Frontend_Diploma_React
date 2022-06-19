@@ -14,9 +14,11 @@ import { actFilterSeatReq } from "../../pages/LocationSelectPage/FilterSeats/eff
 interface IroutesItem {
   className?: any;
   route: IitemRoutes;
+  edit?: boolean;
+  handler?: Function;
 }
 
-const RoutesItem: FC<IroutesItem> = ({ className, route }) => {
+const RoutesItem: FC<IroutesItem> = ({ className, route, edit, handler }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handlerOnClick = (e: any) => {
@@ -104,11 +106,21 @@ const RoutesItem: FC<IroutesItem> = ({ className, route }) => {
             express={route?.is_express}
             wiFi={route?.departure?.have_wifi}
           />
-          <Button
-            type={"selectPlaces"}
-            className={"Train-options__button"}
-            handler={handlerOnClick}
-          />
+          {!edit && (
+            <Button
+              type={"selectPlaces"}
+              className={"Train-options__button"}
+              handler={handlerOnClick}
+            />
+          )}
+          {edit && (
+            <Button
+              type={"change"}
+              className={"Train-options__button"}
+              // @ts-ignore
+              handler={handler}
+            />
+          )}
         </div>
       </div>
     </section>

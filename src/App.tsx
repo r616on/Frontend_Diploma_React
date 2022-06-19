@@ -8,6 +8,8 @@ import FillingDocuments from "./components/pages/FillingDocuments/FillingDocumen
 import StepFirst from "./components/pages/StepFirst/StepFirst";
 import LocationSelectPage from "./components/pages/LocationSelectPage/LocationSelectPage";
 import Index from "./components/pages/Index/Index";
+import PayPage from "./components/pages/PayPage/PayPage";
+import ConfirmPage from "./components/pages/ConfirmPage/ConfirmPage";
 
 const App: FC = () => {
   return (
@@ -24,6 +26,8 @@ const App: FC = () => {
             <Route path="/first" element={<StepFirst />} />
             <Route path="/two" element={<LocationSelectPage />} />
             <Route path="/fillingDocuments" element={<FillingDocuments />} />
+            <Route path="/PayPage" element={<PayPage />} />
+            <Route path="/ConfirmPage" element={<ConfirmPage />} />
             {/* <Route path="/404" element={<NotFound />} />
               <Route path="*" element={<Navigate replace to="/404" />} /> */}
           </Routes>

@@ -7,7 +7,7 @@ import { getRoutes } from "./routes/routes";
 import { postSubscrube } from "./subscribe/subscrube";
 
 export const instanse = axios.create({
-  baseURL: "http://80.87.192.113:3001/",
+  baseURL: process.env.REACT_APP_BASE_URL,
 });
 
 export const AppAPI = {
