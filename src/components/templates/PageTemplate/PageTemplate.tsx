@@ -5,12 +5,17 @@ import Header from "../../organisms/Header/Header";
 import "./style.scss";
 interface Iprops {
   stepOne?: boolean;
+  noSearch?: boolean;
+  backgroundImage?: string;
 }
 
 const PageTemplate: FC<Iprops> = (props) => {
   return (
     <Fragment>
-      <Header />
+      <Header
+        noSearch={props.noSearch}
+        backgroundImage={props.backgroundImage}
+      />
       {props.children}
       <Footer />
     </Fragment>

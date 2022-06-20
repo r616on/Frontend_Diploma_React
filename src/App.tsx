@@ -10,6 +10,7 @@ import LocationSelectPage from "./components/pages/LocationSelectPage/LocationSe
 import Index from "./components/pages/Index/Index";
 import PayPage from "./components/pages/PayPage/PayPage";
 import ConfirmPage from "./components/pages/ConfirmPage/ConfirmPage";
+import FinishPage from "./components/pages/FinishPage/FinishPage";
 
 const App: FC = () => {
   return (
@@ -28,6 +29,7 @@ const App: FC = () => {
             <Route path="/fillingDocuments" element={<FillingDocuments />} />
             <Route path="/PayPage" element={<PayPage />} />
             <Route path="/ConfirmPage" element={<ConfirmPage />} />
+            <Route path="/FinishPage" element={<FinishPage />} />
             {/* <Route path="/404" element={<NotFound />} />
               <Route path="*" element={<Navigate replace to="/404" />} /> */}
           </Routes>

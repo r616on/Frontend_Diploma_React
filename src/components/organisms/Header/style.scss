@@ -2,7 +2,7 @@
 .header {
   position: relative;
   height: 985px;
-  background-image: url("./img/header-first_background.jpg");
+  // background-image: url("./img/header-first_background.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -64,6 +64,6 @@
 .selectTrain {
   &.header {
     height: 596px;
-    background-image: url("./img/selectTrain_background.jpg");
+    // background-image: url("./img/selectTrain_background.jpg");
   }
 }

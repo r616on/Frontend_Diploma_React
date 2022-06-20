@@ -6,12 +6,28 @@ import { Link } from "react-router-dom";
 import SearchTicket from "../../molecules/SearchTicket/SearchTicket";
 import { useSelector } from "react-redux";
 import { AppStoreType } from "../../../store/interfaces";
-
-interface Iprops {}
-const Header: FC<Iprops> = () => {
+import bagroundImgFirst from "./img/header-first_background.jpg";
+import bagroundImgSelectTrain from "./img/selectTrain_background.jpg";
+interface Iprops {
+  noSearch?: boolean;
+  backgroundImage?: string;
+}
+const Header: FC<Iprops> = ({ noSearch, backgroundImage }) => {
   const step = useSelector((state: AppStoreType) => state.CurrentUserInfo.step);
+
   return (
-    <header className={classNames("header", { selectTrain: step })}>
+    <header
+      className={classNames("header", { selectTrain: step })}
+      style={{
+        backgroundImage: `url(${
+          backgroundImage
+            ? backgroundImage
+            : step
+            ? bagroundImgSelectTrain
+            : bagroundImgFirst
+        })`,
+      }}
+    >
       <div className="header__logo ">
         <div className="logo container">Лого</div>
       </div>
@@ -26,7 +42,7 @@ const Header: FC<Iprops> = () => {
       </nav>
       <div className="header__body"></div>
       <div className="header__form  container">
-        <SearchTicket selectTrain={step} />
+        {!noSearch && <SearchTicket selectTrain={step} />}
       </div>
       {!step && <div className="header__line"></div>}
     </header>
