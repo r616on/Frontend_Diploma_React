@@ -20,7 +20,7 @@ const PassengersList: FC<IPassengersList> = ({ className }) => {
         [className]: className,
       })}
     >
-      {passengerFullInfo.length === 0 && (
+      {passengerFullInfo.length !== seatsAdult.length + seatsChild.length && (
         <div className="PassengersList__row">
           {seatsAdult &&
             seatsAdult.length > 0 &&
@@ -58,7 +58,7 @@ const PassengersList: FC<IPassengersList> = ({ className }) => {
         </div>
       )}
 
-      {passengerFullInfo.length > 0 && (
+      {passengerFullInfo.length === seatsAdult.length + seatsChild.length && (
         <div className="PassengersList__row">
           {passengerFullInfo.map((item, index) => {
             return (

@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import IconBtn from "../../atom/IconBtn/IconBtn";
 import InputMask from "react-input-mask";
@@ -76,6 +76,18 @@ const PassengerCard: FC<IPassengerCard> = ({
   const [collapseActive, setCollapseActive] = useState(["active"]);
   const [validate, setValidate] = useState("");
 
+  useEffect(() => {
+    if (
+      surname &&
+      name &&
+      birthday &&
+      ((typeDoc === "passport" && passportSeries && passportNumber) ||
+        (typeDoc === "birthCertificate" && birthCertificate))
+    ) {
+      setValidate("true");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const hendlerNextPassenger = () => {
     if (
       surname &&
@@ -144,9 +156,6 @@ const PassengerCard: FC<IPassengerCard> = ({
                   className="PassengerCard-form__select age"
                   dropdownClassName="PassengerCard-form__select-dropdown age"
                   value={age}
-                  // onChange={(e) => {
-                  //   return setAge(e);
-                  // }}
                   disabled={true}
                 >
                   <Option value="adult">Взрослый</Option>

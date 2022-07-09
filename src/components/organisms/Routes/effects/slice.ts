@@ -31,6 +31,9 @@ const Routes = createSlice({
     setRequestStatus(state, action: { type: string; payload: IRequestStatus }) {
       state.requestStatus = action.payload;
     },
+    setInit() {
+      return initialState;
+    },
   },
 });
 

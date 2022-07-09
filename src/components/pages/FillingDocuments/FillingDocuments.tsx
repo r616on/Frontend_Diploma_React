@@ -31,6 +31,12 @@ function FillingDocuments() {
             <PassengersList className={"TrainSelect-main__PassengersList"} />
             <div className="TrainSelect-controls">
               <Button
+                disabled={
+                  !(
+                    seatsAdult.length + seatsChild.length ===
+                    passengerFullInfo.length
+                  )
+                }
                 type="next"
                 handler={hendlerNext}
                 className="TrainSelect-Next"

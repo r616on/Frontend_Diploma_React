@@ -1,20 +1,183 @@
 .FinishPage {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  background: none;
+  width: 100%;
+  align-items: center;
+  padding-top: 0px;
+  margin-top: -225px;
+  margin-bottom: 175px;
   .FinishPage__title {
+    position: relative;
+    width: 73%;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 84px;
+    color: #ffffff;
+    margin-bottom: 50px;
   }
   .FinishPage__row {
+    width: 73%;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #c4c4c4;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   }
   .FinishPage__order {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #3e3c41;
+    margin: 60px 80px;
   }
   .FinishPage__order-text {
   }
   .FinishPage__order-price {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #928f94;
+    span {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 42px;
+
+      color: #3e3c41;
+    }
   }
   .FinishPage__icon-row {
+    display: flex;
+    justify-content: space-between;
+
+    background: #f4f3f6;
+    width: 100%;
+    padding: 40px 20%;
   }
   .FinishPage__icon-item {
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .FinishPage__icon-item-icon {
   }
   .FinishPage__icon-item-text {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #292929;
+
+    text-align: center;
+    max-width: 158px;
+    margin-top: 11px;
+
+    span {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 21px;
+      text-align: center;
+
+      color: #292929;
+    }
+  }
+  .FinishPage__body {
+    width: 100%;
+    padding: 0 0 0 13%;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #292929;
+    .title {
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 42px;
+      margin-top: 90px;
+      margin-bottom: 50px;
+      span:first-letter {
+        text-transform: uppercase;
+      }
+    }
+    .body {
+      line-height: 28px;
+    }
+    .futter {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 28px;
+      margin-top: 90px;
+      margin-bottom: 129px;
+    }
+  }
+  .FinishPage__footer {
+    padding: 50px 78px 50px 80px;
+    background: rgba(255, 168, 0, 0.88);
+    display: flex;
+    justify-content: space-between;
+    .raitig {
+      display: flex;
+      align-items: center;
+    }
+    .FinishPage__button {
+      width: 323px;
+      height: 60px;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 28px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #292929;
+      border: 1px solid #3e3c41;
+      margin-left: auto;
+      background: transparent;
+    }
+
+    .FinishPage__button:hover,
+    .FinishPage__button:focus {
+      color: #ffa800;
+      background: #ffffff;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .FinishPage__button:active {
+      color: #292929;
+      background: #ffa800;
+      border: 1px transparent solid;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+    .text {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28px;
+
+      color: #292929;
+      margin-right: 23px;
+    }
+    .FinishPage_Finish {
+    }
   }
 }

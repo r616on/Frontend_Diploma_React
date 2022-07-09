@@ -12,6 +12,7 @@ const arrButton = [
   { type: "change", text: "Изменить" },
   { type: "confirm", text: "Подтвердить" },
   { type: "typeEmpty", text: "" },
+
   // { type: "selectPlaces", text: "Выбрать места" },
 ];
 interface Ibutton {
@@ -19,12 +20,14 @@ interface Ibutton {
   type: string;
   children?: string;
   handler: MouseEventHandler;
+  disabled?: boolean;
 }
 const Button: FC<Ibutton> = ({
   type = "learnMore",
   className,
   children,
   handler,
+  disabled,
 }) => {
   return (
     <Fragment>
@@ -34,11 +37,13 @@ const Button: FC<Ibutton> = ({
           if (item.type === type) {
             return (
               <button
+                disabled={disabled}
                 key={uuidv4()}
                 onClick={handler}
                 className={classNames("btn", {
                   [className]: className,
                   [item.type]: type,
+                  disabled: disabled,
                   // typeEmpty: typeEmpty,
                 })}
               >

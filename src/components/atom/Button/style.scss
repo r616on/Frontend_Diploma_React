@@ -1,5 +1,8 @@
 @import "../../../scss/config.scss";
 .btn {
+  &.disabled {
+    opacity: 0.3;
+  }
   &.typeEmpty {
     font-family: $font;
     font-style: normal;

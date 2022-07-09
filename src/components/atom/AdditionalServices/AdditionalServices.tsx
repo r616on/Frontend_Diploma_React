@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import classNames from "classnames";
-// import { Link } from "react-router-dom";
 import "./style.scss";
 interface IadditionalServices {
   className?: any;

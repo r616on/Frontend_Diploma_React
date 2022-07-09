@@ -1,9 +1,27 @@
-import React from "react";
+import react, { useEffect } from "react";
+import React, { FC, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
+import { AppStoreType } from "../../../store/interfaces";
 import Button from "../../atom/Button/Button";
 // import { Link } from "react-router-dom";
 import "./style.scss";
 
-function Footer() {
+const Footer: FC = () => {
+  const dispatch = useDispatch();
+  const [userEmail, setUserEmail] = useState("");
+  const { subscribeUserEmailStatus } = useSelector(
+    (state: AppStoreType) => state.CurrentUserInfo
+  );
+  const onSubscribe = () => {
+    dispatch(actCurrentUserInfo.setSubscribeUserEmail(userEmail));
+    setUserEmail("");
+  };
+  useEffect(() => {
+    if (subscribeUserEmailStatus) {
+      setUserEmail("Вы успешно подписались!");
+    }
+  }, [subscribeUserEmailStatus]);
   return (
     <footer className="footer">
       <div className="footer__top container">
@@ -32,12 +50,29 @@ function Footer() {
         </div>
         <div className="footer__subscription subscription">
           <h3 className="subscription__title title">Подписка</h3>
-          <form className="subscription__form subscription-form">
+          <form
+            className="subscription__form subscription-form"
+            id="subscription"
+            name="subscription"
+          >
             <label className="subscription-form__lable">
               Будьте в курсе событий
-              <input className="subscription-form__input" />
+              <input
+                type="email"
+                name="email"
+                inputMode="email"
+                placeholder="e-mail"
+                value={userEmail}
+                required
+                onChange={(e) => setUserEmail(e.target.value)}
+                className="subscription-form__input"
+              />
             </label>
-            <Button type="submit" />
+            <Button
+              type="submit"
+              handler={onSubscribe}
+              disabled={subscribeUserEmailStatus}
+            />
           </form>
           <h3 className="subscription__title title">Подписывайтесь на нас</h3>
           <ul className="subscription__social-networks social-networks">
@@ -77,6 +112,6 @@ function Footer() {
       </div>
     </footer>
   );
-}
+};
 
-export default Footer;
+export default react.memo(Footer);

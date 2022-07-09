@@ -46,6 +46,9 @@ const FilterSeats = createSlice({
     ) {
       state.have_first_class = action.payload;
     },
+    setInit() {
+      return initialState;
+    },
   },
 });
 

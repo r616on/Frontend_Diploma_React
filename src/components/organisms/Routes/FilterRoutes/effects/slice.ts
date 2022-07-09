@@ -34,16 +34,6 @@ const FilterRoutes = createSlice({
   name: "FilterRoutes",
   initialState: initialState,
   reducers: {
-    // setParams(
-    //   state,
-    //   action: {
-    //     type: string;
-    //     payload: { params: ParamsType; value: string | boolean };
-    //   }
-    // ) {
-    //   const { params, value } = action.payload;
-    //   state = { ...state, [params]: value };
-    // },
     setFrom_city_id(state, action: { type: string; payload: string }) {
       state.from_city_id = action.payload;
     },
@@ -136,6 +126,9 @@ const FilterRoutes = createSlice({
     },
     setSort(state, action: { type: string; payload: string }) {
       state.sort = action.payload;
+    },
+    setInit() {
+      return initialState;
     },
   },
 });

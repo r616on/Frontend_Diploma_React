@@ -1,6 +1,11 @@
 import React, { FC } from "react";
 import "./App.css";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import FillingDocuments from "./components/pages/FillingDocuments/FillingDocuments";
@@ -18,11 +23,6 @@ const App: FC = () => {
       <Router>
         <div className="App">
           <Routes>
-            {/* <Route path="/catalog/:id" element={<ProductPage />} />
-              <Route path="/catalog" element={<CatalogPage />} />
-              <Route path="/cart" element={<CartPage />} />
-              <Route path="/contacts" element={<Contacts />} />
-              <Route path="/about" element={<About />} /> */}
             <Route path="/" element={<Index />} />
             <Route path="/first" element={<StepFirst />} />
             <Route path="/two" element={<LocationSelectPage />} />
@@ -30,8 +30,8 @@ const App: FC = () => {
             <Route path="/PayPage" element={<PayPage />} />
             <Route path="/ConfirmPage" element={<ConfirmPage />} />
             <Route path="/FinishPage" element={<FinishPage />} />
-            {/* <Route path="/404" element={<NotFound />} />
-              <Route path="*" element={<Navigate replace to="/404" />} /> */}
+            <Route path="/404" element={<Index />} />
+            <Route path="*" element={<Navigate replace to="/404" />} />
           </Routes>
         </div>
       </Router>

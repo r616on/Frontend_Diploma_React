@@ -30,13 +30,6 @@ const SearchCity: FC<ISearchItem> = ({ cityFrom, cityTo }) => {
     }
   };
   const individual: boolean = searchTime === search;
-  // useEffect(() => {
-  //   if (items.length === 1) {
-  //     dispatch(actionsCities.changeSearchField(items[0].name));
-  //     dispatch(actionsFilterRoutes.setFrom_city_id(items[0]._id));
-  //     dispatch(actionsCities.setItems([]));
-  //   }
-  // }, [dispatch, items]);
 
   const handleClick = (e: any, value: string, id: string) => {
     if (cityFrom) {

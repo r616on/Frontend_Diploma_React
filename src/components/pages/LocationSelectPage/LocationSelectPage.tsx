@@ -11,11 +11,6 @@ import { actionsSeats } from "./effects/slice";
 
 const LocationSelectPage: FC = () => {
   const dispatch = useDispatch();
-  // const items = useSelector((state: AppStoreType) => state.Seats.items);
-  // const route = useSelector(
-  //   (state: AppStoreType) => state.CurrentUserData.route
-  // );
-  // const ofset = useSelector((state: AppStoreType) => state.FilterRoutes.offset);
 
   const {
     id,

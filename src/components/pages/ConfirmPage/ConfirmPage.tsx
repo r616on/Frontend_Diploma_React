@@ -6,12 +6,14 @@ import SideBarPasengerPage from "../../molecules/SideBarPasengerPage/SideBarPase
 import Button from "../../atom/Button/Button";
 import { useNavigate } from "react-router-dom";
 import RoutesItem from "../../molecules/RoutesItem/RoutesItem";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AppStoreType } from "../../../store/interfaces";
 import PassangerInfoList from "../../molecules/PassangerInfoList/PassangerInfoList";
+import { actCurrentUserInfo } from "../../../store/CurrentUserInfo";
 
 const ConfirmPage: FC = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const { route, personalData } = useSelector(
     (state: AppStoreType) => state.CurrentUserInfo
@@ -20,7 +22,8 @@ const ConfirmPage: FC = () => {
     navigate("/PayPage");
   };
   const hendlerConfirm = () => {
-    navigate("/PayPage");
+    dispatch(actCurrentUserInfo.postOrder());
+    navigate("/FinishPage");
   };
   const routeEdit = () => {
     navigate("/first");

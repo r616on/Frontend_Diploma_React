@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IitemRoutes } from "../components/organisms/Routes/interfaces";
+import { IRequestStatus } from "../utils/requestStatuses";
 
 interface IsetStatusStep {
   type: any;
@@ -52,6 +53,10 @@ interface IinitialState {
     email: string;
     payType: string;
   };
+  requestStatus: IRequestStatus;
+  orderStatus: boolean;
+  subscribeUserEmail: string;
+  subscribeUserEmailStatus: boolean;
 }
 // const passengerFullInfo= [
 //    {
@@ -72,6 +77,37 @@ interface IinitialState {
 //      price: 2388,
 //    },
 //  ];
+//  personalData: {
+//     surname: "Иванов",
+//     name: "Иван",
+//     patr: "Иванович",
+//     phone: "89208002323",
+//     email: "email@gmail.com",
+//     payType: "",
+//   },
+//  _id: "6212d3de5fc56b48553d53b3",
+
+//  train: {
+//         _id: "6212d3ca5fc56b48553d4cd8",
+//         name: "Тройка - 89",
+//       },
+//       from: {
+//         railway_station_name: "Казанский",
+//         city: {
+//           _id: "6212d3c15fc56b48553d43bc",
+//           name: "москва",
+//         },
+//         datetime: 1645534735,
+//       },
+//       to: {
+//         railway_station_name: "Московский",
+//         city: {
+//           _id: "6212d3c15fc56b48553d43bd",
+//           name: "санкт-петербург",
+//         },
+//         datetime: 1645685035,
+//       },
+
 const initialState: IinitialState = {
   step: 1,
   route: {
@@ -82,14 +118,14 @@ const initialState: IinitialState = {
     have_wifi: false,
     have_air_conditioning: false,
     is_express: false,
-    min_price: 1971,
-    available_seats: 127,
+    min_price: 0,
+    available_seats: 0,
     available_seats_info: {
-      second: 32,
-      third: 96,
+      second: 0,
+      third: 0,
     },
     departure: {
-      _id: "6212d3de5fc56b48553d53b3",
+      _id: "",
       have_first_class: false,
       have_second_class: true,
       have_third_class: true,
@@ -97,42 +133,42 @@ const initialState: IinitialState = {
       have_wifi: true,
       have_air_conditioning: true,
       is_express: false,
-      min_price: 1971,
-      duration: 150300,
-      available_seats: 127,
+      min_price: 0,
+      duration: 0,
+      available_seats: 0,
       available_seats_info: {
-        second: 32,
-        third: 96,
+        second: 0,
+        third: 0,
       },
       train: {
-        _id: "6212d3ca5fc56b48553d4cd8",
-        name: "Тройка - 89",
+        _id: "",
+        name: "",
       },
       from: {
-        railway_station_name: "Казанский",
+        railway_station_name: "",
         city: {
-          _id: "6212d3c15fc56b48553d43bc",
-          name: "москва",
+          _id: "",
+          name: "",
         },
-        datetime: 1645534735,
+        datetime: 0,
       },
       to: {
-        railway_station_name: "Московский",
+        railway_station_name: "",
         city: {
-          _id: "6212d3c15fc56b48553d43bd",
-          name: "санкт-петербург",
+          _id: "",
+          name: "",
         },
-        datetime: 1645685035,
+        datetime: 0,
       },
       price_info: {
         second: {
-          top_price: 2358,
-          bottom_price: 1971,
+          top_price: 0,
+          bottom_price: 0,
         },
         third: {
-          top_price: 3255,
-          bottom_price: 3550,
-          side_price: 4455,
+          top_price: 0,
+          bottom_price: 0,
+          side_price: 0,
         },
       },
     },
@@ -151,15 +187,23 @@ const initialState: IinitialState = {
   ],
   seatsChild: [],
   passengerFullInfo: [],
-  price: 900,
+  price: 0,
   personalData: {
-    surname: "Иванов",
-    name: "Иван",
-    patr: "Иванович",
-    phone: "89208002323",
-    email: "email@gmail.com",
+    surname: "",
+    name: "",
+    patr: "",
+    phone: "",
+    email: "",
     payType: "",
   },
+  requestStatus: {
+    loading: false,
+    ok: false,
+    error: false,
+  },
+  orderStatus: false,
+  subscribeUserEmail: "",
+  subscribeUserEmailStatus: false,
 };
 
 const CurrentUserInfo = createSlice({
@@ -195,7 +239,7 @@ const CurrentUserInfo = createSlice({
       if (index === -1) {
         state.passengerFullInfo.push(action.payload);
       } else {
-        state.passengerFullInfo[index] = action.payload;
+        // state.passengerFullInfo[index] = action.payload;
       }
     },
     setSeatsChild(
@@ -244,8 +288,24 @@ const CurrentUserInfo = createSlice({
     setRoute(state, action: { type: string; payload: IitemRoutes }) {
       state.route = action.payload;
     },
-    setRouteInit(state) {
-      state = initialState;
+    postOrder() {},
+    setRequestStatus(state, action: { type: string; payload: IRequestStatus }) {
+      state.requestStatus = action.payload;
+    },
+    setSubscribeUserEmail(state, action: { type: string; payload: string }) {
+      state.subscribeUserEmail = action.payload;
+    },
+    setSubscribeUserEmailStatus(
+      state,
+      action: { type: string; payload: boolean }
+    ) {
+      state.subscribeUserEmailStatus = action.payload;
+    },
+    setOrderStatus(state, action: { type: string; payload: boolean }) {
+      state.orderStatus = action.payload;
+    },
+    setRouteInit() {
+      return initialState;
     },
   },
 });
