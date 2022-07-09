@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "./static/css/main.cb9eaa46.css",
+    "main.js": "./static/js/main.9af65072.js",
+    "static/js/27.1425abba.chunk.js": "./static/js/27.1425abba.chunk.js",
+    "static/media/Calibri_Regular.svg": "./static/media/Calibri_Regular.07f6daf0ebfde243ed65.svg",
+    "static/media/header-background-finish.jpg": "./static/media/header-background-finish.ee1e0833fab7a6df7814.jpg",
+    "static/media/header-first_background.jpg": "./static/media/header-first_background.dbb0982bb2511378866f.jpg",
+    "static/media/selectTrain_background.jpg": "./static/media/selectTrain_background.8678edd60641814364c5.jpg",
+    "static/media/background.jpg": "./static/media/background.5d6fd0093f761326faa9.jpg",
+    "static/media/Calibri_Regular.eot": "./static/media/Calibri_Regular.6c1ce2b0910747e53573.eot",
+    "static/media/Calibri_Regular.ttf": "./static/media/Calibri_Regular.29c57b05b7345f94042a.ttf",
+    "static/media/Calibri_Regular.woff": "./static/media/Calibri_Regular.6e24ec12e9d3cdf79e12.woff",
+    "static/media/avaMean.jpg": "./static/media/avaMean.3e982e5e8309f62280ea.jpg",
+    "static/media/sedentary_img.jpg": "./static/media/sedentary_img.815f79d222211be9c587.jpg",
+    "static/media/avaGerl.jpg": "./static/media/avaGerl.6dce71fa66436655e8b2.jpg",
+    "static/media/ReservedSeat_img.jpg": "./static/media/ReservedSeat_img.1fb4fd711c519b37a4e3.jpg",
+    "static/media/coupe_img.jpg": "./static/media/coupe_img.fb919526cf332d967e4f.jpg",
+    "static/media/luxe_img.jpg": "./static/media/luxe_img.bfaa9b121d517a57b9ec.jpg",
+    "static/media/diploma.svg?mv991e": "./static/media/diploma.aaa302f89d0491f788fa.svg",
+    "static/media/diploma.eot?mv991e": "./static/media/diploma.cde8ba9dc077a63752b0.eot",
+    "static/media/diploma.woff?mv991e": "./static/media/diploma.70b128f71de59a6be342.woff",
+    "static/media/diploma.ttf?mv991e": "./static/media/diploma.62a2daa5d3523caa20f4.ttf",
+    "static/media/hugeSelection.svg": "./static/media/hugeSelection.007a7e222a70fc017528.svg",
+    "static/media/express.svg": "./static/media/express.edf770a08979a45799c322919acac032.svg",
+    "static/media/sedentary.svg": "./static/media/sedentary.c948a4085ad87f6da0a1c66ef5db2c89.svg",
+    "static/media/trainIcon.svg": "./static/media/trainIcon.b0cd7fa067c8650ceec5.svg",
+    "static/media/WiFi.svg": "./static/media/WiFi.148df025d4e38a51e11358c6724468d5.svg",
+    "static/media/reservedSeat.svg": "./static/media/reservedSeat.b50475fc5c331e7603bdf223811524f1.svg",
+    "static/media/dontOffice.svg": "./static/media/dontOffice.2823d485d80e4909b4c7.svg",
+    "static/media/clockIcon.svg": "./static/media/clockIcon.473ad3268e06fde15942.svg",
+    "static/media/compartment.svg": "./static/media/compartment.d00fcb7f7df4425058bb04d89608a6b5.svg",
+    "static/media/convenientOrder.svg": "./static/media/convenientOrder.6c24ce510d565c85fc90.svg",
+    "index.html": "./index.html",
+    "static/media/arrow.svg": "./static/media/arrow.468a2fa69568f0c0621a.svg",
+    "static/media/luxury.svg": "./static/media/luxury.331955b821e33f471c9d75058937ca74.svg"
+  },
+  "entrypoints": [
+    "static/css/main.cb9eaa46.css",
+    "static/js/main.9af65072.js"
+  ]
+}
